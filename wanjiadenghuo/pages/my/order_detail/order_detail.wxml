@@ -1,0 +1,107 @@
+<view>
+  <view class='order_detail'>
+    <view class='flex-row color6' style='padding:0 50rpx;'>订单详情</view>
+    <view class='list'>
+      <view class='flex-row'>
+        <view>
+          <text class='font30'>订单号：</text>
+          <text class='font26 color9'>{{info.order_id}}</text>
+        </view>
+        <navigator  url='evate_detail/evate_detail?order_id={{order_id}}' class='orange font26'>估价详情
+          <text class='right_arrow '>></text>
+        </navigator>
+      </view>
+      <!--订单状态  -->
+      <view class='flex-row'>
+        <view>
+          <text class='font30'>订单状态：</text>
+          <text class='font26 redFont' wx:if="{{info.state == -1}}">已取消</text>
+          <text class='font26 redFont' wx:if="{{info.state == 0}}">未受理</text>
+          <text class='font26 redFont' wx:if="{{info.state == 1}}">受理中</text>
+          <text class='font26 redFont' wx:if="{{info.state == 2}}">已受理（搬家后支付）</text>
+          <text class='font26 redFont' wx:if="{{info.state == 4}}" bindtap='toPay'>已受理（立即支付）</text>
+          <text class='font26 redFont' wx:if="{{info.state == 5}}">支付确认中</text>
+          <text class='font26 redFont' wx:if="{{info.state == 6}}">待评价</text>
+          <text class='font26 redFont' wx:if="{{info.state == 7}}">服务完成</text>
+        </view>
+        <navigator wx:if='{{info.state == 6}}' url='maluation/maluation?order_id={{order_id}}' class='orange font26'>待评价
+          <text class='right_arrow '>></text>
+        </navigator>
+        <navigator wx:if='{{info.state == 7}}' url='comment_detail/comment_detail?order_id={{order_id}}'  class='orange font26'>评价详情
+          <text class='right_arrow '>></text>
+        </navigator>
+      </view>
+      <!-- 支付方式 -->
+      <view class='flex-row'>
+        <view>
+          <text class='font30'>支付方式：</text>
+          <text class='font26 color9'>{{info.state_pay==1?"线上支付":"线下支付"}}</text>
+        </view>
+      </view>
+      <!-- 报价评估 -->
+      <view class='flex-row' wx:if="{{info.pay_value}}">
+        <view>
+          <text class='font30'>报价评估：</text>
+          <text class='font26 color9'>{{info.pay_value?info.pay_value:0}}</text>
+        </view>
+      </view>
+      <!-- 实际支付  -->
+      <view class='flex-row' wx:if="{{info.deal_value}}">
+        <view>
+          <text class='font30'>实际支付：</text>
+          <text class='font26 color9'>{{info.deal_value?info.deal_value:0}}</text>
+        </view>
+      </view>
+      <view class='font26 flex-row color9' wx:if="{{info.create_at}}">
+        <view><text>订单生成时间：{{info.create_at}}</text></view>
+      </view>
+      <view class='font26 flex-row color9' wx:if="{{info.accept_at}}">
+        <view><text>订单受理时间：{{info.accept_at}}</text></view>
+      </view>
+      <view class='font26 flex-row color9' wx:if="{{info.payment_at}}">
+        <view><text>订单生成时间：{{info.payment_at}}</text></view>
+      </view>
+    </view>
+    <view class='flex-row color6' style='padding:0 50rpx;'>预约详情</view>
+    <view class='list'>
+      <!-- 实际支付  -->
+      <view class='flex-row' wx:if="{{info.about_at}}">
+        <view>
+          <text class='font30'>预约时间：</text>
+          <text class='font26 color9'>{{info.about_at?info.about_at:0}}</text>
+        </view>
+      </view>
+      <view class='flex-row' wx:if="{{info.remarks}}">
+        <view>
+          <text class='font30'>备注：</text>
+          <text class='font26 color9'>{{info.remarks?info.remarks:0}}</text>
+        </view>
+      </view>
+      <view class='flex-row' wx:if="{{info.remarks}}">
+        <view>
+          <text class='font30'>联系人：</text>
+          <text class='font26 color9'>{{info.name?info.name:0}}</text>
+        </view>
+      </view>
+      <view class='flex-row' wx:if="{{info.phone}}">
+        <view>
+          <text class='font30'>联系电话：</text>
+          <text class='font26 color9'>{{info.phone?info.phone:0}}</text>
+        </view>
+      </view>
+       <view class='flex-row' wx:if="{{info.name_two}}">
+        <view>
+          <text class='font30'>备选联系人：</text>
+          <text class='font26 color9'>{{info.name_two?info.name_two:0}}</text>
+        </view>
+      </view>
+      
+      <view class='flex-row' wx:if="{{info.phone_two}}">
+        <view>
+          <text class='font30'>备用电话：</text>
+          <text class='font26 color9'>{{info.phone_two?info.phone_two:0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

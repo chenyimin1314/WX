@@ -1,0 +1,79 @@
+<view wx:if='{{isShow}}'>
+  <view class='top'>
+    <image class='header' src='{{userInfo.head_image_url?userInfo.head_image_url:"../../images/default.jpg"}}'></image>
+    <view class='info'>
+      <view class='item'>
+        <text>昵称：</text>{{userInfo.name}}</view>
+      <view class='item' v-if="{{phone != 2}}">
+        <text>手机号码：</text>{{userInfo.phone}}</view>
+      <view class='item item_bottom'>
+        <view class='item_login'>
+          <image src='../../images/personal.png'></image>
+          <text>已登录</text>
+        </view>
+        <!-- 暂时认证  -->
+        <view class='item_login' wx:if="{{userInfo.id_state == 1}}">
+          <image src='../../images/personal2.png'></image>
+          <text>合作伙伴认证</text>
+        </view>
+      </view>
+    </view>
+    <!-- 二维码  -->
+    <image class='code' wx:if='{{userInfo.id_state == 1}}' id='https://www.hukesoft.com/HouseMoving/index.php/Index/User/user_product_card?user_id={{userInfo.user_id}}' bindtap='preview' src='https://www.hukesoft.com/HouseMoving/index.php/Index/User/user_product_card?user_id={{userInfo.user_id}}'></image>
+  </view>
+
+  <!-- 我的订单  -->
+  <view class='list_box'>
+    <view class='list_item bdt'>我的订单</view>
+    <view class="weui-grids two">
+      <navigator url="subscribe/subscribe" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/yuyue.png" />
+        <view class="weui-grid__label">预约</view>
+      </navigator>
+      <navigator url="nocomponent/nocomponent" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/my.png" />
+        <view class="weui-grid__label">待评价</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 合作伙伴  -->
+  <view class='list_box'>
+    <view class='list_item bdt'>合作伙伴</view>
+    <view class="weui-grids">
+      <view class="weui-grid" bindtap='toUrl' hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="../../images/identity.png" />
+        <view class="weui-grid__label">
+          <text wx:if="{{!userInfo.id_state && (userInfo.id_state!=0)}}">未认证</text>
+          <text wx:if="{{userInfo.id_state == 0}}">待审核</text>
+          <text wx:if="{{userInfo.id_state == 1}}">已认证</text>
+          <text wx:if="{{userInfo.id_state == 2}}">已驳回</text>
+        </view>
+      </view>
+      <view  class="weui-grid relative" hover-class="weui-grid_active">
+        <view class='full' id="order/order" bindtap='toDetail'></view>
+        <image class="weui-grid__icon" src="../../images/order.png" />
+        <view class="weui-grid__label">订单查询</view>
+      </view>
+      <view class="weui-grid relative" hover-class="weui-grid_active">
+        <view class='full' id="myprofit/myprofit" bindtap='toDetail'></view>
+        <image class="weui-grid__icon" src="../../images/my_money.png" />
+        <view class="weui-grid__label">我的收益</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title mb2">
+    <navigator url="mycard/mycard" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">我的卡券</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title mb2">
+    <navigator url="about_us/about_us" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">关于我们</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+
+</view>

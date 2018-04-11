@@ -1,0 +1,36 @@
+<view class="item">
+  <!-- <image src=''/> -->
+  <view>
+    <image src='../../images/icon01.png'></image>
+    <view>报价评估</view>
+    <navigator url="assessment/assessment"></navigator>
+  </view>
+  <!-- <image src=''/> -->
+  <view>
+    <image src='../../images/icon02.png'></image>
+    <view>项目搬迁</view>
+    <navigator url="project_remove/project_remove"></navigator>
+  </view>
+  <view>
+    <image src='../../images/icon03.png'></image>
+    <view>同城货运</view>
+    <navigator url="../jianshe/jianshe?name=同城货运"></navigator>
+  </view>
+  <view>
+    <image src='../../images/icon04.png'></image>
+    <view>城际货运</view>
+    <navigator url="../jianshe/jianshe?name=城际货运"></navigator>
+  </view>
+  <view>
+    <image src='../../images/icon05.png'></image>
+    <view>共享平台</view>
+    <navigator url="../jianshe/jianshe?name=共享平台"></navigator>
+  </view>
+  <view>
+    <image src='../../images/icon06.png'></image>
+    <view>个人中心</view>
+    <navigator  open-type='switchTab' url="../my/my"></navigator>
+  </view>
+
+</view>
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->

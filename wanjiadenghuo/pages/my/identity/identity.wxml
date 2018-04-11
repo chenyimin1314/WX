@@ -1,0 +1,62 @@
+<view wx:show="{{!isShow}}">
+  <view class='inputbox'>
+    <view class='li flex-row'>
+      <view class='label color6'>真实姓名：</view>
+      <input class='flex1 placeholder' bindinput='getInput' disabled='{{disabled == 1?true:false}}' value='{{name}}' id='name' placeholder-class='placeholder' placeholder='必填'></input>
+    </view>
+
+    <view class='li flex-row'>
+      <view class='label color6'>手机号码：</view>
+      <input class='flex1 placeholder' maxlength='11'  value='{{phone}}' disabled='{{disabled?true:false}}'  bindinput='getInput' id='phone'  placeholder-class='placeholder' placeholder='必填'></input>
+    </view>
+
+    <view class='li flex-row'>
+      <view class='label color6'>岗位：</view>
+      <input class='flex1 placeholder'  bindinput='getInput' value='{{job}}' id='job' disabled='{{disabled?true:false}}'   placeholder-class='placeholder' placeholder='必填'></input>
+    </view>
+
+    <view class='li flex-row'>
+      <view class='label color6'>小区地址：</view>
+      <view class='flex1 color9' bindtap='translate'>
+        {{address}}
+      </view>
+    </view>
+
+    <!-- 详细  -->
+    <view class='li flex-row'>
+      <view class='label color6'>详细：</view>
+      <input class='flex1 placeholder'  bindinput='getInput' disabled='{{disabled?true:false}}'  value='{{detail}}' id='detail' placeholder-class='placeholder' placeholder='必填'></input>
+    </view>
+
+    <!--添加小区图片  -->
+    <view class='item_list personal_pic' style='padding-left:20rpx;'>
+      <view class='font30 color6'>上传小区照片</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{personal}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage_personal" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view wx:if='{{!disabled}}' class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage_personal"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='tips color9'  wx:if='{{!disabled}}'>*最多上传5张</view>
+    </view>
+    <!-- 确定取消  -->
+    <view class='li flex-row' wx:if='{{!disabled}}' style='margin:50rpx'>
+      <button class='button cancel' bindtap='cancel'>取消</button>
+      <button class='button confirm' bindtap='confirm'>确定</button>
+    </view>
+  </view>
+</view>
+<!--  选择地址部分  -->
+<import src="../model/model.wxml" />
+<template is="areaData" data="{{...item}}" />

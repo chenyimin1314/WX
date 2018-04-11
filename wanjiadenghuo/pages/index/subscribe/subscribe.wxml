@@ -1,0 +1,50 @@
+<view>
+  <view class='top bgwhite font26 color9' style='margin:20rpx 30rpx;padding:20rpx 30rpx;border-radius:10rpx;'>
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>预约日期:</text>
+      <picker mode="date" class='picker bgf1 center' style='height:68rpx;width:356rpx;' data-key="value" bindchange="bindDateChange">
+        <view style='width:100%;line-height:68rpx;height:68rpx;'>{{about_at}}</view>
+      </picker>
+    </view>
+    <!-- 预约时间  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>预约时间:</text>
+      <picker mode="time" class='picker bgf1 center' style='height:68rpx;width:356rpx;' data-key="value" bindchange="bindTimeChange">
+        <view style='width:100%;line-height:68rpx;height:68rpx;'>{{about_time}}</view>
+      </picker>
+    </view>
+    <!--备注  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>备注:</text>
+      <textarea class='bgf1' style='height:228rpx;width:356rpx;line-height:1.5' id='remarks' bindinput="getValue">
+
+      </textarea>
+    </view>
+    <!--联系人  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>联系人:</text>
+      <input class='bgf1' maxlength='40' placeholder='必填' style='height:68rpx;width:356rpx;' value="{{name}}" id='name' bindinput="getValue"> </input>
+    </view>
+    <!--联系电话  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>联系电话:</text>
+      <input class='bgf1' type='number' placeholder='必填' maxlength='11' value="{{phone}}" id='phone' bindinput="getValue" style='height:68rpx;width:356rpx;'>
+      </input>
+    </view>
+
+    <!--联系人  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;' maxlength='40'>联系人:</text>
+      <input class='bgf1' placeholder='选填' style='height:68rpx;width:356rpx;' value="{{name_two}}" id='name_two' bindinput="getValue" />
+
+    </view>
+    <!--联系电话  -->
+    <view class='flex-row flex-start'>
+      <text style='width:156rpx;'>联系电话:</text>
+      <input type='number' maxlength='11' placeholder='选填' class='bgf1' value="{{phone_two}}" id='phone_two' bindchange="getValue" style='height:68rpx;width:356rpx;'>
+      </input>
+    </view>
+  </view>
+  <view class='button confirm' style='margin:0 auto;display:block;height:80rpx;line-height:80rpx;' bindtap='submit'>预约</view>
+
+</view>

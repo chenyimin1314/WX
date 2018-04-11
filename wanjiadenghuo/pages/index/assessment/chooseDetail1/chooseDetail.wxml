@@ -1,0 +1,83 @@
+<view>
+  <view class='flex-row bgwhite'>
+    <view class='flex1 {{currentIndex==0?"active":""}} center flex-row relative'>
+      <view class='full' data-index='0' bindtap='setIndex'></view>
+      <text style='height:100%;'>搬出</text>
+    </view>
+    <view class='flex1 {{currentIndex==1?"active":""}} center flex-row relative'>
+      <view class='full' data-index='1' bindtap='setIndex'></view>
+      <text style='height:100%;'>搬入</text>
+    </view>
+  </view>
+  <!--搬出  -->
+  <view wx:if='{{currentIndex == 0}}' class='top font28 bgwhite plr' style='margin:20rpx 24rpx;border-radius:10rpx;'>
+    <view class='flex-row flex-start bgwhite'>
+      <view class='mr3' style='background:#ff5151;width:6rpx;height:30rpx;'></view>
+      <text class>楼梯类型</text>
+    </view>
+
+    <view class='flex-row flex-start'>
+      <view class='button myfloor mr2 {{index == list[0].type1?"active":""}}' bindtap='setType' data-index='{{index}}' wx:for="{{floorType0}}">{{item.name}}
+      </view>
+    </view>
+    <!--楼层数目  -->
+    <view>
+      <view class='flex-row flex-start bgwhite'>
+        <view class='mr3' style='background:#ff5151;width:6rpx;height:30rpx;'></view>
+        <text class>楼层数目</text>
+      </view>
+      <!--楼层数目  -->
+      <view class='flex-row'>
+        <input type='number' data-index="0" bindinput='getInput' value="{{list[0].count}}" class='plr color9' style='background:#f4f4f4;width:290rpx;height:50rpx;border-radius:10rpx;' placeholder='请输入楼层数'></input>
+      </view>
+
+      <view class='flex-row flex-end'>
+        <view class='color9'>
+          <text class='mr2'>费用小计:</text>
+          <text class='redFont font40'>{{list[0].price?list[0].price:0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 搬入  -->
+  <view wx:if='{{currentIndex == 1}}' class='top font28 bgwhite plr' style='margin:20rpx 24rpx;border-radius:10rpx;'>
+    <view class='flex-row flex-start bgwhite'>
+      <view class='mr3' style='background:#ff5151;width:6rpx;height:30rpx;'></view>
+      <text class>楼梯类型</text>
+    </view>
+
+    <view class='flex-row flex-start'>
+      <view class='button myfloor mr2 {{index == list[1].type1?"active":""}}' bindtap='setType1' data-index='{{index}}' wx:for="{{floorType0}}">{{item.name}}
+      </view>
+    </view>
+    <!--楼层数目  -->
+    <view>
+      <view class='flex-row flex-start bgwhite'>
+        <view class='mr3' style='background:#ff5151;width:6rpx;height:30rpx;'></view>
+        <text class>楼层数目</text>
+      </view>
+      <!--楼层数目  -->
+      <view class='flex-row'>
+        <input type='number'  data-index='1' bindinput='getInput' value="{{list[1].count}}" class='plr color9' style='background:#f4f4f4;width:290rpx;height:50rpx;border-radius:10rpx;' placeholder='请输入楼层数'></input>
+      </view>
+      <!--费用小计  -->
+      <view class='flex-row flex-end'>
+        <view class='color9'>
+          <text class='mr2'>费用小计:</text>
+          <text class='redFont font40'>{{list[1].price?list[1].price:0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='top bgwhite' style='margin:20rpx 24rpx;padding:20rpx;border-radius:10rpx;'>
+    <view class='mt font30  mg'>说明:</view>
+    <view class='mg font24 color9' style='background:#f1f1f1;padding:20rpx;'>
+      {{list[0].describes}}
+    </view>
+  </view>
+
+  <view class='top flex-row plr' style='margin:20rpx 30rpx 40rpx;'>
+    <view class='button cancel' bindtap='cancel'>取消</view>
+    <view class='button confirm' bindtap='save'>保存</view>
+  </view>
+</view>

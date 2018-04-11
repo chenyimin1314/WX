@@ -1,0 +1,46 @@
+page {
+  background: #fff;
+}
+
+.content {
+  width: 570rpx;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 0 60rpx;
+}
+.content::before{
+  display: block;
+  content: "";
+  position: absolute;
+  top:-100rpx;  
+  right: 20rpx;
+  width: 1px;
+  height: 100rpx;
+  background: #fff;
+}
+.content::after{
+  display: block;
+  content: "";
+  position: absolute;
+  top: -150rpx;
+  right: -5rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.close{
+  position: absolute;
+  top: -150rpx;
+  width: 30rpx;
+  height: 30rpx;
+  right: -3rpx;
+  padding: 10rpx;
+  z-index: 20;
+}

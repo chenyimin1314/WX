@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",     
+    "pages/my/my",
+    "pages/my/myprofit/myprofit",
+    "pages/my/myprofit/apply_record/apply_record",
+    "pages/my/mycard/mycard",
+    "pages/my/order_detail/evate_detail/evate_detail",
+    "pages/my/subscribe/subscribe",
+    "pages/index/subscribe/subscribe",
+    "pages/index/subscribe/subscribe_success/subscribe_success",
+    "pages/index/assessment/assessment",
+    "pages/my/order_detail/comment_detail/comment_detail",
+    "pages/my/order/order",
+    "pages/rent/rent",
+    "pages/my/order_detail/maluation/maluation",
+    "pages/my/order_detail/order_detail",
+    "pages/my/subscribe/pay/pay",
+    "pages/my/about_us/about_us",
+    "pages/my/identity_success/identity_success",
+    "pages/my/identity/identity",
+    "pages/index/city_transport/city_transport",
+    "pages/index/same_city/same_city",
+    "pages/index/project_remove/project_remove",
+    "pages/my/myprofit/apply/apply",
+    "pages/jianshe/jianshe",
+    "pages/my/nocomponent/nocomponent",
+    "pages/index/assessment/chooseDetail0/chooseDetail",
+    "pages/index/assessment/chooseDetail1/chooseDetail",
+    "pages/index/assessment/chooseDetail2/chooseDetail",
+    "pages/index/assessment/chooseDetail3/chooseDetail",
+    "pages/index/assessment/chooseDetail4/chooseDetail",
+    "pages/index/assessment/chooseDetail5/chooseDetail"  
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff5155",
+    "navigationBarTitleText": "万家灯火搬家公司",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff5155",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_03.png",
+        "selectedIconPath": "images/icon_03_active.png",
+        "text": "搬家物流"
+      },
+      {
+        "pagePath": "pages/rent/rent",
+        "iconPath": "images/icon_06.png",
+        "selectedIconPath": "images/icon_06_active.png",
+        "text": "物流货运"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icon_08.png",
+        "selectedIconPath": "images/icon_08_active.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

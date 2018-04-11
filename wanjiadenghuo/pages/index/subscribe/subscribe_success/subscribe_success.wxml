@@ -1,0 +1,25 @@
+<view>
+  <view class='flex-row center' style='padding-top:220rpx;'>
+    <image src='../../../../images/success.png' class='mr2' style='width:60rpx;height:60rpx;'></image>
+    <text class='font32'>预约成功</text>
+  </view>
+  <view class='flex-row center color6 font26' style='margin:50rpx 0 140rpx;'>*该报价为预报价,以现场确认价格为准</view>
+  <view class='button confirm' bindtap='back' style='display:block;margin:0 auto;height:90rpx;line-height:90rpx;width:266rpx;'>确定</view>
+</view>
+
+<mask class='mask' wx:if="{{isShow}}">
+  <view class='content'>
+    <image class='close' catchtap='close' src='../../../../images/close.png'></image>
+    <view class='center' style='line-height:114rpx;height:114rpx;'>恭喜您获得</view>
+    <view class='relative flex-row center colorF' style='height:160rpx;'>
+      <image src='../../../../images/card.png' style='width:100%;height:160rpx;position:absolute;z-index:-1'></image>
+      <view>
+        <text style='verticle:bottom'>￥</text>
+        <text class='font60' style='margin-right:10rpx;'>{{info.price}}</text>
+        <text class='font24'>{{info.voucher_name}}</text>
+      </view>
+    </view>
+    <view class='font26 flex-row flex-start color6' style='min-height:50rpx;height:50rpx;'>有效期至:{{info.terminate_at}}</view>
+    <view class='font26 color6' style='padding-bottom:40rpx;' >限定于线上支付的订单,系统自动计算;不可叠加使用;不兑现.</view>
+  </view>
+</mask>

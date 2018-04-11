@@ -1,0 +1,4 @@
+<view class='flex-row center' style='margin-top:50%;'>
+  <image src='../../images/same_city.png' class='mr2' style='width:72rpx;height:68rpx;'></image>
+  <text class='font40 color6'>系统建设中...</text>
+</view>

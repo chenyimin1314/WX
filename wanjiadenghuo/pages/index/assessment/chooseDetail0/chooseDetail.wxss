@@ -1,0 +1,14 @@
+.badge{
+  width: 10rpx;height: 10rpx;
+  border-radius: 50%;
+  background: #00c0ff;
+}
+.redbg{
+  background: #e71f19;
+}
+.choosePlace{
+  max-width: 720rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

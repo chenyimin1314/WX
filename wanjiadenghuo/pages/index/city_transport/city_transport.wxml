@@ -1,0 +1,258 @@
+<scroll-view class="scroll-view">
+  <view class='content'>
+    <view class='h2'>起步</view>
+    <view class='h3'>
+      <view class='icon_red'></view>
+      <view>车辆选择</view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" data-index='0' >
+          <label class="weui-cell" wx:for="{{checkboxItems}}" data-index='0' wx:key="{{index}}">
+            <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" color='#ff5155' type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <view class='count'>
+                <view class='reduce re_icon' data-index="{{index}}" style='{{item.style}}' data-type='0' data-add='-1' catchtap  ='setvalue'>-</view>
+                <input type="number" maxlength='2' data-index="{{index}}" value='{{item.count}}' data-type='0' bindinput='blur' catchtap='blur1' />
+                <view class='add re_icon active' data-index="{{index}}" data-type='0' data-add='1'  catchtap ='setvalue'>+</view>
+              </view>
+              <view>{{item.price}}元/{{item.company}}</view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='chooseStartPlace choosePlace'>
+      <view class='dot'></view>
+      <view bindtap='chooseplace' data-id='start'>起
+        <view class='startPlace' data-id='start' >{{place.start.address}}</view>
+      </view>
+    </view>
+    <view class='chooseEndPlace choosePlace'>
+      <view class='dot'></view>
+      <view bindtap='chooseplace' data-id='end'>终
+        <view class='startPlace' data-id='end'>{{place.end.address}}</view>
+      </view>
+    </view>
+    <view class='distance'> 实际距离:
+      <text class='actural_distance'> {{displacement}}km</text>
+    </view>
+    <view class='h4'>说明</view>
+    <view class='textarea'>
+      以实际地图测算为准，超过10公里，按照10元/公里.车，三百公里以上9折，五百公里以上八折;其中4.2米货车,早晚高峰期限行。
+    </view>
+  </view>
+
+  <view class='content'>
+    <view class='h2'>路程</view>
+    <!--楼层类型  -->
+    <view class='h3'>
+      <view class='icon_red'></view>
+      <view>楼层类型</view>
+    </view>
+    <view class='floor_type flex_list'>
+      <view class='flex_item' wx:for="{{floor_type}}" data-type='1' style='{{item.style}}' wx:key="{{index}}" data-index='{{index}}' bindtap='choose_floor_type'>{{item.name}}</view>
+    </view>
+    <!--楼层数目  -->
+    <view class='h3'>
+      <view class='icon_red'></view>
+      <view>楼层数目</view>
+    </view>
+    <view class=''>
+      <view class="weui-cell weui-cell_access bdb bdp">
+        <view class="weui-cell__bd">选择楼层</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <picker class='picker' bindchange="chooseStratum" value="{{index}}" range="{{stratum}}">
+            <view class="weui-input">{{stratum[stratumIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!--搬运距离  -->
+    <view class='h3'>
+      <view class='icon_red'></view>
+      <view>远距离搬运路程</view>
+    </view>
+    <view class='floor_type flex_list'>
+      <view class='flex_item' wx:for="{{diatance}}" data-index='{{index}}' data-type='3' style='{{item.style}}' bindtap='choose_floor_type'>{{item.name}}</view>
+    </view>
+
+
+    <view class='h4'>说明</view>
+    <view class='textarea'>
+      <view class='strong'>楼层搬运</view>
+      楼层类型为电梯,免费;
+      <view>3楼以下免费,(含)三楼以上,单价：30元/层.车</view>
+      <view class='strong'>远距离搬运路程</view>
+      超过30米按30元、50元、100元、三个档次加距离收费。 从地下室进出,按100元每车
+    </view>
+  </view>
+  <!-- 小件拆装  -->
+  <view class='content'>
+    <view class='h2 nocontent'>小件拆装</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" data-index='1'>
+          <label class="weui-cell" wx:for="{{smallthings}}" wx:key="{{index}}" data-index='{{myIndex}}'>
+            <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" color='#ff5155' type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <view class='count'>
+                <view class='reduce re_icon' data-index="{{index}}" style='{{item.style}}' data-type='1' data-add='-1' catchtap  ='setvalue'>-</view>
+                <input type="number" maxlength='2' data-index="{{index}}" value='{{item.count}}' data-type='1' bindinput='blur' catchtap='blur1' />
+                <view class='add re_icon active' data-index="{{index}}" data-type='1' data-add='1'  catchtap ='setvalue'>+</view>
+              </view>
+              <view>{{item.price}}元/{{item.company}}</view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='h4'>说明</view>
+    <view class='textarea'>
+      <view>以上拆装费含包装。其中床,6颗以下螺丝的简易床的简易床免费拆装</view>
+      <view>空调类增加的材料费用另议</view>
+    </view>
+  </view>
+  <!--  大件拆装  -->
+  <view class='content'>
+    <view class='h2 nocontent'>大件拆装</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" data-index='2'>
+          <label class="weui-cell" wx:for="{{bigthings}}" wx:key="{{value}}">
+            <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" color='#ff5155' type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <view class='count'>
+                <view class='reduce re_icon' data-index="{{index}}" style='{{item.style}}' data-type='2' data-add='-1' catchtap  ='setvalue'>-</view>
+                <input type="number" maxlength='2' data-index="{{index}}" value='{{item.count}}' data-type='2' bindinput='blur' catchtap='blur1' />
+                <view class='add re_icon active' data-index="{{index}}" data-type='2' data-add='1'  catchtap ='setvalue'>+</view>
+              </view>
+              <view>{{item.price}}元/{{item.company}}</view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='h4'>说明</view>
+    <view class='textarea'>
+      <view>钢琴:楼层费50元/层，电梯按一层收费</view>
+      <view>保险柜:按保险柜高度计费,100cm以下免费</view>
+    </view>
+  </view>
+
+  <!--  配件拆装  -->
+  <view class='content'>
+    <view class='h2 nocontent'>配件拆装</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" data-index='3'>
+          <label class="weui-cell" wx:for="{{parts}}" wx:key="{{value}}">
+            <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" color='#ff5155' type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <view class='count'>
+                <view class='reduce re_icon' data-index="{{index}}" style='{{item.style}}' data-type='3' data-add='-1' catchtap  ='setvalue'>-</view>
+                <input type="number" maxlength='2' data-index="{{index}}" value='{{item.count}}' data-type='3' bindinput='blur' catchtap='blur1' />
+                <view class='add re_icon active' data-index="{{index}}" data-type='3' data-add='1'  catchtap ='setvalue'>+</view>
+              </view>
+              <view>{{item.price}}元/{{item.company}}</view>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class='h4'>说明</view>
+    <view class='textarea'>
+      <view>钢琴:楼层费50元/层，电梯按一层收费</view>
+      <view>保险柜:按保险柜高度计费,100cm以下免费</view>
+    </view>
+  </view>
+
+  <!--  特殊时段  -->
+  <view class='content'>
+    <view class='h2 nocontent'>特殊时段</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange" data-index='4'>
+          <label class="weui-cell" wx:for="{{special}}" wx:key="{{value}}">
+            <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" color='#ff5155' type="success" size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <view>{{item.name}}</view>
+              <!-- <view class='count'>
+                <view class='reduce re_icon'>-</view>
+                <input type="number" maxlength='2' data-index='{{index}}' value='{{item.count}}' bindblur='blur()' />
+                <view class='add re_icon active'>+</view>
+              </view> -->
+              <view style='color:#ff5155'>*加收{{item.price*100}}%费用</view>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <!-- 费用统计 -->
+  <view class='content'>
+    <view class='title'>费用统计</view>
+    <view class='item fee' wx:for="{{feeArr}}" wx:key="{{index}}">
+      <view style="{{index == 5?'color:#ff5511':''}}">{{item.name}}</view>
+      <view class='price'>￥{{item.price}}</view>
+    </view>
+  </view>
+
+</scroll-view>
+<!--  一键预约  -->
+<view class='subscribe'>
+  <view class='tips'>
+    <image src='../../../images/report.png' />填写预约信息并成功注册，可获得搬家券
+  </view>
+  <view class='button'>
+  <button class="weui-btn" type="warn" bindtap='submitInfo'>一键预约</button>
+  </view>
+</view>
+<view class='beizhu'>
+  <view>*备注</view>
+  <view>本搬家自助报价仅限于深圳同城</view>
+  <view>1、在收费项目表中未详列部分由双方现场沟通协商</view>
+  <view>2、如因甲方原因造成等待时间超过1小时,收取100元/小时等待时间费用,1小时内免费。</view>
+  <view>3、本收费已包含停车费过路费。</view>
+  <view>4、如只用人工,350元/1天,按8小时工作计,不足8小时按8小时计算。(以达到和离开时间为准）</view>
+</view>
+<view class='bindphone' wx:if="{{isShow}}">
+    <view class='phoneForm'>
+      <view class='title bdb'>绑定手机号</view>
+      <view class='form_group bdb'>
+        <input class='phone' placeholder='请输入手机号' bindinput='getPhone' type='number' maxlength='11'/> 
+        <button class="weui-btn" size='large' type="primary" bindtap='getCode' plain="true">{{codeText}}</button>
+      </view>
+      <view class='form_group bdb'>
+        <input class='phone' placeholder='请输入验证码' bindinput='getCofirm' type='number' maxlength='6'/> 
+      </view>
+      <view class='buttons'>
+        <view class='bdr' bindtap="setCancel">取消</view>
+        <view class='bind' bindtap='bindwechat'>立即绑定</view>
+      </view>
+    </view>
+</view>

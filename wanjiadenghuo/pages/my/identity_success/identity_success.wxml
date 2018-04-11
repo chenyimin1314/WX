@@ -1,0 +1,11 @@
+<view wx:show='{{!isShow}}'>
+  <view class='top' style='text-align:center;background:#fff'>
+    <image style='width:168rpx;height:196rpx;margin:130rpx 0 38rpx'  src='../../../images/identity_success.png'></image>
+    <view class='font36 mb3'>您已是合作伙伴！</view>
+    <view class='font24 color9'>*修改资料需要重新审核</view>
+    <view class='flex-row buttonGroup'>
+      <button class='button cancel' bindtap='changeInfo'>修改资料</button>
+      <button class='button confirm' bindtap='confirm'>确定</button>
+    </view>
+  </view>
+</view>

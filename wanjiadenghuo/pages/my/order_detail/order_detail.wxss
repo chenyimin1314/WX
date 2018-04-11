@@ -1,0 +1,13 @@
+
+.list{
+  margin:0 20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 20rpx 50rpx;
+}
+.list .flex-row{
+  min-height: 60rpx;
+}
+.font26.flex-row{
+  min-height: 50rpx;
+}

@@ -1,0 +1,20 @@
+<view>
+  <view class='top'>
+    <view class='flex-row font28 color9' wx:for='{{serviceList}}' wx:key='{{index}}'>
+      <view class='left'>
+        <text> {{item.name}}</text>
+      </view>
+      <view class='right'>
+        <image style='width:42rpx;height:40rpx;' bindtap='setGrade' data-index='{{index}}' data-idx='{{idx}}' wx:for-item="item1" wx:for-index='idx' wx:for="{{testarr}}" src='../../../../images/{{idx<item.value?"star_active.png":"star.png"}}'></image>
+      </view>
+    </view>
+    <view class='myInput'>
+      <textarea id='content' class='font28' bindinput='getValue' placeholder='请输入评语' placeholder-class='color9 font28'></textarea>
+    </view>
+  </view>
+  <view class='buttonGroup flex-row' style='justify-content:space-between;padding:60rpx 100rpx;'>
+    <button class='button cancel' bindtap='cancel'>取消</button>
+    <button class='button confirm' bindtap='myConfirm'>确定</button>
+  </view>
+
+</view>

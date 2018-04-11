@@ -1,0 +1,227 @@
+<scroll-view class='scrollView' scroll-y>
+  <view class='top'>
+    <view class='flex-row relative baojia'>
+      <view class='full' catchtap='call'></view>
+      <image style='' src='../../../images/pinggu3.png' class='full' style='z-index:-1'></image>
+      <text class='colorF' style='margin-left:80rpx;margin-top:-2rpx;'>人工报价</text>
+      <text class='colorF mr2'>400-700-8942</text>
+    </view>
+    <view class='flex-row relative baojia'>
+      <image style='' src='../../../images/pinggu.png' class='full' style='z-index:-1'></image>
+      <text class='colorF' style='margin-left:80rpx;margin-top:-2rpx;'>自动报价</text>
+    </view>
+  </view>
+  <!--搬运  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='0'></view>
+      <text>搬运</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if="{{item.selected}}" wx:for='{{car_list}}'>
+        <text class='font28'>{{item.car_name}}</text>
+        <text class='color9'>{{item.count?item.count+"辆":"无"}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>起</text>
+        <text class='color9 nowrap' style='padding-left:20rpx;'>{{carAddress.start.address}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>终</text>
+        <text class='color9 nowrap' style='padding-left:20rpx;'>{{carAddress.end.address}}</text>
+      </view>
+      <view class='flex-row'>
+        <view>
+          <text class='color6'>实际距离:</text>
+          <text>{{distance.distance}}km</text>
+        </view>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{distance.money}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--楼层  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='1'></view>
+      <text>楼层</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if='{{item.count}}' wx:for='{{floor_list}}'>
+        <text class='font28'>{{index == 0?"搬出":"搬入"}}</text>
+        <text class='type'><text>类型：</text>
+        <text class='color9'>{{item.type1 == 0?"电梯":"楼梯"}}</text></text>
+        <text><text>层次：</text>
+        <text class='color9'>{{item.count?item.count:"无"}}</text></text>
+      </view>
+      <view class='flex-row flex-end'>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{pricelist.floor_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  距离  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='2'></view>
+      <text>距离</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if='{{item.name}}' wx:for='{{trip_list}}'>
+        <text class='font28'>{{index == 0?"搬出":"搬入"}}</text>
+        <text class='type'>
+          <text>搬运距离：</text>
+        <text class='color9'>{{item.name}}</text>
+        </text>
+      </view>
+      <view class='flex-row flex-end'>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{pricelist.mileage_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--  拆装  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='3'></view>
+      <text>拆装</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if='{{item.selected && item.count}}' wx:for='{{list[0]}}'>
+        <text class='font28'>{{item.name}}</text>
+        <text class='color9'>{{item.count?item.count:"0"}}{{item.company}}</text>
+      </view>
+      <view class='flex-row flex-end'>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{pricelist.min_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  大件  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='4'></view>
+      <text>大件</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if='{{item.selected && item.count}}' wx:for='{{list[1]}}'>
+        <text class='font28'>{{item.name}}</text>
+        <text class='color9'>{{item.count?item.count:"0"}}{{item.company}}</text>
+      </view>
+      <view class='flex-row flex-end'>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{pricelist.max_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 特殊时间段  -->
+  <view class='session'>
+    <view class='flex-row list plr relative' style='background:#fff'>
+      <view class='full' bindtap='toUrl' data-index='5'></view>
+      <text>特殊时间段</text>
+      <image src='../../../images/pinggu_right.png' style='width:28rpx;height:28rpx;'></image>
+    </view>
+    <view class='list_content'>
+      <view class='flex-row' wx:if="{{item.selected}}" wx:for='{{list[3]}}'>
+        <text class='font28'>{{item.name}}</text>
+      </view>
+      <view class='flex-row flex-end'>
+        <view>
+          <text class='color6'>费用小计(元):</text>
+          <text class='font32 redFont'>{{pricelist.parts_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 费用统计  -->
+  <view class='session'>
+    <view class='flex-row center' style='background:#fff'>
+      <text class='redFont'>费用统计</text>
+    </view>
+    <view class='list_content' style='margin:0'>
+      <view class='flex-row'>
+        <text class='font28'>搬运费：</text>
+        <text class='redFont'>￥{{pricelist.starting_price?pricelist.starting_price:"0"}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>楼层费用：</text>
+        <text class='redFont'>￥{{pricelist.floor_price?pricelist.floor_price:"0"}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>距离费用：</text>
+        <text class='redFont'>￥{{pricelist.mileage_price?pricelist.mileage_price:"0"}}</text>
+      </view>
+
+      <view class='flex-row'>
+        <text class='font28'>拆装费用：</text>
+        <text class='redFont'>￥{{pricelist.min_price?pricelist.min_price:"0"}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>大件费用：</text>
+        <text class='redFont'>￥{{pricelist.max_price?pricelist.max_price:"0"}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='font28'>特殊时段费用：</text>
+        <text class='redFont'>￥{{pricelist.parts_price?pricelist.parts_price:"0"}}</text>
+      </view>
+
+      <view class='flex-row redFont'>
+        <text class=''>总计</text>
+        <text class='font32'>￥{{pricelist.sum_price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--  说明  -->
+  <!-- <view class='top bgwhite' style='margin:20rpx 0;padding:20rpx;'>
+    <view class='mt font30 color6 mg'>备注:</view>
+    <textarea class='mg font24 color9' maxlength='100' style='background:#f1f1f1;padding:20rpx;height:120rpx;position:relative;' id='beizhu'>
+    </textarea>
+  </view> -->
+  <!--预约  -->
+  <view class='bgwhite' bindtap='toDetail' style='padding:30rpx 100rpx;'>
+    <view class='flex-row center font24 redFont'>
+      <image src='../../../images/caculate.png' style='width:34rpx;height:26rpx;margin-right:10rpx;'></image>
+      <text>填写预约信息并成功注册,可获得搬家优惠券！</text>
+    </view>
+    <view class='button confirm' style='width:100%;box-sizing:border-box;height:80rpx;line-height:80rpx;'>一键预约</view>
+
+  </view>
+  <view class='font28 color9' style='background:#f1f1f1;padding:24rpx 30rpx;'>
+    <view>说明:</view>
+    <view style=''>{{order_type_describe[2].describe}}</view>
+  </view>
+</scroll-view>
+
+<view class="bindphone {{isShow?'':'hide'}}">
+  <view class='phoneForm'>
+    <view class='title bdb'>绑定手机号</view>
+    <view class='form_group bdb'>
+      <input class='phone' placeholder='请输入手机号' bindinput='getPhone' type='number' maxlength='11' />
+      <button class="weui-btn" size='large' type="primary" bindtap='getCode' plain="true">{{codeText}}</button>
+    </view>
+    <view class='form_group bdb'>
+      <input class='phone' placeholder='请输入验证码' bindinput='getCofirm' type='number' maxlength='6' />
+    </view>
+    <view class='buttons'>
+      <view class='bdr' bindtap="setCancel">取消</view>
+      <view class='bind' bindtap='bindwechat'>立即绑定</view>
+    </view>
+  </view>
+</view>

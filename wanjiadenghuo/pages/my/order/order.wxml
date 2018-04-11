@@ -1,0 +1,180 @@
+<view wx:if='{{!isShow}}'>
+  <view class='top'>
+    <!--搜索框  -->
+    <view class='searchBar'>
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" bindtap='searchFn' type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="{{placeholoder}}" value="{{keyword}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" style='color:#ff5557' hidden="{{!inputShowed}}" bindtap="hideInput">完成</view>
+      </view>
+      <!--日历  -->
+      <image class='rili' bindtap='filter' src='../../../images/date.png'></image>
+    </view>
+  </view>
+
+  <scroll-view scroll-x>
+    <view class='swiper-tab'>
+      <view class="swiper-tab-list relative {{currentTab==0 ? 'on' : ''}}">
+        <view class='full' data-current="0" bindtap="swichNav"></view>
+        <view class='font28'>
+          <text class='font40'>{{operate.recommender_num}}</text>位</view>
+        <view>我的分享</view>
+      </view>
+      <view class="swiper-tab-list relative {{currentTab==1 ? 'on' : ''}}">
+        <view class='full' data-current="1" bindtap="swichNav"></view>
+        <view class='font28'>
+          <text class='font40'>{{operate.sum_cooperation_num}}</text>次</view>
+        <view>总合作次数</view>
+      </view>
+      <view class="swiper-tab-list relative {{currentTab==2 ? 'on' : ''}}">
+        <view class='full' data-current="2" bindtap="swichNav"></view>
+        <view class='font28'>
+          <text class='font40'>{{operate.cooperation_num}}</text>位</view>
+        <view>有效合作次数</view>
+      </view>
+    </view>
+
+  </scroll-view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <!-- 列表  -->
+      <scroll-view class='scrollView' scroll-y bindscrolltolower='loadlist'>
+        <view class='flex-row' wx:for='{{list[0]}}' wx:key="{{index}}" style='background:#fff;padding:20rpx 30rpx;margin-bottom:20rpx;'>
+          <image src='{{item.head_image_url}}' style='width:80rpx;height:80rpx;border-radius:10rpx;'></image>
+          <view class='flex1'>
+            <view class='nickname flex-row' style='justify-content:flex-start;min-height:60rpx;'>
+              <text class='mr2'>{{item.name}}</text>
+              <view class='{{item.type==1?"yiji":"erji"}}'>{{item.type == 1?"一级":"二级"}}</view>
+            </view>
+            <view class='font28 color9' style='text-align:left'>订单时间：{{item.create_at}}</view>
+          </view>
+          <view class='flex-row orange'>
+            已注册
+          </view>
+        </view>
+        
+        <view wx:if='{{loaded}}' class='bgwhite font28 flex-row center color9'>没有更多数据了！</view>
+        <view wx:if='{{noData}}' class='bgwhite font28 flex-row center color9'>暂无数据</view>
+      </scroll-view>
+    </swiper-item>
+    <!--  总合作列表  -->
+    <swiper-item>
+      <scroll-view class='scrollView' scroll-y>
+        <view class='list'>
+          <view class='item' wx:for='{{list[1]}}' wx:key='{{index}}'>
+            <view class='item_left'>
+              <view class='i_l_item'>
+                <text class='label'>合作编号：</text>
+                <text class='value'>{{item.id}}</text>
+              </view>
+              <view class='i_l_item'>
+                <text class='label'>微信昵称：</text>
+                <text class='value'>{{item.name}}</text>
+              </view>
+              <view class='i_l_item'>
+                <text class='label'>订单时间：</text>
+                <text class='value'>{{item.order_time}}</text>
+                <!-- <button size='mini' class='erji' style='padding:4rpx 8rpx;line-height:1' plain='mini'>二级</button> -->
+              </view>
+            </view>
+            <!--右边  -->
+            <view class='item_right'>
+              <view>
+                <!-- <text class='item_profit'>收益 (元) : </text>
+            <text class='redFont'>30</text> -->
+                <text class='orange' wx:if='{{item.state == -1}}'>已取消</text>
+                <text class='orange' wx:if='{{item.state == -0}}'>未受理</text>
+                <text class='orange' wx:if='{{item.state == 1}}'>受理中</text>
+                <text class='orange' wx:if='{{item.state == 2}}'>已受理</text>
+                <text class='orange' wx:if='{{item.state == 4}}'>待支付</text>
+                <text class='orange' wx:if='{{item.state == 5}}'>支付确认中</text>
+                <text class='orange' wx:if='{{item.state == 6}}'>待评价</text>
+                <text class='orange' wx:if='{{item.state == 7}}'>服务完成</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <view wx:if='{{loaded}}' class='bgwhite font28 flex-row center color9'>没有更多数据了！</view>
+        <view wx:if='{{noData}}' class='bgwhite font28 flex-row center color9'>暂无数据</view>
+      </scroll-view>
+    </swiper-item>
+    <!--有效合作列表  -->
+    <swiper-item>
+      <scroll-view class='scrollView' scroll-y>
+        <view class='list'>
+          <view class='item' wx:for='{{list[2]}}' wx:key='*this'>
+            <view class='item_left'>
+              <view class='i_l_item'>
+                <text class='label'>合作编号：</text>
+                <text class='value'>{{item.id}}</text>
+              </view>
+              <view class='i_l_item'>
+                <text class='label'>微信昵称：</text>
+                <text class='value'>{{item.name}}</text>
+              </view>
+              <view class='i_l_item'>
+                <text class='label'>订单时间：</text>
+                <text class='value'>{{item.order_time}}</text>
+                <!-- <button size='mini' class='erji' style='padding:4rpx 8rpx;line-height:1' plain='mini'>二级</button> -->
+              </view>
+            </view>
+            <!--右边  -->
+            <view class='item_right'>
+              <view>
+                <!-- <text class='item_profit'>收益 (元) : </text>
+            <text class='redFont'>30</text> -->
+                <text class='orange' wx:if='{{item.state == -1}}'>已取消</text>
+                <text class='orange' wx:if='{{item.state == -0}}'>未受理</text>
+                <text class='orange' wx:if='{{item.state == 1}}'>受理中</text>
+                <text class='orange' wx:if='{{item.state == 2}}'>已受理</text>
+                <text class='orange' wx:if='{{item.state == 4}}'>待支付</text>
+                <text class='orange' wx:if='{{item.state == 5}}'>支付确认中</text>
+                <text class='orange' wx:if='{{item.state == 6}}'>待评价</text>
+                <text class='orange' wx:if='{{item.state == 7}}'>服务完成</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <view wx:if='{{loaded}}' class='bgwhite font28 flex-row center color9'>没有更多数据了！</view>
+        <view wx:if='{{noData}}' class='bgwhite font28 flex-row center color9'>暂无数据</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+  <!--上面已完成  -->
+  <view class='filterBox' wx:if='{{showFilter}}' catchtap='hideFilter' data-index='1'>
+    <view class='filter' catchtap='hideFilter'>
+      <view class='title'>日期</view>
+      <view class='chooseDate'>
+        <view class="section">
+          <picker mode="date" class='picker' value="{{startDate}}" start="09:01" end="21:01" data-key="startDate" bindchange="bindDateChange">            
+            <view>{{startDate?startDate:"开始日期"}}</view>
+          </picker>
+          -
+          <!--结束日期  -->
+          <picker mode="date" class='picker' value="{{steartDate}}" start="09:01" end="21:01" data-key="endDate" bindchange="bindDateChange">            
+             <view>{{endDate?endDate:"结束日期"}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class='button_group'>
+        <button type='default' bindtap='reset' size='mini' plain='ture'>重置</button>
+        <button type='warn' bindtap='filterSuccess' size='mini'>完成</button>
+      </view>
+    </view>
+  </view>
+
+</view>

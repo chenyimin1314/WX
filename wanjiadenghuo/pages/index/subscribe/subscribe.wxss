@@ -1,0 +1,8 @@
+/* pages/index/subscribe/subscribe.wxss */
+.flex-row{
+  margin-bottom: 15rpx;
+}
+.flex-row .bgf1{
+  padding: 0 10rpx;
+  line-height: 68rpx;
+}

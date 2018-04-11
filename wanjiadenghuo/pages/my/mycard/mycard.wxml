@@ -1,0 +1,27 @@
+<view>
+  <view class='relative'  wx:for="{{list}}" wx:key='{{index}}'>
+    <view class='l_top flex-row'>
+      <view class='l_t_left redFont'>
+        <text>￥</text>
+        <text class='font80'>{{item.price}}</text>
+      </view>
+      <view class='l_t_right font28'>
+        <view>
+          <text class='color3 font24'>使用说明：</text>
+          <text class='color9 font24'>优惠券限定用于线上支付的订单，系统自动计算；不可叠加使用；不兑现</text>
+        </view>
+      </view>
+    </view>
+    <view class='l_bottom flex-row'>
+      <view class='l_b_left'>
+        <view class='l_t_left font24 color9 nowrap'>{{item.name}}</view>
+      </view>
+      <view class='flex-row l_t_right font24 color9'>
+        <text>过期时间：{{item.terminate_at}}</text>
+        <text class='mr2' wx:if="{{item.state == 0}}">未使用</text>
+        <text class='mr2' wx:if="{{item.state == 1}}">已使用</text>
+        <text class='mr2' wx:if="{{item.state == 2}}">已过期</text>
+      </view>
+    </view>
+  </view>
+</view>

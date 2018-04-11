@@ -1,0 +1,44 @@
+<view wx:if='{{!isShow}}'>
+  <view class='top'>
+    <view class='tips font28'>本次可提现金额:</view>
+    <view class='money'>
+      <text>￥</text>
+      <text class='redFont'>{{info.profit_money}}</text>
+    </view>
+    <view class='color9'>
+      <view class='li font28'>说明:</view>
+      <view class='li font28'>1.系统默认提现到盟友本人微信号</view>
+      <view class='li font28'>2.金额大于{{10}}元才可进行提现</view>
+    </view>
+    <view class='buttonGroup'>
+      <button class='button cancel'>取消</button>
+      <button class='button confirm' bindtap='apply'>申请提现</button>
+    </view>
+  </view>
+</view>
+<!--弹窗  -->
+<view class='mask' wx:if="{{showApply}}">
+  <view class='apply'>
+    <view class='li'>提现类型</view>
+    <view class='li relative' wx:for='{{list}}' wx:key='{{index}}'>
+      <view class='full' bindtap='chooseType' data-index="{{index}}"></view>
+      <image class='pay_icon' src="{{item.src}}"></image>
+      <view class='flex1 color9'>{{item.name}}</view>
+      <image class='select' wx:if="{{!item.selected}}" src='../../../../images/apply_select.png'></image>
+      <image class='select' wx:if="{{item.selected}}" src='../../../../images/success.png'></image>
+    </view>
+    <view class='li1 color6'>
+      <text>账号:</text>
+      <input placeholder='请输入账号' bindinput='getInput' data-key='account' placeholder-class='placeholder font28' class='flex1' type='text'></input>
+    </view>
+    <view class='li1 color6'>
+      <text>提现金额:</text>
+      <input placeholder='请输入金额'  bindinput='getInput' data-key='money' placeholder-class='placeholder font28' class='flex1 ' type='number' maxlength='9'></input>
+    </view>
+    <!--按钮  -->
+    <view class='' style='height:90rpx;display:flex;align-items:center;justify-content:space-between;'>
+      <button class='button cancel' bindtap='cancel'>取消</button>
+      <button class='button confirm'  bindtap='confirm'>确定</button>
+    </view>
+  </view>
+</view>

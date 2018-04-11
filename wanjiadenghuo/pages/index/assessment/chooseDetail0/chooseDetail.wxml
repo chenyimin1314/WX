@@ -1,0 +1,98 @@
+<view>
+  <view class='top' style='border-radius:10rpx;'>
+    <view class='list flex-row bgwhite flex-start mb2 relative' style='padding:20rpx 24rpx 60rpx;margin-bottom:20rpx;' wx:for='{{list}}' wx:key='{{item.product_id}}'>
+      <view class='full' catchtap='chooseShop' data-index='{{index}}' style='width:40%;'></view>
+      <view class='left flex-row' style='max-width:30%;width:30%;'>
+        <image class='icon' src='../../../../images/{{item.selected?"success.png":"apply_select.png"}}'></image>
+        <image src='../../../../images/{{index == 1?"car2.png":"car1.png"}}' style='width:148rpx;height:148rpx;border:1px solid #ddd'></image>
+      </view>
+      <!--4.2米  -->
+      <view class='flex1' wx:if="{{index == 0}}">
+        <view class='font30'>{{item.car_name}}</view>
+        <view class='font24'>
+          <text class='color9'>载重:</text>
+          <text>2吨</text>
+        </view>
+        <view class='font24' style='white-space:nowrap'>
+          <text class='color9'>长*宽*高:</text>
+          <text>4.2*1.8*1.8米</text>
+        </view>
+        <view class='font24' style='white-space:nowrap'>
+          <text class='color9'>载货体积:</text>
+          <text>13.6方</text>
+        </view>
+      </view>
+      <!--4.2米  -->
+      <view class='flex1' wx:if="{{index == 1}}">
+        <view class='font30'>{{item.car_name}}</view>
+        <view class='font24'>
+          <text class='color9'>载重:</text>
+          <text>1吨</text>
+        </view>
+        <view class='font24' style='white-space:nowrap'>
+          <text class='color9'>长*宽*高:</text>
+          <text>2.7*1.4*1.2米</text>
+        </view>
+        <view class='font24' style='white-space:nowrap'>
+          <text class='color9'>载货体积:</text>
+          <text>4.5方</text>
+        </view>
+      </view>
+      <!-- 右边  -->
+      <view>
+        <view class='right flex-row flex-end flex1 font24' style='white-space:nowrap'>{{item.car_price}}/车(含人工)</view>
+        <view class='center flex-row' style='max-width:160rpx;width:160rpx;padding:0 20rpx;'>
+          <image class='icon' catchtap='reduce' data-index='{{index}}' src='../../../../images/reduce.png'></image>
+          <input value='{{item.count}}' placeholder='0' bindinput='setInput' data-index='{{index}}' type='number' class='input flex1' style='padding:0 6rpx;'></input>
+          <image class='icon' catchtap='add' data-index='{{index}}' src='../../../../images/add.png'></image>
+        </view>
+      </view>
+      <!--费用小计  -->
+      <view style='position:absolute;bottom:0;right:0;' class='font24 plr color9'>费用小计(元):
+        <text class='font40 redFont'>{{item.price?item.price:0}}</text>
+      </view>
+
+    </view>
+  </view>
+  <!-- 选择地图  -->
+  <view class='top bgwhite'>
+    <view class='flex-row plr'>
+      <view class='badge'></view>
+      <view class='choosePlace flex1 relative'>
+        <view class='full' bindtap='choosePlace' data-id='start'></view>
+        <text style='margin-right:40rpx;'>起</text>
+        <text class='font28 color9' style='padding-left:20rpx;'>{{carAddress.start.address}}</text>
+      </view>
+    </view>
+
+    <view class='flex-row plr'>
+      <view class='badge redbg'></view>
+      <view class='choosePlace flex1 relative'>
+        <view class='full' bindtap='choosePlace' data-id='end'></view>
+        <text style='margin-right:40rpx;'>终</text>
+        <text class='font28 color9' style='padding-left:20rpx;'>{{carAddress.end.address}}</text>
+      </view>
+    </view>
+    <view class='flex-row plr font28'>
+      <view>
+        <text class='color9'>实际距离:</text>
+        <text>{{distance.distance}}km</text>
+      </view>
+      <view class='font24 plr color9'>费用小计(元):
+        <text class='font40 redFont'>{{distance.money}}</text>
+      </view>
+    </view>
+  </view>
+  <!--  说明  -->
+  <view class='top bgwhite' style='margin:20rpx 24rpx;padding:20rpx;border-radius:10rpx;'>
+    <view class='mt font30 mg'>说明:</view>
+    <view class='mg font24 color9' style='background:#f1f1f1;padding:20rpx;'>
+      {{list[0].describes}}
+    </view>
+  </view>
+  <!--  -->
+  <view class='top flex-row plr' style='margin:20rpx 30rpx 40rpx;'>
+    <view class='button cancel' bindtap='cancel'>取消</view>
+    <view class='button confirm' bindtap='save'>保存</view>
+  </view>
+</view>

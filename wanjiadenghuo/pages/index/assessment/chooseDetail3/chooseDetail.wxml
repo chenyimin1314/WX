@@ -1,0 +1,39 @@
+<view>
+  <view class='top bgwhite plr' style='margin:20rpx 24rpx;border-radius:10rpx;'>
+    <view class='flex-row flex-start bgwhite'>
+      <view class='mr3' style='background:#ff5151;width:6rpx;height:30rpx;'></view>
+      <text class>选择物品</text>
+    </view>
+    <view class='list flex-row flex-start relative' wx:for='{{list}}' wx:key='{{item.product_id}}'>
+      <view class='full' catchtap='chooseShop' data-index='{{index}}' style='width:40%;'></view>
+      <view class='left flex-row' style='max-width:40%;width:40%;'>
+        <image class='icon' src='../../../../images/{{item.selected?"success.png":"apply_select.png"}}'></image>
+        <view class='flex1 font24'>{{item.name}}</view>
+      </view>
+      <view class='center flex-row' style='max-width:160rpx;width:160rpx;'>
+        <image class='icon' catchtap='reduce' data-index='{{index}}' src='../../../../images/reduce.png'></image>
+        <input value='{{item.count}}' placeholder='0' bindinput='setInput' data-index='{{index}}' type='number' class='input flex1' style='padding:0 6rpx;'></input>
+        <image class='icon' catchtap='add' data-index='{{index}}' src='../../../../images/add.png'></image>
+      </view>
+      <view class='right flex-row flex-end flex1 font26'>{{item.price}}/{{item.company}}</view>
+    </view>
+    <view class='flex-row flex-end'>
+      <view class='color9 font28'>
+        <text class='mr2'>费用小计:</text>
+        <text class='redFont'>{{totalPrice}}</text>
+      </view>
+    </view>
+  </view> 
+  <view class='top bgwhite' style='margin:20rpx 24rpx;padding:20rpx;border-radius:10rpx;'>
+    <view class='mt font30  mg'>说明:</view>
+    <view class='mg font24 color9' style='background:#f1f1f1;padding:20rpx;'>
+      <!-- 以上拆装费含包装。其中床,6颗以下的螺丝免费拆装。空调类增加的费用另议 -->
+      {{order_type_describe[0].describe}}
+    </view>
+  </view>
+
+   <view class='top flex-row plr' style='margin:20rpx 30rpx 40rpx;'>
+    <view class='button cancel' bindtap='cancel'>取消</view>
+    <view class='button confirm' bindtap='save'>保存</view>
+  </view>
+</view>

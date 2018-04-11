@@ -1,0 +1,16 @@
+<view>
+  <view class='top' style='text-align:center;background:#fff'>
+    <image src='../../../images/logo.png' style='width:128rpx;height:128rpx;border-radius:50%;border:1px solid #ddd;margin-top:40rpx;'></image>
+    <view>万家灯火搬家公司</view>
+    <view class='color9 font24' style='text-indent:2em;text-align:left;padding:2em 2em 3em'>
+      万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，
+      万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，
+      万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司，万家灯火时一家专业的搬家公司。
+    </view>
+    <view class='flex-row relative' style='justify-content:center'>
+      <view class='full' bindtap='call' data-phone='400-9999-8888'></view>
+      <image src='../../../images/about_us.png' class='mr2' style='width:50rpx;height:50rpx;'></image>
+      <text class='color6'>400-9999-8888</text>
+    </view>
+  </view>
+</view>

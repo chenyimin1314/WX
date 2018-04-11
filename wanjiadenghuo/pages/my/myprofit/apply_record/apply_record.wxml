@@ -1,0 +1,86 @@
+<view wx:if='{{!isShow}}'>
+  <view class='top'>
+    <!--搜索框  -->
+    <view class='searchBar'>
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" bindtap='searchFn' type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{keyword}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" style='color:#ff5557' hidden="{{!inputShowed}}" bindtap="hideInput">完成</view>
+      </view>
+      <!--日历  -->
+      <image class='rili' bindtap='filter' src='../../../../images/date.png'></image>
+    </view>
+  </view>
+  <!-- 列表  -->
+  <scroll-view class='scrollView' bindscrolltolower='loadedlist'  scroll-y>
+    <view class='list'>
+      <view class='item' wx:for="{{list}}">
+        <view class='item_left'>
+          <view class='i_l_item'>
+            <text class='label'>申请提现时间：</text>
+            <text class='value'>{{item.create_time}}</text>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>提现金额(元)：</text>
+            <text class='value'>{{item.paied_money}}</text>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>账号类型：</text>
+            <text class='value'>{{item.type}}</text>
+            <!-- <button size='mini' class='erji' style='padding:4rpx 8rpx;line-height:1' plain='mini'>二级</button> -->
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>账号：</text>
+            <text class='value'>{{item.account}}</text>
+          </view>
+        </view>
+        <!--右边  -->
+        <view class='item_right'>
+          <view>
+            <!-- <text class='item_profit'>收益 (元) : </text>
+            <text class='redFont'>30</text> -->
+            <text class='orange' wx:if="{{item.state == 0}}">正在审核</text>
+            <text class='orange' wx:if="{{item.state == 1}}">审核成功</text>
+            <text class='orange' wx:if="{{item.state == 2}}">审核失败</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{loaded}}" class='item color9 bgwhite font24 center'>没有更多数据了！</view>
+      <view wx:if="{{noData}}" class='item color9 bgwhite font24 center'>暂无数据!</view>
+    </view>
+  </scroll-view>
+  <!--上面已完成  -->
+  <view class='filterBox' wx:if='{{showFilter}}' catchtap='hideFilter' data-index='1'>
+    <view class='filter'  catchtap='hideFilter'>
+      <view class='title'>日期</view>
+      <view class='chooseDate'>
+        <view class="section">
+          <picker mode="date" class='picker' value="{{startDate}}" start="09:01" end="21:01" data-key="startDate" bindchange="bindDateChange">
+            <view>{{startDate?startDate:"开始日期"}}</view>
+          </picker>
+          -
+          <!--结束日期  -->
+          <picker mode="date" class='picker' value="{{steartDate}}" start="09:01" end="21:01" data-key="endDate" bindchange="bindDateChange">
+          <view>{{endDate?endDate:"结束日期"}}</view>          
+          </picker>
+        </view>
+      </view>
+      <view class='button_group'>
+        <button type='default' bindtap='reset' size='mini' plain='ture'>重置</button>
+        <button type='warn' bindtap='filterSuccess' size='mini'>完成</button>
+      </view>
+    </view>
+  </view>
+
+</view>

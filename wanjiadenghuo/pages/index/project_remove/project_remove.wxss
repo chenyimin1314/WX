@@ -1,0 +1,13 @@
+/* pages/index/project_remove/project_remove.wxss */
+.remove_project{
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%)
+}
+.remove_project image{
+  width: 59rpx;
+  height: 48rpx;
+  margin-right: 30rpx;
+}

@@ -1,0 +1,93 @@
+<view wx:if='{{!isShow}}'>
+  <view class='top'>
+    <view class='top_profit'>
+      <view class='remain_money'>{{info.sum_profit}}</view>
+      <view class='monen_text'>我的总收益 (元)</view>
+      <navigator class='apply_record' url='apply_record/apply_record'>提现记录
+        <text class='right_arrow'>></text>
+      </navigator>
+      <view class='has_money'>可提现收益 (元):
+        <text class='hasmony_count'>{{info.profit_money}}</text>
+        <navigator class='apply_now' url='apply/apply'>
+          立即提现
+          <text class='right_arrow'>></text>
+        </navigator>
+      </view>
+    </view>
+    <!--搜索框  -->
+    <view class='searchBar'>
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" bindtap='searchFn' type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{keyword}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" style='color:#ff5557' hidden="{{!inputShowed}}" bindtap="hideInput">完成</view>
+      </view>
+      <!--日历  -->
+      <image class='rili' bindtap='filter' src='../../../images/date.png'></image>
+    </view>
+  </view>
+  <!-- 列表  -->
+  <scroll-view class='scrollView' scroll-y>
+    <view class='list'>
+      <view class='item' wx:for='{{list}}' wx:key='{{index}}'>
+        <view class='item_left'>
+          <view class='i_l_item'>
+            <text class='label'>合作编号:</text>
+            <text class='value'>{{item.id}}</text>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>微信昵称:</text>
+            <text class='value'>{{item.name}}</text>
+            <button size='mini' class='{{item.type == 1?"yiji":"erji"}}' style='padding:4rpx 8rpx;line-height:1' plain='mini'>{{item.type == 1?"一级":"二级"}}</button>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>订单时间:</text>
+            <text class='value'>{{item.order_time}}</text>
+          </view>
+        </view>
+        <!--右边  -->
+        <view class='item_right'>
+          <view>
+            <text class='item_profit'>收益 (元) : </text>
+            <text class='redFont'>{{item.profit}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='flex-row center color9 bgwhite' wx:if="{{noData}}">暂无数据</view>
+      <view class='flex-row center color9 bgwhite' wx:if="{{loaded}}">没有更多数据了!</view>
+    </view>
+  </scroll-view>
+  <!--上面已完成  -->
+  <view class='filterBox' wx:if='{{showFilter}}' catchtap='hideFilter' data-index='1'>
+    <view class='filter' catchtap='hideFilter'>
+      <view class='title'>日期</view>
+      <view class='chooseDate'>
+        <view class="section">
+          <picker mode="date" class='picker' value="{{startDate}}" start="09:01" end="21:01" data-key="startDate" bindchange="bindDateChange">
+            <view>{{startDate?startDate:"开始日期"}}</view>
+          </picker>
+          -
+          <!--结束日期  -->
+          <picker mode="date" class='picker' value="{{steartDate}}" start="09:01" end="21:01" data-key="endDate" bindchange="bindDateChange">
+            <view>{{endDate?endDate:"结束日期"}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class='button_group'>
+        <button type='default' bindtap='reset' size='mini' plain='ture'>重置</button>
+        <button type='warn' bindtap='filterSuccess' size='mini'>完成</button>
+      </view>
+    </view>
+  </view>
+
+</view>

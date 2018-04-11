@@ -1,0 +1,55 @@
+<view>
+  <view class='scrollView'>
+    <view class='list'>
+      <view class='item' wx:if="{{order_list.length>0}}" wx:key='{{index}}' wx:for='{{order_list}}'>
+        <view class='item_left'>
+          <view class='i_l_item'>
+            <text class='label'>订单号：</text>
+            <text class='value'>{{item.order_id}}</text>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>预约时间：</text>
+            <text class='value'>{{item.about_at}}</text>
+          </view>
+          <view class='i_l_item'>
+            <text class='label'>报价评估：</text>
+            <text class='value'>{{item.pay_value}}</text>
+            <button size='mini' class='erji' style='padding:4rpx 8rpx;line-height:1' data-order_id='{{item.order_id}}' bindtap='toDetail' plain='mini'>详情</button>
+          </view>
+          <view wx:if="{{item.state>=5}}">
+            <view class='i_l_item'>
+              <text class='label'>实际支付(元)：</text>
+              <text class='value'>{{item.state_pay}}</text>
+            </view>
+            <!--支付方式  -->
+            <view class='i_l_item'>
+              <text class='label'>支付方式：</text>
+              <text class='value'>{{item.state_pay==1?"线上支付":"线下支付"}}</text>
+            </view>
+          </view>
+        </view>
+        <!--右边  -->
+        <view class='item_right'>
+          <view class='color3'>
+            <text wx:if="{{item.state == -1}}">已取消</text>
+            <text wx:if="{{item.state == 0}}">未受理</text>
+            <text wx:if="{{item.state == 1}}">受理中</text>
+            <text wx:if="{{item.state == 2}}">已受理</text>
+            <text wx:if="{{item.state == 4}}">已受理</text>
+            <text wx:if="{{item.state == 5}}">支付确认中</text>
+            <text wx:if="{{item.state == 6}}">支付完成</text>
+            <text wx:if="{{item.state == 7}}">服务完成</text>
+          </view>
+          <view>
+            <button class='button confirm font24' wx:if="{{item.state == 1}}" bindtap='cancel' data-index="{{index}}" data-order_id="{{item.order_id}}" data-index="{{index}}" bindtap='cancel'>取消预约</button>
+            <text class='font24 red' wx:if="{{item.state == 2}}">*搬家后支付</text>
+            <button class='button confirm green font24' wx:if="{{item.state == 4}}" data-money='{{item.deal_value}}' data-order_id='{{item.order_id}}' bindtap='payNow'>立即支付</button>
+            <button class='button confirm green font24' data-order_id='{{item.order_id}}' wx:if="{{item.state == 6}}" bindtap='toCommet'>待评价</button>
+          </view>
+        </view>
+      </view>
+      <view class='flex-row center color6 font28 bgwhite' wx:if="{{noData}}">暂无数据！</view>
+      <view class='flex-row center color6 font28 bgwhite' wx:if="{{loaded}}">没有更多数据了！</view>
+    </view>
+  </view>
+</view>

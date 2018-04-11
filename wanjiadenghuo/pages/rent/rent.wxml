@@ -1,0 +1,31 @@
+<view class="item">
+  <!-- <image src=''/> -->
+ 
+  <view>
+    <image src='../../images/icon03.png'></image>
+    <view>同城货运</view>
+    <navigator url="../jianshe/jianshe?name=同城货运"></navigator>
+  </view>
+  <view>
+    <image src='../../images/icon04.png'></image>
+    <view>城际货运</view>
+    <navigator url="../jianshe/jianshe?name=城际货运"></navigator>
+  </view>
+</view>
+<view class='bindphone' wx:if="{{isShow}}">
+  <view class='phoneForm'>
+    <view class='title bdb'>绑定手机号</view>
+    <view class='form_group bdb'>
+      <input class='phone' placeholder='请输入手机号' bindinput='getPhone' type='number' maxlength='11' />
+      <button class="weui-btn" size='large' type="primary" bindtap='getCode' plain="true">{{codeText}}</button>
+    </view>
+    <view class='form_group bdb'>
+      <input class='phone' placeholder='请输入验证码' bindinput='getCofirm' type='number' maxlength='6' />
+    </view>
+    <view class='buttons'>
+      <view class='bdr' bindtap="setCancel">取消</view>
+      <view class='bind' bindtap='bindwechat'>立即绑定</view>
+    </view>
+  </view>
+</view>
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->

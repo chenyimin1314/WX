@@ -1,0 +1,65 @@
+.top {
+  display: flex;
+  background: #fff;
+  padding: 24rpx 31rpx;
+  margin: 20rpx 0 30rpx;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.info {
+  flex: 1;
+}
+
+.top .item {
+  margin: 0 20rpx;
+  height: 100%;
+  color: #666;
+  white-space: nowrap;
+}
+
+.item {
+  font-size: 26rpx;
+}
+
+.item_bottom.item {
+  margin-top: 10rpx;
+  /* max-width: 360rpx; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item_login image {
+  width: 48rpx;
+  height: 38rpx;
+  margin-right: 10rpx;
+}
+
+.item_login {
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.code {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.two .weui-grid {
+  width: 50%;
+}
+
+.list_box {
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.weui-grids{
+  border-left: none;
+}
+
+.weui-grids .weui-grid:last-child{
+  border-right: none;
+} 
+

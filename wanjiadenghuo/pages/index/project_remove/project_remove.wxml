@@ -1,0 +1,4 @@
+<view class='remove_project' bindtap='call'>
+ <image src='../../../images/phone.png'></image>
+ <text>18686888888</text>
+</view>

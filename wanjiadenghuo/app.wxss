@@ -1,0 +1,320 @@
+/**app.wxss**/
+@import 'pages/lib/weui.wxss';
+page{
+  background: #f2f2f2;
+  font-size: 32rpx;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.nowrap{
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+}
+.colorF{
+  color: #fff;
+}
+.flex1{
+  padding: 0 20rpx;
+  flex: 1;
+}
+.font60{
+  font-size:60rpx;
+}
+.font80{
+  font-size:80rpx;
+}
+.font100{
+  font-size:100rpx;
+}
+.color9{
+  color: #999;
+}
+.color6{
+  color: #666;
+}
+.color3{
+  color: #333;
+}
+.colora{
+  color: #aaa;
+}
+.font28{
+  font-size: 28rpx;
+}
+.button{
+  background: none;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0 20rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+}
+.relative{
+  position: relative;
+}
+.full{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.mt2{
+  margin-top: 20rpx;
+}
+.mt4{
+  margin-top: 40rpx;
+}
+.mb2{
+  margin-top: 20rpx;
+}
+.mt3{
+  margin-top: 30rpx;
+}
+.mr2{
+  margin-right: 20rpx;
+}
+.mb3{
+  margin-bottom: 30rpx;
+}
+.mg{
+  margin: 0 30rpx;
+}
+.font36{
+  font-size: 36rpx;
+}
+.font40{
+  font-size: 40rpx;
+}
+.font30{
+  font-size: 30rpx;
+}
+.font32{
+  font-size: 32rpx;
+}
+.font26{
+  font-size: 26rpx;
+}
+.font24{
+  font-size: 24rpx;
+}
+.button.confirm{
+  width:200rpx;
+  background: #ff5155;
+  text-align: center;  
+  color: #fff;
+}
+.button.cancel{
+  width:200rpx;
+  color: #fff;
+  background: #b2b2b2;
+  text-align: center;
+}
+.bdt{
+  border-top: 1rpx solid #ddd;
+}
+.bdb{
+  border-bottom: 1rpx solid #ddd;
+}
+.bdl{
+  border-left: 1rpx solid #ddd;
+}
+.bdr{
+  border-right: 1rpx solid #ddd;
+}
+.mb2{
+  margin-bottom: .2rem;
+}
+.weui-cell {
+  font-size: 30rpx;
+}
+.placeholder{
+  font-size: 32rpx;
+  color: #999;
+  font-family: "微软雅黑"
+}
+.input{
+  font-size: 32rpx;
+  color: #666;
+  font-family: "微软雅黑"
+}
+
+.upper{
+  vertical-align:super;
+  font-size: 16rpx;
+}
+.item{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.strong{
+  font-weight: 600;
+  color: #000;
+}
+.bindphone{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+.phoneForm{
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 560rpx;
+  transform: translate(-50%,-50%);
+}
+.phoneForm .title{
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 28rpx;
+}
+.phoneForm .form_group{
+  padding: 0 40rpx;
+  height: 90rpx;
+  display:flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.phoneForm .form_group button{
+  white-space: nowrap;
+  width: 200rpx;
+  height: 68rpx;
+  margin: 0;
+  line-height: 68rpx;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: #999;
+  color: #999;
+  font-size: 28rpx;
+}
+.phoneForm .buttons{
+  display: flex;
+  height: 80rpx;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.phoneForm .buttons view{
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  line-height: 80rpx;
+}
+.phoneForm .buttons view:nth-child(2){
+  color: #ff5155;
+}
+.button-hover[type="primary"][plain]{
+  color: #aaa;
+  border-color: #aaa;
+  font-size: 28rpx;
+}
+
+/*头像  */
+.header{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 10rpx;
+}
+body{
+  font-size: 30rpx;
+}
+
+/*列表  */
+.list_item{
+  height: 80rpx;
+  align-items: center;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  background: #fff;
+}
+.right_arrow{
+  font-family: cursive;
+  font-weight: 600;
+  margin-left: .2rem;
+}
+
+.mask{
+  background: rgba(0,0,0,.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.mask>view{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  border-radius: 10rpx;
+}
+.pay_icon{
+   width:46rpx;
+  height: 40rpx;
+}
+.select{
+  width: 40rpx;
+  height: 40rpx;
+}
+.redFont{
+  color: #ff5155
+}
+.orange{
+  color: #ffb533;
+}
+.green{
+  color: #5ab234;
+}
+.flex-row{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  min-height: 80rpx;
+  justify-content:space-between;
+}
+.flex-start{
+  justify-content: flex-start;
+}
+.flex-end{
+  justify-content: flex-end;
+}
+.mr3{
+  margin-right: 30rpx;
+}
+.center{
+  text-align: center;
+  justify-content: center;
+}
+.plr{
+  padding: 0 30rpx;
+}
+.bgwhite{
+  background: #fff;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.hide{
+  display: none!important;
+}
+.bgf1{
+  background: #f1f1f1;
+}

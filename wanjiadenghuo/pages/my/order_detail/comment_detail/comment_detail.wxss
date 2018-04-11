@@ -1,0 +1,23 @@
+/* pages/my/order_detail/maluation/maluation.wxss */
+.top{
+  background: #fff;
+  margin: 20rpx 30rpx;
+  padding: 50rpx 20rpx;
+}
+.flex-row{
+  justify-content: flex-start;
+  padding: 0 40rpx;
+}
+.flex-row .left{
+  width: 200rpx;
+}
+.right image{
+  margin-right: 20rpx;
+}
+.myInput textarea{
+  background: #f1f1f1;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  color: #999;
+  height:160rpx;
+}

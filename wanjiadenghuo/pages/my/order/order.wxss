@@ -1,0 +1,48 @@
+@import '../myprofit/myprofit.wxss';
+
+.swiper-tab {
+  border-bottom: 2rpx solid #f1f1f1;
+  text-align: center;
+  background: #fff;
+  height: 140rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #999;
+  padding: 10rpx 0;
+  overflow: hidden;
+  border-bottom: 5rpx solid #fff;
+}
+
+.on {
+  color: #ff3b2f;
+  border-bottom: 5rpx solid #ff3b2f;
+}
+
+.swiper-box {
+  display: block;
+  position: absolute;
+  top: 260rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  overflow: hidden;
+  border-top: 1rpx solid #f1f1f1;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.scrollView {
+  top: 0;
+}
+
+.filterBox {
+  top: 100rpx;
+  z-index: 2000;
+}

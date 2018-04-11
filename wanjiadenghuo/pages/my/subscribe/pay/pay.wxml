@@ -1,0 +1,38 @@
+<view>
+  <view class='top'>
+    <view class='li relative' wx:for='{{list}}' wx:key='{{index}}'>
+      <view class='full' bindtap='chooseType' data-index="{{index}}"></view>
+      <image class='pay_icon' src="{{item.src}}"></image>
+      <view class='flex1 color9'>{{item.name}}</view>
+      <image class='select' wx:if="{{!item.selected}}" src='../../../../images/apply_select.png'></image>
+      <image class='select' wx:if="{{item.selected}}" src='../../../../images/success.png'></image>
+    </view>
+  </view>
+  <view class='buttonGroup'>
+    <button class='button confirm' bindtap='myconfirm'>确认</button>
+  </view>
+</view>
+
+<view class='mask' catchtap='cancel' data-index="cancel" wx:if="{{showMoney}}">
+  <view class='maskbox'>
+    <view class='flex-row center font36 bdb' style='height:90rpx;'>在线支付</view>
+    <view class='flex-row plr font30'>支付金额</view>
+    <view class='flex-row plr font28' style='padding-bottom:20rpx;'>
+      <input class='money color9 flex1' id='money' type='number' bindinput='getInput' value='{{money}}' disabled></input>
+    </view>
+    <!--优惠券  -->
+    <view class='card plr'>
+      <view class='flex-row selectlist relative orange font28' wx:for="{{coupon}}" wx:key='{{index}}'>
+        <view class='full' catchtap='useCoupon' data-index='{{index}}'></view>
+        <image class='mr2' style='width:40rpx;height:40rpx;' src="../../../../images/{{item.selected?'success.png':'apply_select.png'}}"></image>
+        <text class='name mr2'>{{item.price}}元优惠券</text>
+        <text class='description mr2'>({{item.name}})</text>
+      </view>
+    </view>
+    <!--v  -->
+    <view class='buttonGroup'>
+      <view class='font32 color3' catchtap='cancel' data-index="cancel">取消</view>
+      <view class='font32 redFont' catchtap='pay'>确定</view>
+    </view>
+  </view>
+</view>

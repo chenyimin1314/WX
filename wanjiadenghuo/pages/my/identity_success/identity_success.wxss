@@ -1,0 +1,4 @@
+/* pages/my/myprofit/identity_success/identity_success.wxss */
+.buttonGroup{
+  padding: 130rpx 100rpx 120rpx;
+}

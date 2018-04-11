@@ -1,0 +1,4 @@
+@import '../myprofit.wxss';
+.scrollView,.filterBox{
+  top: 100rpx;
+}
