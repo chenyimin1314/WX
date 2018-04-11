@@ -1,0 +1,139 @@
+@import '../represent/represent.wxss';
+.content{
+  width: 560rpx;
+}
+.swiper-tab-list{
+  width: 33%;
+}
+.product{
+  display: flex; 
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.list_center{
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.image{
+  text-align: center;
+}
+.tip{
+  line-height: 50rpx;
+  padding-bottom: 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.con_cover{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius:10rpx;
+  margin: 0 auto 20rpx;
+}
+.card_title{
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ddd;
+  font-weight: 600;
+}
+.confirm .card_title{
+  border: none;
+}
+.product .cover{
+  width: 158rpx;
+  height: 158rpx;
+}
+.right{
+  flex: 1;
+  padding-left: 10rpx;
+  position: relative;
+}
+.right .name{
+  line-height: 40rpx;
+  max-height: 80rpx;
+}
+.price{
+  color:#ff3b2f;
+  line-height: 40rpx;
+  font-size: 32rpx;
+}
+.r_bottom{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  position: absolute;
+  align-items: flex-end;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.user_name{
+  display: inline-block;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  color:#999;
+  font-size: 24rpx;
+  max-width: 170rpx;
+  white-space: nowrap;
+  height: 32rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.recmend{
+  position: absolute;
+  bottom: 0rpx;
+  right: 20rpx;
+  color:#E8DA01;
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+
+}
+.recmend image{
+  width: 30rpx;
+  height: 30rpx;
+  
+}
+
+.info{
+  display: flex;
+  align-items: center;
+}
+.header_icon{
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+}
+
+.code{
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.qr_code{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+.longTap{
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+/*关闭按钮  */
+.close{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.daiyan_time{
+  font-size: 26rpx;
+  white-space: nowrap;
+}

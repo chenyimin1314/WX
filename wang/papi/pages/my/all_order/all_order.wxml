@@ -1,0 +1,77 @@
+<view wx:if="{{isShow}}">
+  <!-- tab切换 -->
+  <scroll-view class='taglist' scroll-x>
+    <view class="swiper-tab">
+      <view wx:for="{{page_arr}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" wx:key='{{index}}' data-tag_id="{{item.tag_id}}" data-current="{{index}}" bindtap="swichNav">{{item.name}}</view>
+      <!-- <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">钻石</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">翡翠</view> -->
+    </view>
+  </scroll-view>
+  {{taglist}}
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <!-- 我是哈哈 -->
+    <swiper-item class="swiper-item" wx:for="{{order_list}}" wx:for-item="order" wx:key="{{index}}">
+      <scroll-view class='scroll-view' scroll-y data-index='{{index}}' bindscrolltolower="toLower" lower-threshold="50">
+        <view class='order_list' wx:if="{{order.length>0}}">
+          <!--  店铺列表  -->
+          <view class='order_item' wx:for="{{order}}" wx:for-item='order' wx:for-index='idx'>
+            <view class='order_shop_title'>
+              <view>{{order.shop_name}}
+                <image class='right_arrow' src='../../../img/right_arrow.png'></image>
+              </view>
+            </view>
+            <!--  商品列表  -->
+            <view class='order_content' wx:for="{{order.product}}" wx:for-item="product" wx:for-index="productIndex">
+              <!--  跳转到商品详情  -->
+              <view class='full' bindtap='toDetail' data-index='{{index}}' data-idx='{{idx}}' data-pIdx='{{productIndex}}'></view>
+              <view class='order_content_top'>
+                <image class='header_image' mode='widthFix' lazy-load='true' src='{{product.cover}}' />
+                <!--  头像右边  -->
+                <view class='product_content'>
+                  <!--  右边的上部分  -->
+                  <view class='product_info'>
+                    <view class='product_name'>{{product.name}}</view>
+                    <view class='product_price'>￥{{product.price?product.price:0}}</view>
+                  </view>
+                  <!--  商品规格  -->
+                  <view class='product_size'>
+                    <text>规格：{{product.condition1}}</text>
+                    <text>x{{product.number}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class='source'>来源于{{product.user_name?product.user_name:"商家"}}</view>
+            </view>
+            <view class='order_content_bottom'>
+              <view>
+                <text class='product_number'><!--共{{order.count?order.count:0}}</text>件商品--></text>
+                <text>总计:{{order.total}}<text>（含运费{{order.postage}}元）</text></text>
+              </view>
+            </view>
+            <!--  订单详情  -->
+            <view class='order_detail'>
+              <view class='yellow' bindtap='order_detail'  data-index='{{index}}' data-idx='{{idx}}'>订单详情</view>
+              <view class="button-sp-area">
+                <button wx:if="{{order.state == 0}}" class="weui-btn default"
+                 data-index='{{index}}' data-idx='{{idx}}' bindtap='pay' type="default" size='mini' plain="true">立即支付</button>
+                <button wx:if="{{order.state == 1}}" class="weui-btn warn" size='mini' type="default" plain="true">待发货</button>
+                <button wx:if="{{order.state == 2}}" class="weui-btn warn" size='mini' 
+                  data-index='{{index}}' data-idx='{{idx}}' bindtap='confirm' 
+                 type="default" plain="true">确认收货</button>
+                <button wx:if="{{order.state == 3}}" class="weui-btn default " size='mini' type="default" plain="true"
+                data-index='{{index}}' data-idx='{{idx}}' bindtap='delete'>删除订单</button>
+              </view>
+            </view>
+          </view>
+          <view class='noData' wx:if="{{page_arr[index].loaded == true && order.length>0}}">没有更多数据了！</view>
+        </view>
+        <view class='no_list' bindtap='toIndex' wx:if="{{order.length == 0}}">
+          <view class='first_content'>亲~您还没有订单哦~</view>
+          <view class='second_content'>
+            <text>快去看看吧</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

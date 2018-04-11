@@ -1,0 +1,45 @@
+page {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.camera_list {
+  margin: 20rpx 0;
+  background: #fff;
+}
+.camera{
+  display: flex;
+}
+.camera>view{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 15rpx;
+  border: 1rpx solid #ddd;
+   border-radius: 10rpx;
+}
+.img_item{
+  position: relative;
+}
+.img_item>image{
+  width: 100%;
+  height: 128rpx;
+  border-radius: 10rpx;
+}
+.index_sals1{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background:rgba(0,0,0,.6);
+  left: 20%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.index_sals1 image.sals{
+  width: 30rpx;
+  height: 30rpx;
+}

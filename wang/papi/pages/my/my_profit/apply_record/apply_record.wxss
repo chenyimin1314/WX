@@ -1,0 +1,51 @@
+/* pages/my/my_profit/my_profit.wxss */
+/* 列表  */
+.item{
+  background: #fff;
+  margin-bottom: 15rpx;
+  padding: 25rpx;
+  line-height: 1.5
+}
+.list{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.list_item{
+  margin-top: 20rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item>view view:nth-child(1){
+  margin-bottom: 20rpx;
+}
+.item>view:nth-child(2) view{
+  text-align: right;
+}
+.money{
+  font-size: 40rpx;
+}
+.date{
+  margin-left: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.strong{
+  font-size: 36rpx;
+}
+.noData{
+  text-align: center;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+}

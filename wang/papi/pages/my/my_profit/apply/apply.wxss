@@ -1,0 +1,146 @@
+/* pages/my/my_profit/my_profit.wxss */
+page{
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.h_top{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 22rpx 25rpx;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.h_top > view{
+  display: flex;
+  align-items: center;
+}
+.h_top > view:nth-child(1) image{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  border: 1rpx solid #666;
+  margin-right: 20rpx;
+}
+.money{
+  font-size: 36rpx;
+}
+.apply_type{
+  margin: 20rpx 0;
+  padding: 20rpx 25rpx;
+  background: #fff;
+}
+.apply_type .title{
+  line-height: 60rpx;
+}
+.apply_type .item.border{
+  border-bottom: 1rpx solid #ddd;
+}
+.apply_type .item{
+  position: relative;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item .type{
+  width: 45rpx;
+  margin-right: 20rpx;
+  height: 45rpx;
+}
+.item .select{
+  width: 40rpx;
+  height: 40rpx;
+}
+.apply_type .item>view{
+  display: flex;
+  align-items: center;
+}
+.account{
+  background: #FFF;
+  margin-bottom: 20rpx;
+  padding: 25rpx;
+  color: #666;
+}
+.account .acc_account{
+  height: 80rpx;
+  border-bottom: 1rpx solid #ddd;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+.account .acc_account input{
+  height: 100%;
+  width: 100%;
+}
+.tip{
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.button{
+  padding: 25rpx;
+}
+
+.button button{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.popver{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .3);
+  z-index: 20;
+}
+.verify{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 70rpx;
+  right: 70rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.v_title{
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.getInput{
+  display: flex;
+  padding: 0 25rpx;
+  margin-bottom: 24rpx;
+  color: #999;
+}
+.getInput input{
+  background: #f6f6f6;
+  flex: 1;
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  height: 60rpx;
+}
+.getInput button[type="warn"]{
+  margin-left: 15rpx;
+  opacity: .6;
+}
+.confirm{
+  text-align: center;
+  margin: 60rpx 0 30rpx;
+}
+.confirm button{
+  width: 240rpx;
+}
+.placeholder{
+  color: #999;
+}
+.close{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

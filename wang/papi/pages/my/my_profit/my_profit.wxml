@@ -1,0 +1,44 @@
+<view class='profit' wx:if="{{isShow}}">
+  <!--  提现列表  -->
+  <view class='content'>
+    <view class='top'>
+      <view class='my_money'>我的佣金(元)</view>
+      <view class='money'>{{user_profit.money?user_profit.money:0}}</view>
+      <view class='submitBtn' bindtap='apply'>提现</view>
+      <view>
+        <navigator class='apply_record' url='apply_record/apply_record'>提现记录
+          <image mode='widthFix' class="right_arrow" src='../../../img/right_arrow_white.png'></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='subTop'>
+      <view class='s_top'>
+        <view>{{user_profit.sum_order?user_profit.sum_order:0}}</view>
+        <view>总订单</view>
+      </view>
+      <view class='s_top'>
+        <view>{{user_profit.sum_money>10000?(user_profit.sum_money/10000)+"W":user_profit.sum_money}}</view>
+        <view>销售额</view>
+      </view>
+    </view>
+    <!-- 列表  -->
+    <scroll-view class='list' scroll-y toLower="toLower">
+      <view class='item' wx:for="{{profit_order}}">
+        <view>交易金额(元)：{{item.price?item.price:0}}</view>
+        <view class='list_item'>
+          <view>
+            <text class='name'>{{item.user_name}}</text>
+            <text class='date'>{{item.created_at}}</text>
+          </view>
+          <view>
+            佣金（元）：
+            <text class='strong'>{{item.rednet_profit}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='noData' wx:if="{{loaded}}">没有更多数据了</view>
+      <view class='noData' wx:if="{{user_profit.order && user_profit.order.length>0}}">暂无记录</view>
+    </scroll-view>
+  </view>
+  <!--  提现操作  -->
+</view>

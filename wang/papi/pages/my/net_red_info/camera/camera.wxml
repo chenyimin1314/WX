@@ -1,0 +1,12 @@
+<!-- 相册  -->
+<view class='camera_list'>
+<view class='noData' wx:if="{{selfUser_id == user_id}}">长按图片可删除,点击图片预览</view>
+  <view class=''>
+    <view class='camera' wx:for="{{arr}}" wx:if="{{arr.length>0}}" wx:for-index="index">
+      <view class='img_item' wx:if="{{item}}" wx:for-item="item" wx:for="{{arr[index]}}" wx:for-index="idx">
+        <image src='{{item.img_path}}' catchtap='preview' id='{{item}}' data-index="{{index}}" data-idx="{{idx}}" bindlongpress='deleteImg'></image>
+      </view>
+    </view>
+    <view class='noData' wx:if="{{arr.length == 0}}">暂无数据</view>
+  </view>
+</view>

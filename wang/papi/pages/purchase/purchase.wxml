@@ -1,0 +1,66 @@
+<view class='page' wx:if="{{isShow}}">
+  <view class='top'>
+    <view class='shop_name' wx:for="{{shop}}" wx:if="{{shop.length>0}}" wx:for-index="index">
+      <view class='s_name'>
+        <view class='select'>
+          <image src='{{item.isselected=="true"?"../../img/select_active.png":"../../img/select.png"}}'></image>
+          <view class='full' catchtap='selectShop' data-index='{{index}}'></view>
+        </view>
+        {{item.shop_name}}
+        <image mode='widthFix' class='right_arrow' src='../../img/right_arrow.png'></image>
+      </view>
+
+      <view class='product_list'>
+        <view class='product_item' wx:for="{{item.product}}" wx:for-item="item1" wx:for-index="idx">
+          <view class='full list_item' catchlongpress='delete' data-index="{{index}}" data-idx="{{idx}}"></view>
+          <view class='select'>
+            <image src='{{item1.isselected=="true"?"../../img/select_active.png":"../../img/select.png"}}'></image>
+            <view class='full' bindtap='selectProduct' data-index='{{index}}' data-idx="{{idx}}"></view>
+          </view>
+          <view class='header'>
+            <image src='{{item1.cover}}'></image>
+          </view>
+          <view class='right_content'>
+            <view class='product_name'>{{item1.name}}</view>
+            <view class='product_size'>规格：{{item1.condition1}}</view>
+            <view class='product_operate'>
+              <text class='red'>￥{{item1.price}}</text>
+              <view class='get_num'>
+                <image mode='widthFix' data-index='{{index}}' catchtap='setNum' data-type="0" data-index="{{index}}" data-idx="{{idx}}" src='../../img/reduce.png'></image>
+                <input class='getNum' value='{{item1.number}}' data-index="{{index}}" data-idx="{{idx}}" bindinput="getNum" type='number'></input>
+                <image mode='widthFix' catchtap='setNum' data-type="1" data-index="{{index}}" data-idx="{{idx}}" src='../../img/add.png'></image>
+              </view>
+            </view>
+          </view>
+          <view class='from'>来源于{{item1.user_name?item1.user_name:"商家"}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='shop_name' wx:if="{{!shop.length>0}}">
+      <view class='no_shop' bindtap='toIndex'>
+      <image src='../../img/purchase_01.png'></image>
+        <view>购物车暂无商品</view>
+        <navigator>快去抢购吧</navigator>
+      </view>
+    </view>
+
+  </view>
+  <view class='bottom'>
+    <view>
+      <view class='select'>
+        <image data-index="{{isSelectAll}}" src='{{isSelectAll=="true"?"../../img/select_active.png":"../../img/select.png"}}'></image>
+        <view class='full' bindtap='selectAll' data-index='{{isSelectAll}}'></view>
+      </view>
+      <text>全选</text>
+    </view>
+    <view class='right_confirm'>
+      <view>
+        <text style='color:#999'>合计:</text>
+        <text class='red'>￥{{price}}元</text>
+      </view>
+      <view class='toConfrim' catchtap='confirm_purchase'>
+        结算
+      </view>
+    </view>
+  </view>
+</view>

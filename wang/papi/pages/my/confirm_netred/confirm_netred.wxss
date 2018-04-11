@@ -1,0 +1,212 @@
+/* pages/my/confirm_netred/confirm_netred.wxss */
+
+.top {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.top .item {
+  flex: 1;
+  text-align: center;
+  padding-top: 30rpx;
+  height: 142rpx;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+}
+
+.item.line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1rpx;
+  width: 146rpx;
+  top: 45rpx;
+  left: -30%;
+  background: #bcbcbc;
+}
+
+.top image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 网红列表  */
+
+.item_list {
+  margin: 0 24rpx;
+}
+
+.item_list .tips {
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  line-height: 60rpx;
+}
+
+.item_list .input {
+  background: #fff;
+  height: 72rpx;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+.item_list .input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.personal.item_list .input {
+  height: 138rpx;
+  align-items: flex-start;
+}
+
+.personal.item_list .input textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+}
+/*选择平台  */
+.select{
+  background: #fff;
+}
+.platform{
+    display: flex;
+    align-items: center;
+    padding: 0 10rpx;
+    height: 80rpx;
+}
+
+.select_platform{
+  width: 180rpx;
+  position: relative;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+.select_platform image,.select_platform text{
+  vertical-align: middle;
+}
+.select_platform input{
+  width: 90rpx;
+}
+.create_time{
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: #999;
+  height: 56rpx;
+  border:1rpx solid #ddd;
+  font-size: 28rpx!important;
+  line-height: 56rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-family: 'UICTFontTextStyleBody';
+  min-height:1.4rem;
+}
+.create_time::after{
+  display: none;
+}
+.select_platform image{
+  width: 36rpx;
+  height: 36rpx;
+  padding: 10rpx;
+}
+.platform .weui-btn{
+  width: 180rpx;
+  margin: 0;
+}
+
+.platform input{
+  border-radius: 10rpx;
+  height: 56rpx;
+  border:1rpx solid #ddd;
+  padding: 0 10rpx;
+  color: #999;
+}
+.weui-btn{
+  margin: 0;
+}
+.platform_id{
+  width: 160rpx;
+}
+.fans{
+  flex: 1;
+  margin: 0 10rpx;
+}
+/* 上传图片  */
+.weui-cells{
+  margin: 0;
+}
+.item_list .content{
+  padding: 20rpx 20rpx 0;
+  background: #fff;
+}
+.item_list  .title{
+  padding: 0 20rpx;
+}
+.weui-uploader__input-box {
+  border-style: dashed;
+}
+.submit{
+  height: 90rpx;
+  line-height: 90rpx;
+  margin:20rpx 40rpx;
+}
+.personal_pic .content{
+  padding: 20rpx 0 20rpx 10rpx;
+}
+
+/*  身份证  */
+.flex_row.id_card{
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+ 
+}
+.bgwhite{
+  background: #fff;
+  color: #777;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  padding-left: 20rpx;
+}
+.flex_row.id_card image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 5rpx;
+  margin-bottom: 10rpx;
+}
+.item_list_line{
+  margin-bottom: 10rpx;
+  line-height: 1.5;
+}
+/*  */
+.item_cell{
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  margin: 20rpx 24rpx;
+  padding:0  20rpx;
+  color: #777;
+}
+.last{
+  margin-bottom: 60rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.success{
+  color: #7ECAFF;
+}
+.fail{
+  color:#ff3b2f;
+}
+.orange{
+  color: orange;
+}

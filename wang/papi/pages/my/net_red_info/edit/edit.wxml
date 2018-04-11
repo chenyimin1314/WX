@@ -1,0 +1,66 @@
+<view class='isShow'>
+  <scroll-view scroll-y>
+  <!-- 网红昵称  -->
+  <view>
+    <view class='item_list'>
+      <view class='tips'>昵称</view>
+      <view class='input'>
+        <input placeholder='必填' id='name' value='{{name}}' bindinput='getInput'></input>
+      </view>
+    </view>
+    <!--  擅长直播类型  -->
+
+    <view class='item_list'>
+      <view class='tips'>个性签名</view>
+      <view class='input'>
+        <input placeholder='必填' id='sign' value='{{sign}}' bindinput="getInput"></input>
+      </view>
+    </view>
+    <!--上传身份证  -->
+    <view class='item_list'>
+      <view class='tips'>上传主页封面(1张)</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--  提交个人照片  -->
+    <view class='item_list personal_pic'>
+      <view class='tips'>上传个人照片（最多一次9张）</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{personal}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage_personal" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage_personal"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button class='submit' type='warn' bindtap='submit'>保存</button>
+    </view>
+
+  </view>
+  </scroll-view>
+  
+</view>

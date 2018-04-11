@@ -1,0 +1,30 @@
+@import '../confirm_netred/confirm_netred.wxss';
+.shop{
+  position: relative;
+}
+.shop .input {
+  padding-bottom: 60rpx;
+}
+.personal.item_list.shop .input {
+  height: 200rpx;
+}
+
+.shop .input view{
+  position: absolute; 
+  bottom: 0;
+  right: 0;
+  line-height: 60rpx;
+  color: #999;
+  padding-right: 20rpx;
+}
+.mechant .platform{
+  width: 48%;
+  box-sizing: border-box;
+}
+.mechant .select_platform{
+  width: 100%;
+}
+.mechant .select{
+  display: flex;
+  flex-flow: row wrap;
+}

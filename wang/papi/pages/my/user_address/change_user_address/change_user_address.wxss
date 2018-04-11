@@ -1,0 +1,22 @@
+/* pages/my/user_address/add_user_address/add_user_address.wxss */
+@import '../model/model.wxss';
+.content{
+  margin:20rpx 0rpx;
+}
+.add_button{
+  padding: 0 10%;
+  margin-top: 60rpx;
+}
+.weui-cell__bd.area .weui-input{
+  background: none;
+  border: none;
+  text-align: left;
+  color: #999;
+  padding: 0;
+}
+.weui-cell__bd.area .weui-input::after{
+  display: none;
+}
+.weui-cell__bd{
+  color: #999;
+}

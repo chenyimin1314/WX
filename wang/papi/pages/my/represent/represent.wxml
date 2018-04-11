@@ -1,0 +1,64 @@
+<view wx:if="{{isShow}}">
+  <scroll-view scroll-x>
+    <view class='swiper-tab' style='width:{{page_arr.length*187.5}}rpx;'>
+      <view class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" wx:for="{{page_arr}}" data-current="{{index}}" bindtap="swichNav">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item wx:for="{{page_arr}}"  wx:for-index="index">
+      <scroll-view class='scrollview' data-index='{{index}}' bindscrolltolower='toLower' scroll-y>
+        <view class='list_box'>
+          <!-- 列表循环  -->
+          <view wx:if="{{item.list.length>0 && a.is_rsement == 0}}" wx:for="{{item.list}}" wx:for-item="a" wx:for-index="key" class='list'>
+            <view class='list_top'>
+              <view class='full' data-index='{{index}}' data-key='{{key}}' bindtap='toDetail'></view>
+              <image class='cover' mode='scaleToFill' src='{{a.cover}}'></image>
+              <view class='price'>￥{{a.price?a.price:0}}</view>
+              <view class='index_advice'>{{a.price}}</view>
+            </view>
+            <view class='list_center'>
+              <view class='product_name'>{{a.name}}</view>
+              <view class='shop_name'>
+                <text class='color_gray'>{{a.shop_name}}</text>
+                <view class='button_warn' data-index='{{index}}' data-key='{{key}}'  wx:if="{{(!a.state && a.state!=0) || (a.state == 2)}}" bindtap='showDate'>我要代言</view>
+              </view>
+              <view class='shop_name oper' wx:if="{{a.state == 0}}">
+                <view class='button_warn wait_confirm'>待确定</view>
+                <view class='button_defult' data-index='{{index}}' data-key='{{key}}' bindtap='cancal_daiyan'>取消代言</view>
+              </view>
+            </view>
+            <view class='sum_rsement color_gray'>{{a.sum_rsement}}人已代言</view>
+          </view>
+        </view>
+        <view class='noData' wx:if="{{item.loaded}}">没有更多数据了</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 日期弹窗  -->
+  <view class='popover' wx:if="{{show_date}}" bindtap='close' data-index='1'>
+    <view class='content' bindtap='close' data-index='0'>
+      <view class='date_title'>请选择代言时间：</view>
+      <view class='date_input'>
+        <text class='color_gray'>开始时间</text>
+        <picker class="weui-btn" mode="date" value="{{data}}" start="2000-01-01" end="2030-12-31" data-index='start_time' bindchange="bindDateChange">
+          <view class='create_time color_gray'>{{start_time?start_time:"请选择"}}</view>
+        </picker>
+      </view>
+      <!-- 结束日期  -->
+      <view class='date_input'>
+        <text class='color_gray'>结束时间</text>
+        <picker class="weui-btn" mode="date" value="{{data}}" start="2000-01-01" end="2030-12-31" data-index='end_time' bindchange="bindDateChange">
+          <view class='create_time color_gray'>{{end_time?end_time:"请选择"}}</view>
+        </picker>
+      </view>
+      <!-- 操作  -->
+      <view class='operate'>
+        <view bindtap='close' data-index='1'>取消</view>
+        <view class='confirm' bindtap='confirm'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

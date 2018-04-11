@@ -1,0 +1,43 @@
+/* pages/my/user_address/user_address.wxss */
+.content{
+  padding-bottom: 40rpx;
+}
+.list{
+  margin-top: 20rpx;
+}
+.list .item{
+  margin-bottom: 15rpx;
+  padding: 20rpx 20rpx 0;
+  background: #fff;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.list .item view.name{
+  margin-bottom: 15rpx;
+}
+.list .item view:nth-child(1) text:nth-child(1){
+  margin-right: 40rpx;
+}
+/*设置默认  */
+.setDefault{
+  align-items: center;
+  flex: 1;
+  margin: 0;
+}
+.operate{
+  height: 100rpx;
+  align-items: center;
+  flex: 1;
+}
+.button-sp-area{
+ margin: 0;
+}
+.button-sp-area button{
+  margin-left: 20rpx;
+}
+.setDefault image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 15rpx;
+
+}

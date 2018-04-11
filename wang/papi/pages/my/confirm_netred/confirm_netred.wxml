@@ -1,0 +1,153 @@
+<view class='isShow' wx:if="{{isShow}}">
+  <view class='top'>
+    <view class='item'>
+      <image mode='scaleToFill' src='../../../img/edit_1.png'></image>
+      <view>绑定手机</view>
+    </view>
+    <view class='item line'>
+      <image mode='scaleToFill' src='{{is_red_net == "null"?"../../../img/edit_0.png":"../../../img/edit_1.png"}}'></image>
+      <view>提交资料</view>
+    </view>
+    <view class='item line'>
+      <image wx:if="{{is_red_net == 1}}" mode='scaleToFill' src='../../../img/check_success.png'></image>
+       <image wx:elif="{{is_red_net == 2}}" mode='scaleToFill' src='../../../img/checkerror.png'></image> 
+        <image wx:else mode='scaleToFill' src='../../../img/edit_0.png'></image>
+      <view wx:if="{{is_red_net == 1}}" class='success'>审核成功</view>
+      <view wx:elif="{{is_red_net == 2}}" class='fail'>审核失败</view>
+      <view wx:else>审核确认</view>
+    </view>
+  </view>
+  <!-- 网红昵称  -->
+  <view wx:if="{{is_red_net == 'null'}}">
+    <view class='item_list'>
+      <view class='tips'>网红昵称</view>
+      <view class='input'>
+        <input placeholder='必填' id='name' bindinput='getInput'></input>
+      </view>
+    </view>
+    <!--  个人简介  -->
+    <view class='item_list personal'>
+      <view class='tips'>个人简介</view>
+      <view class='input'>
+        <textarea bindinput='getInput' id='profile' placeholder='必填'></textarea>
+      </view>
+    </view>
+    <!--  选择直播平台  -->
+    <view class='item_list personal'>
+      <view class='tips'>选择直播平台</view>
+      <view class='select'>
+        <view class='platform' wx:for="{{list}}" wx:key="{{index}}">
+          <view class='select_platform'>
+            <image data-index='{{index}}' bindtap='select' mode='scaleToFill' src='{{item.isSelected?"../../../img/select_active.png":"../../../img/select.png"}}'></image>
+            <text wx:if="{{index<3}}">{{item.name}}</text>
+            <input wx:else value='{{item.name}}' id='name' bindinput='getListPara' data-index="{{index}}" placeholder='其它'></input>
+          </view>
+          <input class='platform_id' id='platform_id' bindinput='getListPara' data-index="{{index}}" value='{{item.platform_id}}' placeholder='平台用户id'></input>
+          <input class='fans' id='fans' type='number' bindinput='getListPara' data-index="{{index}}" placeholder='粉丝量'></input>
+          <picker class="weui-btn" mode="date" value="{{data}}" start="2000-01-01" end="2030-12-31" data-index='{{index}}' bindchange="bindDateChange">
+            <view class='create_time'>{{item.create_time?item.create_time:"创建时间"}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!--  擅长直播类型  -->
+
+    <view class='item_list'>
+      <view class='tips'>擅长直播类型</view>
+      <view class='input'>
+        <input placeholder='必填' id='live_type' bindinput="getInput"></input>
+      </view>
+    </view>
+    <!--上传身份证  -->
+    <view class='item_list'>
+      <view class='tips'>上传身份证</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--  提交个人照片  -->
+    <view class='item_list personal_pic'>
+      <view class='tips'>上传个人照片</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{personal}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage_personal" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage_personal"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='tips color_gray'>*提交个人照片至少5张</view>
+    </view>
+
+    <button class='submit' type='warn' bindtap='submit'>提交审核</button>
+  </view>
+  <!--  提交资料后的东西  -->
+  <view class='item_list bgwhite' wx:else>
+    <view class='item_list_line'>
+      <text>昵称：</text>
+      <text>{{info.name}}</text>
+    </view>
+    <!--  个人简介  -->
+     <view class='item_list_line'>
+      <text>个人简介：</text>
+      <text>{{info.name}}</text>
+    </view>
+     <!--  直播平台资料  -->
+     <view class='item_list_line'>
+      <text>直播平台资料：</text>
+      <text>{{info.platform}} (粉丝：{{info.fans/10000}}W  注册时间：{{info.platform_time}})</text>
+    </view>
+     <!--  擅长直播类  -->
+     <view class='item_list_line'>
+      <text>擅长直播品类：</text>
+      <text>{{info.platform}}</text>
+    </view>
+    <!--  身份证  -->
+    <view class='item_list_line'>
+      <text>身份证：</text>
+      <view class='flex_row id_card'>
+        <image wx:for="{{info.audit_img}}" bindtap="checkImg" id="{{item.img_path}}"  wx:key="{{*this}}"  src='{{item.img_path}}' wx:if='{{item.type == 1}}'></image>
+      </view>
+    </view>
+    <!-- 个人照片 -->
+    <view class='item_list_line'>
+      <text>个人照片：</text>
+      <view class='flex_row id_card'> 
+        <image wx:for="{{info.audit_img}}" bindtap="checkImg" id="{{item.img_path}}" src='{{item.img_path}}' wx:key="{{*this}}" wx:if='{{item.type == 2}}'></image>
+      </view>
+    </view>
+  </view>
+  <!--  审核状态  -->
+  <view class='item_cell' wx:if="{{is_red_net!='null'}}">
+    <text>审核状态:</text>
+    <text wx:if="{{is_red_net == 0}}">审核中</text>
+    <text class='success' wx:if="{{is_red_net == 1}}">审核成功</text>
+    <text class='fail' wx:if="{{is_red_net == 2}}">审核失败</text>
+  </view>
+  <view  class='item_cell last' wx:if="{{is_red_net==2}}">
+    *原因：资料不符合条件,咨询 <text class='orange' bindtap='call'>客服电话：88888888</text>
+  </view>
+</view>

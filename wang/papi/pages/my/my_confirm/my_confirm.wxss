@@ -1,0 +1,4 @@
+@import '../my_fans/my_fans.wxss';
+.gray{
+  color: #a7a7a7;
+}

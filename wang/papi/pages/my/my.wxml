@@ -1,0 +1,161 @@
+<view wx:if="{{isShow}}">
+  <view class='bindPhone' wx:if="{{showBindPhone}}">
+    <view class='phone'>
+      <view class='title'>绑定手机号</view>
+      <view class="phoneFlag">
+        <input class="weui-input" bindinput="getPhone" maxlength="11" placeholder="请输入手机号" />
+        <button class='getcode' bindtap='getCode' type="warn">{{codeText}}</button>
+      </view>
+      <view class="phoneFlag">
+        <input class="weui-input" bindinput="getCofirm" maxlength="6" placeholder="验证码" />
+      </view>
+      <!-- <view class='code_flag'>11</view> -->
+      <view class="btngroup">
+        <view bindtap='cancelBind'>取消</view>
+        <view class='bind_wechat' bindtap='bindwechat'>确定</view>
+      </view>
+    </view>
+  </view>
+  <!--  我的内容  -->
+  <view class='pages_my' wx:else="{{showBindPhone}}">
+    <!--上面部分  -->
+    <view class='top'>
+      <view class='header' data-index='{{info.identity}}'>
+        <image class='header_icon' bindtap='checkInfo' data-index='{{info.identity}}' src='{{info.head_image_url?info.head_image_url:"../../img/default.png"}}' binderror='this.src =="../../img/default.png"' />
+        <!--../../img/header.png-->
+        <image class='header_vip_icon' wx:if="{{info.identity==0}}" src='../../img/identify0.png' />
+        <image class='header_vip_icon' wx:if="{{info.identity==1}}" src='../../img/identify1.png' />
+        <image class='header_vip_icon' wx:if="{{info.identity==2}}" src='../../img/identify2.png' />
+
+      </view>
+      <view class='nickName'>{{info.name}}</view>
+      <!-- 关注 粉丝  -->
+      <view class='flex_row'>
+        <view class='flex_item'>
+          <view>{{info.follow?info.follow:0}}</view>
+          <view>关注</view>
+        </view>
+        <view class='flex_item'>
+          <view>{{info.fans?info.fans:0}}</view>
+          <view>粉丝</view>
+        </view>
+        <view class='flex_item'>
+          <view>{{info.sales_volume?info.sales_volume:0}}</view>
+          <view>销量</view>
+        </view>
+      </view>
+    </view>
+    <!--  中部  -->
+    <view class='center_order flex_row bdb'>
+      <navigator url='all_order/all_order?type=1'>
+        <image mode='aspectFit' src='../../img/remain_pay.png' />
+        <view>待支付</view>
+      </navigator>
+      <navigator url='all_order/all_order?type=3'>
+        <image mode='aspectFit' src='../../img/remain_confirm.png' />
+        <view>待收货</view>
+      </navigator>
+      <navigator url='all_order/all_order?type=4'>
+        <image mode='aspectFit' src='../../img/compelete.png' />
+        <view>已完成</view>
+      </navigator>
+      <navigator url='all_order/all_order?type=0'>
+        <image mode='aspectFit' src='../../img/all_order.png' />
+        <view>全部订单</view>
+      </navigator>
+    </view>
+    <!--  收货地址  -->
+    <view class="weui-cells weui-cells_after-title list">
+      <navigator url="user_address/user_address" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">收货地址</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <!-- 我的收益  -->
+    <view wx:if="{{info.identity == 2}}" class="weui-cells weui-cells_after-title list">
+      <navigator url="my_profit/my_profit" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的收益</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title list">
+      <navigator url="my_confirm/my_confirm" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的关注</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-cells weui-cells_after-title list">
+      <navigator url="my_fans/my_fans" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">关注我的</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <!--  网红代言管理  -->
+    <view class='confirm' wx:if="{{info.identity == 2}}">
+    <!-- "   -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd font28">我的代言</view>
+        </view>
+      </view>
+      <view class='merchant flex_row'>
+        <view>
+          <view class='icon_box'>
+            <image class='marchant_icon' src='../../img/my_net1.png' />
+          </view>
+          <view>我要代言</view>
+          <view class='full' data-index="3" bindtap='toConfircheckInfo'></view>
+        </view>
+        <!--  网红列表  -->
+        <view>
+          <view class='icon_box'>
+            <image class='marchant_icon' src='../../img/my_net.png' />
+          </view>
+          <view>代言管理</view>
+          <view class='full' data-index="4" bindtap='toConfircheckInfo'></view>
+        </view>
+      </view>
+    </view>
+
+    <!--商家认证  -->
+
+    <view class='confirm'>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd font28">认证</view>
+        </view>
+      </view>
+      <view class='merchant flex_row'>
+        <view>
+          <view class='icon_box'>
+            <image wx:if="{{info.identity==0}}" class='marchant_icon' src='../../img/merchant_personal.png' />
+            <image wx:if="{{info.identity==2}}" class='marchant_icon' src='../../img/merchant.png' />
+            <image wx:if="{{info.identity==1}}" class='marchant_icon' src='../../img/merchant_active.png' />
+          </view>
+          <view>商家认证</view>
+          <view class='font24' wx:if="{{info.is_shop==2}}">被驳回</view>
+          <view class='font24' wx:elif="{{info.is_shop==1}}">已认证</view>
+          <view class='font24' wx:elif="{{info.is_shop==0}}">审核中</view>
+          <view class='font24' wx:else>未认证</view>
+
+          <view class='full' data-index="1" data-is_red_net='{{info.is_red_net}}' data-is_shop="{{info.is_shop}}" data-identity="{{info.identity}}" bindtap='toConfircheckInfo'></view>
+        </view>
+        <!--  网红列表  -->
+        <view>
+          <view class='icon_box'>
+            <image wx:if="{{info.identity==0}}" class='marchant_icon' src='../../img/net_red_personal.png' />
+            <image wx:if="{{info.identity==1}}" class='marchant_icon' src='../../img/net_red.png' />
+            <image wx:if="{{info.identity==2}}" class='marchant_icon' src='../../img/net_red_active.png' />
+          </view>
+          <view>网红认证</view>
+          <view class='font24' wx:if="{{info.is_red_net==2}}">被驳回</view>
+          <view class='font24' wx:elif="{{info.is_red_net==1}}">已认证</view>
+          <view class='font24' wx:elif="{{info.is_red_net==0}}">审核中</view>
+          <view class='font24' wx:else>未认证</view>
+          <view class='full' data-index="2" data-is_red_net='{{info.is_red_net}}' data-is_shop="{{info.is_shop}}" data-identity="{{info.identity}}" bindtap='toConfircheckInfo'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

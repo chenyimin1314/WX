@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/represent_manager/represent_manager",
+    "pages/my/my",
+    "pages/my/represent/represent",
+    "pages/my/net_red_info/daiyan/daiyan",
+    "pages/my/net_red_info/net_red_info",
+    "pages/my/net_red_info/edit/edit",
+    "pages/my/my_profit/my_profit",
+    "pages/my/my_profit/apply/apply",
+    "pages/my/all_order/order_detail/order_detail",
+    "pages/my/all_order/all_order",
+    "pages/purchase/purchase",
+    "pages/index/shop_detail/shop_detail",
+    "pages/index/mechant/mechant",
+    "pages/index/confirm_order/confirm_order",
+    "pages/my/user_address/change_user_address/change_user_address",
+    "pages/my/user_address/add_user_address/add_user_address",
+    "pages/my/my_confirm/my_confirm",
+    "pages/my/my_fans/my_fans",
+    "pages/my/user_address/user_address",
+    "my/all_order/all_order",
+    "pages/my/confirm_netred/confirm_netred",
+    "pages/my/confirm_mechant/submit_success/submit_success",
+    "pages/my/confirm_mechant/confirm_mechant",
+    "pages/index/netred/netred",
+    "pages/purchase/confirm_purchase/confirm_purchase",
+    "pages/my/my_profit/apply_record/apply_record",
+    "pages/my/net_red_info/camera/camera"
+  ],
+  "window": {
+    "backgroundTextStyle": "宋体",
+    "navigationBarBackgroundColor": "#ff3b2f",
+    "navigationBarTitleText": "网红买手",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "borderStyle": "white",
+    "selectedColor": "#ff3b2f",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/purchase/purchase",
+        "iconPath": "img/purchase.png",
+        "selectedIconPath": "img/purchase_active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/my_active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

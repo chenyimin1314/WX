@@ -1,0 +1,143 @@
+<view class='isShow' wx:if="{{isShow}}">
+  <view class='top'>
+    <view class='item'>
+      <image mode='scaleToFill' src='../../../img/edit_1.png'></image>
+      <view>绑定手机</view>
+    </view>
+    <view class='item line'>
+      <image mode='scaleToFill' src='{{is_shop == "null"?"../../../img/edit_0.png":"../../../img/edit_1.png"}}'></image>
+      <view>提交资料</view>
+    </view>
+    <view class='item line'>
+      <image wx:if="{{is_shop == 1}}" mode='scaleToFill' src='../../../img/check_success.png'></image>
+       <image wx:elif="{{is_shop == 2}}" mode='scaleToFill' src='../../../img/checkerror.png'></image> 
+        <image wx:else mode='scaleToFill' src='../../../img/edit_0.png'></image>
+      <view wx:if="{{is_shop == 1}}" class='success'>审核成功</view>
+      <view wx:elif="{{is_shop == 2}}" class='fail'>审核失败</view>
+      <view wx:else>审核确认</view>
+    </view>
+  </view>
+  <!-- 网红昵称  -->
+  <view wx:if="{{is_shop == 'null'}}">
+    <view class='item_list'>
+      <view class='tips'>店铺名称</view>
+      <view class='input'>
+        <input placeholder='必填' id='shop_name' bindinput='getInput'></input>
+      </view>
+    </view>
+    <!-- 姓名  -->
+    <view class='item_list'>
+      <view class='tips'>管理员姓名</view>
+      <view class='input'>
+        <input placeholder='必填' id='admin_name' bindinput='getInput'></input>
+      </view>
+    </view>
+    <!-- 手机号  -->
+    <view class='item_list'>
+      <view class='tips'>手机号</view>
+      <view class='input'>
+        <input placeholder='必填' maxlength='11' type='number' id='admin_phone' bindinput='getInput'></input>
+      </view>
+    </view>
+    <!--  个人简介  -->
+    <view class='item_list personal shop'>
+      <view class='tips'>店铺简介</view>
+      <view class='input'>
+        <textarea bindinput='getIntro' maxlength='200' id='shop_describe' placeholder='必填'></textarea>
+        <view>{{length}}/200</view>
+      </view>
+    </view>
+    <!--  选择直播平台  -->
+    <view class='item_list mechant'>
+      <view class='tips'>经营品类</view>
+      <view class='select'>
+        <view class='platform' wx:for="{{list}}" wx:key="{{index}}">
+          <view class='select_platform'>
+            <image data-index='{{index}}' bindtap='select' mode='scaleToFill' src='{{item.isSelected?"../../../img/select_active.png":"../../../img/select.png"}}'></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+   
+    <!--上传身份证  -->
+    <view class='item_list'>
+      <view class='tips'>上传营业执照</view>
+      <view class='content'>
+        <view class="weui-uploader">
+          <!--  图片  -->
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+     <!--  注册地址  -->
+
+    <view class='item_list'>
+      <view class='tips'>注册地址：</view>
+      <view class='input'>
+        <input placeholder='必填' id='address' bindinput="getInput"></input>
+      </view>
+    </view>
+    <button class='submit' type='warn' bindtap='submit'>提交审核</button>
+  </view>
+  <!--  提交资料后的东西  -->
+  <view class='item_list bgwhite' wx:else>
+    <!-- 个人照片 -->
+    <view class='item_list_line'>
+      <text>企业营业执照:</text>
+      <view class='flex_row id_card'> 
+        <image wx:for="{{info.shop_info_img}}" bindtap="checkImg" id="{{item.img_path}}" src='{{item.img_path}}' wx:key="{{*this}}"></image>
+      </view>
+    </view>
+    <view class='item_list_line'>
+      <text>店铺名：</text>
+      <text>{{info.shop_name}}</text>
+    </view>
+    <!--  管理员姓名  -->
+    <view class='item_list_line'>
+      <text>管理员姓名：</text>
+      <text>{{info.admin_name}}</text>
+    </view>
+    <!-- 管理员电话  -->
+    <view class='item_list_line'>
+      <text>管理员电话:</text>
+      <text>{{info.admin_phone}}</text>
+    </view>
+     <!--  店铺介绍 -->
+    <view class='item_list_line'>
+      <text>店铺介绍:</text>
+      <text>{{info.shop_describe}}</text>
+    </view>
+     <!--  直播平台资料  -->
+     <view class='item_list_line'>
+      <text>经营范围：</text>
+      <text>{{info.category}}</text>
+    </view>
+     <!--  擅长直播类  -->
+     <view class='item_list_line'>
+      <text>注册地址：</text>
+      <text>{{info.address}}</text>
+    </view>
+  </view>
+  <!--  审核状态  -->
+  <view class='item_cell' wx:if="{{is_shop!='null'}}">
+    <text>审核状态:</text>
+    <text wx:if="{{is_shop == 0}}">审核中</text>
+    <text class='success' wx:if="{{is_shop == 1}}">审核成功</text>
+    <text class='fail' wx:if="{{is_shop == 2}}">审核失败</text>
+  </view>
+  <view  class='item_cell last' wx:if="{{is_shop==2}}">
+    *原因：资料不符合条件,咨询 <text class='orange' bindtap='call'>客服电话：88888888</text>
+  </view>
+</view>

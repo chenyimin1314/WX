@@ -1,0 +1,5 @@
+/* pages/my/net_red_info/edit/edit.wxss */
+@import '../../confirm_mechant/confirm_mechant.wxss';
+.item_list .content{
+  padding-left: 10rpx;
+}

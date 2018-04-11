@@ -1,0 +1,22 @@
+<scroll-view class='fans_list' scroll-y lower-threshold="50" bindscrolltoupper='toTop' bindscrolltolower="toBottom">
+  <view class='item flex_row' wx:if="{{fans_list.length>0}}" wx:for="{{fans_list}}">
+    <view class='header'>
+    <image class='header_icon' mode='aspectFit' src='{{item.head_image_url?item.head_image_url:"../../../img/default.png"}}'></image>
+    <image class='vip_icon' mode='widthFix' wx:if="{{item.identity==0}}" src='../../../img/identify0.png'></image>
+    <image class='vip_icon' mode='widthFix' wx:if="{{item.identity==1}}" src='../../../img/identify1.png'></image>
+    <image class='vip_icon' mode='widthFix' wx:if="{{item.identity==2}}" src='../../../img/identify2.png'></image>
+    </view>
+    <view class='content'>
+        <view class='name'>{{item.name}}</view>
+        <view class='sign'>{{item.sign}}</view>
+    </view>
+    <view class='confirm'>
+      <image mode='widthFix' src='{{item.is_fans==0?"../../../img/fans.png":"../../../img/fans1.png"}}'></image>
+      <view class="{{item.is_fans==0?'orange':'blue'}}">{{item.is_fans==0?'加关注':'相互关注'}}</view>
+      <view class='full' bindtap='addConfirm' data-user_id="{{item.id}}" data-index="{{index}}" data-is_fans='{{item.is_fans}} '></view>
+    </view>
+  </view>
+  <view class='noData' wx:if="{{fans_list.length==0}}">
+  暂无数据
+  </view>
+</scroll-view>

@@ -1,0 +1,16 @@
+<!-- 相册  -->
+<view class='camera_list'>
+  <view class=''>
+    <view class='camera' wx:for="{{arr}}" wx:if="{{arr.length>0}}">
+      <view class='img_item' wx:for="{{arr[index]}}">
+        <view class='full' bindtap='toDetail' data-shop_id='{{item.shop_id}}' data-product_id='{{item.product_id}}'></view>
+        <image src='{{item.cover}}'></image>
+        <view class='index_sals1'>
+          <image class='sals' mode='widthFix' src='../../../../img/index_sals1.png'></image>
+          <text>{{item.sales_volume?item.sales_volume:0}}件</text>
+        </view>
+      </view>
+    </view>
+    <view class='noData' wx:if="{{arr.length == 0}}">暂无数据</view>
+  </view>
+</view>

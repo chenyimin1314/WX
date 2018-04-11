@@ -1,0 +1,70 @@
+<view class='confirm_order' wx:if="{{isShow}}">
+  <view wx:if="{{!showAddress}}">
+    <view class='info'>
+      <view class='tips'>收货人信息</view>
+      <view class='address' wx:if="{{showAdd}}">
+        <navigator url='../../my/user_address/add_user_address/add_user_address'>添加收货地址</navigator>
+      </view>
+      <view class='chooseAddress'>
+        <view>
+          <text>收货人：{{address.contacts_name}}</text>
+          <text>{{address.phone}}</text>
+        </view>
+        <view>
+          <text>{{address.address}}</text>
+        </view>
+        <view class='full' data-type='0' catchtap='chooseAddress'></view>
+      </view>
+    </view>
+    <!-- 商品详情  -->
+    <view class='scrollView'>
+      <view class='shop_list'>
+        <view wx:for="{{shop}}" class='item'>
+          <view class='title'>{{item.shop_name}}
+            <image mode='widthFix' src='../../../../img/right_arrow.png'></image>
+          </view>
+          <view class='item1' wx:for="{{item.product}}" wx:for-item="item1">
+            <image class='shop_icon' src='{{item1.cover}}'></image>
+            <view class='right'>
+              <view class='top'>
+                <view>{{item1.name}}</view>
+                <view>￥{{item1.price}}</view>
+              </view>
+              <view class='bottom'>
+                <text class='size'>规格:{{item1.condition1}}</text>
+                <text>x{{item1.number}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='submitPrice'>
+            总计：
+            <text>￥{{item.total}}元</text>（含运费{{item.postage?item.postage:0}}元）
+          </view>
+          <view class='operate button-sp-area' wx:if="{{item.state==0}}">
+            <button class="weui-btn default" type="default" bindtap='cancel'  plain="true">取消订单</button>
+            <button class="weui-btn warn" type="default" bindtap='pay' plain="true">立即支付</button>
+          </view>
+          <view class='operate button-sp-area' wx:if="{{item.state==1}}">
+            <button class="weui-btn warn" type="default" plain="true">待发货</button>
+          </view>
+          <view class='operate button-sp-area'  wx:if="{{item.state==2}}">
+            <button class="weui-btn warn" bindtap='confirm' type="default" plain="true">确认收货</button>
+          </view>
+          <view class='operate button-sp-area' wx:if="{{item.state==3}}">
+            <button class="weui-btn default" bindtap='delete' type="default" plain="true">删除订单</button>
+          </view>
+        </view>
+        <view class='orderStatus' wx:if="{{item.state!=0}}">
+          <view class='order_status' wx:if="{{state_info.shop_p_id}}">订单编号：{{state_info.shop_p_id}}</view>
+          <view class='order_status'>支付方式：{{state_info.payStyle?state_info.payStyle:"微信支付"}}</view>
+          <view class='order_status' wx:if="{{state_info.created_at}}">创建时间：{{state_info.created_at}}</view>
+          <view class='order_status' wx:if="{{state_info.pay_at}}">支付时间：{{state_info.pay_at}}</view>
+          <view class='order_status' wx:if="{{state_info.send_at}}">发货时间：{{state_info.send_at}}</view>
+          <view class='order_status' wx:if="{{state_info.company}}">物流公司：{{state_info.company}}</view>
+          <view class='order_status' wx:if="{{state_info.order_number}}">物流编号：{{state_info.order_number}}</view>
+          <view class='order_status' wx:if="{{state_info.Receive_at}}">收货时间：{{state_info.Receive_at}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

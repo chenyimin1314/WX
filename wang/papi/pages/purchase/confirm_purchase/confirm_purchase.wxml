@@ -1,0 +1,73 @@
+<view class='confirm_order' wx:if="{{isShow}}">
+  <view wx:if="{{!showAddress}}">
+    <view class='info'>
+      <view class='tips'>收货人信息</view>
+      <view class='address' wx:if="{{showAdd}}">
+        <navigator url='../../my/user_address/add_user_address/add_user_address'>添加收货地址</navigator>
+      </view>
+      <view class='chooseAddress' wx:if="{{!showAdd}}">
+        <view>
+          <text>收货人：{{address.contacts_name}}</text>
+          <text>{{address.phone}}</text>
+        </view>
+        <view>
+          <text>{{address.address}}</text>
+        </view>
+        <view class='full' data-type='0' catchtap='chooseAddress'></view>
+      </view>
+    </view>
+    <!-- 商品详情  -->
+    <view class='scrollView' style='top:{{showAdd?"200rpx;":"215rpx"}}'>
+      <view class='shop_list'>
+        <view wx:for="{{shop}}" class='item'>
+          <view class='title'>{{item.shop_name}}
+            <image mode='widthFix' src='../../../img/right_arrow.png'></image>
+          </view>
+          <view class='item1' wx:for="{{item.product}}" wx:for-item="item1">
+            <image class='shop_icon' src='{{item1.cover}}'></image>
+            <view class='right'>
+              <view class='top'>
+                <view>{{item1.name}}</view>
+                <view>￥{{item1.price}}</view>
+              </view>
+              <view class='bottom'>
+                <text class='size'>规格:{{item1.condition1}}</text>
+                <text>x{{item1.number}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='postage'>
+            <text>运费：</text>
+            <text>￥{{item.postage?item.postage:0}}</text>
+          </view>
+        </view>
+        <view class='submitPrice'>
+          总计：
+          <text>￥{{sum_price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='pay' bindtap='pay'>去支付</view>
+  </view>
+
+  <!-- 选择地址  -->
+  <view wx:if="{{showAddress}}">
+    <view class='info showAddress'>
+      <view class='tips'>选择收货地址</view>
+      <view class='chooseAddress' wx:for="{{addressList}}" wx:for-item='item' catchtap='chooseAddress'>
+        <view>
+          <text>收货人：{{item.contacts_name}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+        <view>
+          <text>{{item.address}}</text>
+        </view>
+        <view class='full' data-type='0' catchtap='chooseAddress' data-type='1' data-index='{{index}}'></view>
+        <image mode='widthFix' class='select' src='../../../img/select{{item.address_id==address_id?"_active":""}}.png'></image>
+      </view>
+      <view class="back">
+        <button class='weui-btn back' bindtap='back' type='mini' plain='main'>返回</button>
+      </view>
+    </view>
+  </view>
+</view>

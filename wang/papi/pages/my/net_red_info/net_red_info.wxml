@@ -1,0 +1,86 @@
+<view wx:if="{{isShow}}">
+  <!-- 头像部分  -->
+  <view class='top'>
+    <image class='bg' mode='aspectFill' src='{{info.head_image_url?info.head_image_url:"../../../img/default_bg.png"}}'></image>
+    <view class='t_center'>
+      <view>
+        <view class='name'>{{info.name}}</view>
+        <view class='sign'>{{info.sign}}</view>
+      </view>
+      <view wx:if="{{!isMine}}" bindtap='confirm' data-is_fans='{{info.is_fans}}'>
+        <image mode='widthFix' data-is_fans='{{info.is_fan}}' wx:if="{{info.is_fans == 0}}" src='../../../img/confirm.png'></image>
+        <image mode='widthFix' data-is_fans='{{info.is_fan}}' wx:else src='../../../img/my_confirm.png'></image>
+        <view data-is_fans='{{info.is_fan}}'>{{info.is_fans == 0?"关注":"取消关注"}}</view>
+      </view>
+      
+    </view>
+    <view class='flex_row t_bottom'>
+      <view class='flex_row left_icon'>
+        <view class='image'>
+          <image mode='widthFix' src='../../../img/net_info.png'></image>{{info.fans?info.fans:0}}</view>
+        <view class='image'>
+          <image mode='widthFix' src='../../../img/net_per.png'></image>{{info.platform_fans?info.platform_fans:0}}</view>
+        <view class='image'>
+          <image mode='widthFix' src='../../../img/net_info1.png'></image>{{info.sales_volume?info.sales_volume:0}}</view>
+      </view>
+      <view class='right_icon'>
+        <view class='image'>
+          <image mode='widthFix' src='../../../img/share.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  编辑  -->
+  <view class='camera_list edit' wx:if="{{isMine}}" bindtap='edit'>
+    <view class='top_title'>
+      <view class='t_text' >
+        编辑个人资料
+      </view>
+      <image mode='widthFix' class='right_arrow' src='../../../img/right_arrow.png'></image>
+    </view>
+    <view class='list'>
+
+    </view>
+  </view>
+  <!-- 相册  -->
+  <view class='camera_list my_camera'>
+    <view class='full' bindtap='toCarema'></view>
+    <view class='top_title'>
+      <image mode='widthFix' class='t_image' src='../../../img/camera.png'></image>
+      <view class='t_text'>
+        <view class='t_camera'>相册</view>
+        <view class='t_count'>{{info.user_img.length?info.user_img.length:0}}张</view>
+      </view>
+      <image mode='widthFix' class='right_arrow' src='../../../img/right_arrow.png'></image>
+    </view>
+    <view class='camera'>
+      <view class='img_item' wx:for="{{info.user_img}}" wx:if="{{index < 3}}">
+        <image src='{{item.img_path}}'></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 代言商品列表  -->
+  <view class='camera_list daiyan'>
+    <view class='top_title'>
+      <view class='full' bindtap='toDaiyan'></view>
+      <image mode='widthFix' class='t_image' src='../../../img/daiyan.png'></image>
+      <view class='t_text'>
+        <view class='t_camera'>代言商品</view>
+        <view class='t_count'>{{info.user_product.length?info.user_product.length:0}}件</view>
+      </view>
+      <image mode='widthFix' class='right_arrow' src='../../../img/right_arrow.png'></image>
+    </view>
+    <view class='camera shop_list'>
+      <view class='img_item' wx:for="{{info.user_product}}" wx:if="{{index < 5}}">
+        <view class='full' bindtap='toDetail' data-shop_id='{{item.shop_id}}'
+         data-product_id='{{item.product_id}}'></view>
+        <image src='{{item.cover}}'></image>
+        <view class='index_sals1'>
+          <image class='sals' mode='widthFix' src='../../../img/index_sals1.png'></image>
+          <text>{{item.sales_volume?item.sales_volume:0}}件</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

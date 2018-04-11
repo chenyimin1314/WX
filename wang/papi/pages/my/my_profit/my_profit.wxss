@@ -1,0 +1,82 @@
+/* pages/my/my_profit/my_profit.wxss */
+
+.top {
+  display: flex;
+  flex-flow: column wrap;
+  height: 250rpx;
+  background: #ff3b2f;
+  color: #fff;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.top .my_money {
+  font-size: 24rpx;
+}
+
+.top .money {
+  font-size: 80rpx;
+  line-height: 1.2;
+}
+
+.submitBtn {
+  padding: 0 20rpx;
+  border: 1rpx solid #fff;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}
+
+.apply_record {
+  padding: 10rpx;
+}
+
+.right_arrow {
+  width: 13rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.subTop {
+  background: -webkit-linear-gradient(top, RGB(255,60,48), RGB(255,97,87)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(top, RGB(255,60,48), RGB(255,97,87)); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(top, RGB(255,60,48), RGB(255,97,87)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(top, RGB(255,60,48), RGB(255,97,87)); /* 标准的语法 */
+  display: flex;
+}
+.subTop > .s_top{
+  flex: 1;
+  height: 106rpx;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* 列表  */
+.item{
+  background: #fff;
+  margin-bottom: 15rpx;
+  padding: 25rpx;
+  line-height: 1.5
+}
+.list_item{
+  margin-top: 20rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.date{
+  margin-left: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.strong{
+  font-size: 36rpx;
+}
+.noData{
+  text-align: center;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  background: #fff;
+}

@@ -1,0 +1,31 @@
+<view class='content'>
+  <view class='list'>
+    <view class='item' wx:for="{{addressList}}" wx:key="{{index}}">
+      <view class='name'>
+        <text>{{item.contacts_name}}</text>
+        <text>{{item.phone}}</text>
+      </view>
+      <view class='address'>{{item.address}}</view>
+      <view class='bdp flex_row operate'>
+        <view class='setDefault flex_row' bindtap='setDefault' data-index='{{index}}' data-type='{{item.type}}' data-address_id='{{item.address_id}}' >
+          <image  data-index='{{index}}' data-type='{{item.type}}' data-address_id='{{item.address_id}}'  src='{{item.type == 1?"../../../img/select_active.png":"../../../img/select.png"}}' />
+          <text  data-index='{{index}}' data-type='{{item.type}}' data-address_id='{{item.address_id}}' >设为默认</text>
+        </view>
+          <view class="button-sp-area">
+            <button class="weui-btn" bindtap='toEdit' data-address_id='{{item.address_id}}' data-index='{{index}}' type="default" plain="true" size='mini'>编辑</button>
+            <button class="weui-btn" type="default" data-index='{{index}}' bindtap='deleteAddress' data-address_id='{{item.address_id}}' plain="true" size='mini'>删除</button>
+          </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:if="address.length==0">
+      暂无收货地址
+  </view> -->
+  <!--  添加收货地址  -->
+  <view class="weui-cells weui-cells_after-title list">
+    <navigator url="add_user_address/add_user_address" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">添加收货地址</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>

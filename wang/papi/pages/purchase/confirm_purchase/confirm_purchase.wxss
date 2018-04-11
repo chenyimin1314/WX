@@ -1,0 +1,181 @@
+/* pages/index/confirm_order/confirm_order.wxss */
+html,page{
+  overflow:hidden;
+  position: relative;
+  padding: 0;
+}
+.scrollView{
+  position: absolute;
+  width: 100%;
+  top: 225rpx;
+  bottom: 100rpx;
+  border-top: 1rpx solid #ddd;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.pay{
+  position: absolute;
+  background: #ff3b2f;
+  text-align: center;
+  bottom: 0;
+  height: 100rpx;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  line-height: 100rpx;
+}
+.shop_list{
+  width: 100%;
+}
+
+.info {
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.info .tips {
+  color: #999;
+  line-height: 67rpx;
+}
+
+.info>view {
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  margin-top: -1rpx;
+  padding: 0 25rpx;
+}
+
+.address {
+  line-height: 104rpx;
+  font-size: 34rpx;
+  background: #fff;
+}
+
+/* 收货地址  */
+
+.info .chooseAddress {
+  position: relative;
+  padding: 15rpx 25rpx;
+  line-height: 1.5;
+}
+
+.info .chooseAddress text:nth-child(1) {
+  margin-right: 60rpx;
+}
+
+.full {
+  z-index: 20;
+}
+
+.showAddress .chooseAddress {
+  padding: 25rpx 25rpx 25rpx 90rpx;
+}
+
+/* 收货地址  */
+
+.chooseAddress>view {
+  padding-bottom: 10rpx;
+}
+
+.chooseAddress .select {
+  position: absolute;
+  left: 25rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 商品列表  */
+
+.item {
+  padding: 0 25rpx;
+  background: #fff;
+  margin-top: 25rpx;
+  border-bottom: 1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
+  margin-top: -1rpx;
+}
+
+.item .title {
+  height: 80rpx;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.item .title image {
+  width: 10rpx;
+  margin-left: 10rpx;
+}
+
+.item1{
+  display: flex;
+  padding:25rpx 0;
+  align-items: flex-start;
+  background: #fff;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  margin-top: -1rpx;
+}
+
+.item1 .shop_icon {
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+
+.item1 .right {
+  flex: 1;
+}
+
+.item1 .right >view {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solide #ddd;
+}
+
+.item1 .right .top {
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.item1 .right .top>view:nth-child(1) {
+  flex: 1;
+}
+
+.item1 .right .top>view:nth-child(2) {
+  width: 120rpx;
+  text-align: right;
+}
+
+.item1 .right .bottom {
+  font-size: 26rpx;
+  color: #999;
+}
+.postage,.submitPrice{
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  background: #fff;
+}
+.postage text:nth-child(2){
+  color: #999;
+  font-size: 26rpx;
+}
+.submitPrice{
+  padding: 0 25rpx;
+  justify-content: flex-end;
+}
+.submitPrice text:nth-child(1){
+  color: #FF3B2F;
+}
+.back .back{
+  background: #ff3b2f;
+  color: #fff;
+  border:none;
+  margin-top:20px;
+}

@@ -1,0 +1,46 @@
+<view class="weui-cells weui-cells_after-title content">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label font28">收货人</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" id='name' maxlength='20' bindinput='getInput' placeholder="请输入收货人真实姓名" />
+    </view>
+  </view>
+  <!--  -->
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label font28">手机号</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type='number' maxlength='11' id='phone' bindinput='getInput' placeholder="请输入收货人手机号码" />
+    </view>
+  </view>
+  <!--  -->
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label font28">所在地区</view>
+    </view>
+    <view class="weui-cell__bd area" bindtap='translate'>
+      <button class="weui-input">{{address}}</button>
+      <!-- <input class="weui-input" v-model='address' disabled value='{{address}}'  placeholder="所在地区"/> -->
+    </view>
+  </view>
+  <!-- 详细地址  -->
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label font28">详细地址</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" id='detail' maxlength='20' bindinput='getInput' placeholder="详细地址" />
+    </view>
+  </view>
+</view>
+ <!--保存收货地址  -->
+ <view class='add_button'>
+    <button type='warn' bindtap="addAddress">保存</button>
+  </view>
+
+  <!--  选择地址部分  -->
+<import src="../model/model.wxml"/>
+<template is="areaData" data="{{...item}}"/>

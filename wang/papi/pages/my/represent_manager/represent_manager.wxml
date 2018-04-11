@@ -1,0 +1,95 @@
+<view wx:if="{{isShow}}">
+  <scroll-view scroll-x>
+    <view class='swiper-tab'>
+      <view class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" wx:for="{{page_arr}}" data-current="{{index}}" bindtap="swichNav">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item wx:for="{{page_arr}}"  wx:for-index="index">
+      <scroll-view class='scrollview' bindscrolltolower='toLower' scroll-y>
+        <view class='list_box'>
+          <!-- 列表循环  -->
+          <view wx:if="{{item.list.length>0}}" wx:for="{{item.list}}" wx:for-item="a" wx:for-index="key" class='list'>
+            <view class='list_top'>
+              <view class='full' data-index='{{index}}' data-key='{{key}}' bindtap='toDetail'></view>
+              <view class='recmend' wx:if="{{index == 0}}">
+                <image src='../../../img/recmend.png' mode='scaleToFill'></image>
+                <text>{{a.is_recommend==1?"取消推荐":"首页推荐"}}</text>
+                <view class='full' bindtap='recmend' data-index='{{index}}' data-is_recommend='{{a.is_recommend}}' data-key='{{key}}'></view>
+              </view>
+              <image class='cover' mode='scaleToFill' src='{{a.cover}}'></image>
+              <view class='price'>￥{{a.price?a.price:0}}</view>
+              <view class='index_advice'>{{a.price}}</view>
+            </view>
+            <view class='list_center'>
+              <view class='product_name'>{{a.name}}</view>
+              <view class='shop_name'>
+                <text class='color_gray'>{{a.shop_name}}</text>
+                <view class='button_warn' data-index='{{index}}' data-key='{{key}}'  wx:if="{{index == 0}}" bindtap='showDate'>代言卡</view>
+                <view class='button_warn no_border' wx:if="{{index == 2}}">代言结束</view>
+              </view>
+              <view class='shop_name oper' wx:if="{{index == 1}}">
+                <view class='button_defult'  data-index='{{index}}' data-key='{{key}}' bindtap='cancal_daiyan'>拒绝代言</view>
+                <view class='button_warn'  data-index='{{index}}' data-key='{{key}}' bindtap='showDaiyan'>确定代言</view>
+              </view>
+            </view>
+            <view class='sum_rsement color_gray'>{{a.sum_rsement}}人已代言</view>
+            <view wx:if="{{index == 0}}" class='yellow'>到期时间：{{a.end_time}}</view>
+            <view wx:if="{{index == 1 || index == 2}}">
+              <view class='color_gray'>代言时间</view>
+              <view class='color_gray daiyan_time'>
+                {{a.start_time?a.start_time:"无记录"}}至{{a.end_time?a.end_time:"无记录"}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='noData' wx:if="{{item.loaded}}">没有更多数据了</view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 日期弹窗  -->
+  <view class='popover' wx:if="{{show_date}}" bindtap='close' data-index='1'>
+    <view class='content' bindtap='close' data-index='0'>
+      <image class='close' catchtap='close'  data-index='1' src='../../../img/close.png'></image>
+      <view class='card_title'>代言卡</view>
+      <view class='product'>
+        <image mode='scaleToFill' class='cover' src='{{current.cover}}'></image>
+        <view class='right'>
+          <view class='name'>{{current.name}}</view>
+          <view class='r_bottom'>
+            <view class='price'>￥{{current.price?current.price:0}}</view>
+            <view class='info'>
+              <image class='header_icon' mode='scaleToFill' src='{{header_url}}'></image>
+              <text class='user_name'>{{user_name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='qr_code'>
+       <image class='code' bindlongtap='longTap' src='{{codeUrl}}'></image>
+       <view class='longTap'>长按二维码查看商品详情</view>
+      </view>
+    </view>
+  </view>
+  <!-- 确定代言  -->
+  <view class='popover' wx:if="{{show_daiyan}}" bindtap='close' data-index='1'>
+    <view class='content confirm' bindtap='close' data-index='0'>
+      <image class='close' catchtap='close'  data-index='1' src='../../../img/close.png'></image>
+      <view class='card_title'></view>
+      <view class='image'>
+        <image class='con_cover' src='{{current.cover}}'></image>
+      </view>
+      <view class='tip'>您确定要代言此商品吗?</view>
+      <view class='operate'>
+        <view class='blue'  bindtap='close' data-index='1'>取消</view>
+        <view class='blue' bindtap='confirm_second'>确定</view>
+      </view>
+     
+    </view>
+  </view>
+</view>
+
+

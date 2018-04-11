@@ -1,0 +1,180 @@
+/* pages/my/my.wxss */
+.bindPhone{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.15)
+}
+.bindPhone .phone{
+  width: 560rpx;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-60%);
+}
+.weui-cells,.weui-cell {
+  z-index: 0;
+}
+.phoneFlag{
+  display: flex;
+  margin: 0 32rpx;
+  border-bottom:1rpx solid #ddd;
+  height: 90rpx;
+  align-items: center;
+}
+
+.title{
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.phoneFlag input{
+  padding:0 20rpx;
+}
+.btngroup{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  padding-top: 61rpx;
+  position: relative;
+  z-index: 0;
+}
+.btngroup:after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right:0rpx;
+  top: 60rpx;
+  border-bottom: 1rpx solid #ddd;
+  z-index:2;
+}
+.btngroup view{
+  text-align: center;
+  height: 100%;
+  line-height: 90rpx;
+  flex: 1;
+}
+button[type="warn"].getcode {
+  padding:0;
+  white-space: nowrap;
+  width: 200rpx;
+  background: none;
+  color: #999;
+  height: 68rpx;
+}
+button[type="warn"].getcode::after{
+  display: none;
+}
+.btngroup view:nth-child(2){
+  color: #ff3b2f;
+  border-left: 1rpx solid #d9d9d9;
+}
+page {
+  width: 100%;
+  height: 100%;
+}
+/* 页面内容  */
+.pages_my .top{
+  height: 300rpx; 
+  background: -webkit-linear-gradient(right bottom,#ff805d, #ff594f); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right bottom,#ff805d, #ff594f); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right bottom,#ff805d, #ff594f); /* Firefox 3.6 - 15 */
+  background: linear-gradient(right bottom,#ff805d, #ff594f); /* 标准的语法 */
+}
+.pages_my .top .header{
+  width: 120rpx;
+  height: 120rpx;
+  background: #fff;
+  position: relative;
+  padding:2rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.pages_my .top .header .header_icon{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pages_my .top .header .header_vip_icon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/*  昵称  */
+.pages_my .top .nickName{
+  margin: 20rpx 0 40rpx;
+  color: #fff;
+  text-align: center;
+  height: 30rpx;
+}
+/* 关注  */
+.flex_row{
+  color: #fff;
+  justify-content: space-around;
+}
+.flex_row .flex_item{
+  text-align: center;
+}
+.flex_row .flex_item>view:nth-child(2){
+ color: #ffc8c3;
+ font-size: 24rpx;
+}
+/* 中部订单  */
+.center_order{
+  height: 106rpx;
+  overflow: hidden;
+  color: #666;
+  background: #fff;
+  margin-bottom: 15rpx;
+  border: 1px solid #ddd;
+}
+.center_order > navigator{
+  flex:1;
+  text-align: center;
+}
+.center_order > navigator image{
+  margin-top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 列表  */
+.list{
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+}
+
+.merchant > view{
+  width: 50%;
+  flex: 1;
+  background: #fff;
+  color: #666;
+  border-right: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  padding-bottom: 20rpx;
+  position: relative;
+  z-index: 0;  
+}
+.merchant{
+  margin-bottom:20rpx;
+}
+.merchant > view view{
+  text-align: center;
+}
+ .icon_box{
+  width: 50rpx;
+  height: 50rpx;
+  margin:28rpx auto 15rpx;
+}
+ .icon_box image{
+   width: 100%;
+   height: 100%;
+ }

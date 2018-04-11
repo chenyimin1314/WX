@@ -1,0 +1,34 @@
+/* pages/my/my_fans/my_fans.wxss */
+
+.item{
+  margin: 18rpx 24rpx 0;
+  background: #fff;
+  border-radius: 6rpx;
+  padding: 20rpx;
+}
+.content{
+  flex: 1;
+  padding: 15rpx 20rpx;
+}
+.content .name{
+  font-size: 30rpx;
+}
+.content .sign{
+  color: #999;
+}
+.confirm {
+  width: 120rpx;
+  text-align: center;
+  padding-top: 10rpx;
+
+  position: relative;
+}
+.orange{
+  color: #ffac56;
+}
+.blue{
+  color: #68a8ff;
+}
+.confirm image{
+  width: 42rpx;
+}

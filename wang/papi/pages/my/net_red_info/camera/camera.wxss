@@ -1,0 +1,68 @@
+page {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.camera_list {
+  margin: 20rpx 0;
+  background: #fff;
+}
+
+.edit {
+  height: 80rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.edit .top_title {
+  height: 100%;
+}
+
+.top_title {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 100rpx;
+}
+
+.top_title .t_text {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.top_title .t_text view:nth-child(1) {
+  font-size: 32rpx;
+}
+
+.top_title .t_text view:nth-child(2) {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.top_title .t_image {
+  width: 80rpx;
+}
+
+.camera {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 25rpx 25rpx 25rpx;
+}
+
+.camera>view {
+  margin-right: 15rpx;
+   width: 33%;
+  height: 220rpx;
+}
+.camera>view:last-child{
+  margin: 0;
+}
+
+.camera>view image {
+  display: block;
+  width: 220rpx;
+  height: 220rpx;
+}

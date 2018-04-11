@@ -1,0 +1,193 @@
+.top {
+  height: 480rpx;
+  position: relative;
+  padding-top: 290rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.top .bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.flex_row {
+  height: 100rpx;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.t_bottom {
+  width: 100%;
+  padding: 0 25rpx;
+  border-top: 1rpx solid #fff;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.t_center {
+  padding: 0 25rpx;
+  display: flex;
+  height: 90rpx;
+}
+
+.t_center>view:nth-child(1) {
+  flex: 1;
+}
+
+.t_center>view:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+.t_center>view:nth-child(2) image {
+  width: 46rpx;
+  vertical-align: middle;
+}
+
+.t_center .name {
+  font-size: 32rpx;
+}
+
+.t_center .sign {
+  color: #eee;
+}
+
+.image {
+  margin-right: 60rpx;
+}
+
+.left_icon image, .right_icon image {
+  width: 46rpx;
+}
+
+.left_icon image {
+  margin-right: 10rpx;
+}
+
+.right_icon image {
+  width: 68rpx;
+}
+
+.right_icon .image {
+  margin: 0;
+}
+
+/*  相册  */
+
+.camera_list {
+  margin: 20rpx 0;
+  background: #fff;
+}
+
+.edit {
+  height: 80rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.edit .top_title {
+  height: 100%;
+}
+
+.top_title {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 100rpx;
+}
+
+.top_title .t_text {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.top_title .t_text view:nth-child(1) {
+  font-size: 32rpx;
+}
+
+.top_title .t_text view:nth-child(2) {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.top_title .t_image {
+  width: 80rpx;
+}
+
+.camera {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx 25rpx 25rpx;
+}
+
+.camera>view {
+  flex: 1;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.camera>view image {
+  display: block;
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.shop_list {
+  justify-content: flex-start;
+}
+
+.shop_list>view {
+  flex: inherit;
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 15rpx;
+}
+
+.shop_list>view image {
+  display: block;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 10rpx;
+}
+
+.shop_list>view {
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  position: relative;
+}
+.index_sals1{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background:rgba(0,0,0,.6);
+  left: 20%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.shop_list>view .index_sals1 image.sals{
+  width: 30rpx;
+  height: 30rpx;
+}
+/* 相册跳转  */
+.my_camera{
+  position: relative;
+}
+.daiyan .top_title{
+  position: relative;  
+}

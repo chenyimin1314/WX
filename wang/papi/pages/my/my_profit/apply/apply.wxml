@@ -1,0 +1,61 @@
+<view class='profit' wx:if="{{isShow}}">
+  <view class='apply'>
+    <view></view>
+  </view>
+  <view>
+    <view class='h_top'>
+      <view>
+        <image src='{{user_profit.head_image_url}}'></image>
+        <text>{{user_profit.name}}</text>
+      </view>
+      <view>
+        <text>可提现金额（元）：</text>
+        <text class='money'>{{user_profit.money}}</text>
+      </view>
+    </view>
+    <view class='apply_type'>
+      <view class='title'>提现类型</view>
+      <view class='item {{index == (apply_type.length-1)?"":"border"}}' wx:for="{{apply_type}}">
+        <view class='full' bindtap='chooseType' data-index="{{index}}"></view>
+        <view>
+          <image class='type' mode='widthFix' src='../../../../img/{{item.icon}}'></image>
+          <text>{{item.name}}</text>
+        </view>
+        <image class='select' src='{{item.isSelected?"../../../../img/apply_select.png":"../../../../img/apply.png"}}'></image>
+      </view>
+    </view>
+    <view class='account'>
+      <view class='acc_top'>提现账号</view>
+      <view class='acc_account'>
+        <input bindinput='getValue' value='{{account}}'  id='account' />
+      </view>
+    </view>
+    <view class='account'>
+      <view class='acc_top'>提现金额</view>
+      <view class='acc_account'>
+        <input bindinput='getValue' value='{{money}}' type='number' id='money' />
+      </view>
+      <view class='tip'>*金额大于10元才可提现</view>
+    </view>
+  </view>
+  <view class='button'>
+    <button type='warn' bindtap='confirm_first'>立即提现</button>
+  </view>
+
+  <view class='popver' catchtap='close' data-type="1" wx:if="{{showPopver}}">
+    <view class='verify' catchtap='close' data-type="0">
+      <image class='close' catchtap='close' data-type="1" src='../../../../img/close.png'></image>
+      <view class='v_title'>获取验证码</view>
+      <view class='getInput'>
+        <input disabled='true' value='{{phone}}' />
+      </view>
+      <view class='getInput'>
+        <input class='getCode' bindinput='getValue' value='{{code}}'  id='code'  placeholder='请输入验证码' placeholder-class='placeholder' />
+        <button type='warn' size='mini' bindtap='getCode'>{{codeText}}</button>
+      </view>
+      <view class='confirm'>
+        <button type='warn' size='mini' bindtap='confirm_second'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>

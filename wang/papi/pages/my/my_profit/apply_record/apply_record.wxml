@@ -1,0 +1,26 @@
+<view class='profit' wx:if="{{isShow}}">
+  <!--  提现列表  -->
+  <view class='content'>
+    <!-- 列表  -->
+    <scroll-view class='list' scroll-y toLower="toLower">
+      <view class='item' wx:for="{{audit_info}}">
+        <view class='left'>
+         <view>{{item.type==1?"微信钱包":"支付宝"}}</view>
+         <view class='color_gray'>{{item.create_time}}</view>
+        </view>
+        <view class='right'>
+          <view>
+            审核状态：
+            <text wx:if="{{item.state == 0}}">正在审核</text>
+            <text wx:elif="{{item.state == 1}}">审核成功</text>
+            <text wx:else="{{item.state == 2}}">审核失败</text>
+          </view>
+          <view>提现金额：<text class='money'>{{item.paied_money}}</text>元</view>
+        </view>
+      </view>
+      <view class='noData' wx:if="{{loaded}}">没有更多数据了</view>
+      <view class='noData' wx:if="{{(!audit_info) || audit_info.length==0}}">暂无记录</view>
+    </scroll-view>
+  </view>
+  <!--  提现操作  -->
+</view>

@@ -1,0 +1,72 @@
+<view wx:if="{{isShow}}">
+  <!--轮播图  -->
+  <view>
+    <swiper class='swiper' circular="true" current='1' indicator-dots="{{true}}" indicator-color="#fff" indicator-active-color="#ff3b2f" autoplay="true" interval="{{1500}}" duration="{{400}}">
+      <block wx:for="{{banner}}" class="{{item}}" wx:key="*this">
+        <swiper-item class="img_item">
+          <image class='image' bindtap='showVideo' data-link="{{item.link}}" mode='widthFix' src="{{item.banner}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+ <!-- tab切换 -->
+  <scroll-view class='taglist' scroll-x>
+    <view class="swiper-tab">
+      <view wx:for="{{tag_list}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" wx:key='{{*this}}' data-tag_id="{{item.tag_id}}" data-current="{{index}}" bindtap="swichNav">{{item.name}}</view>
+      <!-- <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">钻石</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">翡翠</view> -->
+    </view>
+  </scroll-view>
+  <!--  下面切换  -->
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <!-- 我是哈哈 -->
+    <swiper-item class="swiper-item" wx:for="{{tag_list}}" wx:key="*this">
+      <scroll-view class='scroll-view' scroll-y data-index='{{index}}' bindscrolltolower="toLower" lower-threshold="50">
+        <navigator class='listItem' url='{{item1.identity==1?"mechant/mechant?user_id="+item1.user_id:"netred/netred?user_id="+item1.user_id}}' wx:for="{{indexData[index]}}" wx:for-index="idx" wx:for-item="item1">
+          <view class='top'>
+            <view class='header'>
+              <image class='header_icon' mode='scaleToFill' src='{{item1.head_image_url?item1.head_image_url:"../../img/default.png"}}'></image>
+              <image class='header_vip_icon' mode='widthFix' wx:if="{{item1.identity == 0}}" src='../../img/identify0.png'></image>
+              <image class='header_vip_icon' mode='widthFix' wx:elif="{{item1.identity == 1}}" src='../../img/identify1.png'></image>
+              <image class='header_vip_icon' mode='widthFix' wx:else="{{item1.identity == 2}}" src='../../img/identify2.png'></image>
+            </view>
+            <!--  上部右边内容  -->
+            <view class='name_info'>
+              <view class='n_name_info'>
+                <text class='info_name'>{{item1.name}}</text>
+                <image mode='widthFix' class='message' src='../../img/index_message.png'></image>
+                <text wx:if="{{item1.identity == 1}}" class='yellow'>{{item1.notice?item1.notice:"无通知"}}</text>
+                <text class='yellow' wx:if="{{item1.identity == 2}}">{{item1.sign?item1.sign:""}}</text>
+              </view>
+              <view class='n_name_sals'>
+                <view>
+                  <image mode='widthFix' src='../../img/index_fans.png'></image>
+                  <text>{{item1.fans?item1.fans:0}}个</text>
+                </view>
+                <view>
+                  <image mode='widthFix' src='../../img/index_sals.png'></image>
+                  <text>{{item1.sales_volume?item1.sales_volume:0}}件</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!--  下面图片  -->
+          <view class='imgList'>
+            <image wx:for='{{item1.product_list}}' wx:for-item="item2" wx:if="{{idx < 4}}" wx:for-index='idx' src='{{item2.cover}}' wx:key="{{item2.product_id}}"></image>
+          </view>
+        </navigator>
+        <view class='no_data' wx:if="{{item.success && indexData[index].length > 0 }}">没有更多数据!</view>
+        <view class='noDataIndex' wx:if="{{indexData[index].length == 0}}">
+            <image src='../../img/index_01.png' mode='scaleToFill'></image>
+            <view>暂无数据</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  
+</view>
+<view class='popver' wx:if='{{show_video}}' data-index='1' catchtap='closeVideo'>
+  <view class='p_content' data-index='0' catchtap='closeVideo'>
+    <video src='{{videoUrl}}' autoplay="{{true}}" catchtap='closeVideo' id='myVideo' data-index='0' loop="{{true}}" objectFit="fill" controls ></video>
+  </view>
+</view>

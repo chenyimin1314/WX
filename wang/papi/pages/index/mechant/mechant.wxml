@@ -1,0 +1,126 @@
+<view wx:if="{{isShow}}">
+  <view class='shop_image'>
+    <view class='opacity'>
+      <view class='center'>
+        <image class='header' bindtap='showIntro' src='{{info.head_image_url}}'></image>
+        <view class='right'>
+          <view class='r-top'>
+            <text>店铺号：{{info.shop_id}}</text>
+            <view class='confirm' bindtap='addConfirm' data-is_fans='{{info.is_fans}}'>{{info.is_fans?"取消关注":"关注"}}</view>
+          </view>
+          <view class='r-bottom'>
+            <view class='service'>{{info.notice?info.notice:"暂无通知"}}</view>
+            <view class='fans'>
+              <view>
+                <image class='fans_icon' mode='widthFix' src="../../../img/index_sals1.png"></image>
+                <text>{{info.sales_volume}}件</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='all_order'>
+    <view class='bdr'>
+      <view class='strong'>{{info.product_num}}</view>
+      <view>总商品</view>
+    </view>
+    <view class='bdr'>
+      <view class='strong'>{{info.product_month_num}}</view>
+      <view>新品</view>
+    </view>
+    <view>
+      <view class='strong'>{{info.fans}}</view>
+      <view>粉丝</view>
+    </view>
+  </view>
+  <!--  列表循环  -->
+  <scroll-view class='scrollView' scroll-y lower-threshold='50' bindscrolltolower='toLower'>
+    <view class='item' wx:for="{{info.product_list}}">
+      <view class='header'>
+        <view wx:if="{{item.is_recommend}}" class='is_recommend'>正在推荐</view>
+        <image mode='scaleToFill' src='{{item.cover}}'></image>
+        <!-- <view class='price'>{{item.price}}</view> -->
+      </view>
+      <view class='right_content'>
+        <view class='title'>
+          {{item.name}}
+        </view>
+        <view class='r_bottom'>
+          <view class='item_price'>￥{{item.price}}</view>
+          <view class='submit_btn' bindtap='toPurchase' data-id='{{item.product_id}}'>立即购买</view>
+        </view>
+      </view>
+      <view class='toDetail' bindtap='toDetail' data-id='{{item.product_id}}'></view>
+    </view>
+  </scroll-view>
+</view>
+<view catchtap='close' wx:if='{{isPopver}}' data-index="1" class='{{isPopver?"on":"off"}}'>
+  <view class='purchase' catchtap='close' data-index="0">
+    <!--  头部部分  -->
+    <view class='p_header'>
+      <image class='header_icon' mode='scaleToFill' src='{{current.picture}}'></image>
+      <view class='product_name'>
+        <view class='p_name'>
+          <view>{{current.name}}</view>
+          <view>
+            <text>邮费：{{product.postage}}</text>
+            <text>库存：{{current.num}}</text>
+          </view>
+        </view>
+        <view class='p_bottom'>
+          <view class='p_price'>￥{{current.price}}</view>
+          <swiper wx:if="{{product.product_order && product.product_order.length>0}}" class='swiper' circular='true' vertical="true" autoplay="{{true}}" interval="{{3000}}" duration="{{400}}">
+            <swiper-item class="swiper_item" wx:for="{{product.product_order}}" wx:for-item="item1">
+              <image src="{{item1.head_image_url}}" class="slide_image" />
+              <text class='header-name'>{{item1.name}}</text>
+              <text>已下单</text>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+    </view>
+    <!-- 中部  -->
+    <view class='btn-center'>
+      <view class='c-title'>规格</view>
+      <view class="button-sp-area btnGroup">
+        <button wx:for="{{product.specs}}" wx:for-item="p_item" wx:for-index="product_index" data-index="{{product_index}}" class="weui-btn {{p_item.product_classfy_id == current.product_classfy_id?'active':''}}" size='mini' type="default" catchtap='choose' plain="true">{{p_item.name}}</button>
+      </view>
+    </view>
+    <view class='purchase_car'>
+      <view>购买数量</view>
+      <view class='get_num'>
+        <image mode='widthFix' data-index='0' catchtap='setNum' src='../../../img/reduce.png'></image>
+        <input class='getNum' id='num' bindinput="getNum" value='{{num}}' type='number'></input>
+        <image mode='widthFix' catchtap='setNum' data-index='1' src='../../../img/add.png'></image>
+      </view>
+    </view>
+    <!--  下部  -->
+    <view class='operate_btn'>
+      <view catchtap='addshopping'>加入购物车</view>
+      <view catchtap='confirm'>确定</view>
+    </view>
+  </view>
+</view>
+<!--  公司简介弹窗  -->
+<view class='popver' wx:if="{{intro}}" catchtap='closeIno' data-index='1'>
+  <view class='intro' catchtap='closeIno'>
+    <view class='in_title'>公司简介
+      <image class='close' catchtap='closeIno' data-index='1' mode='scaleFix' src='../../../img/close.png'></image>
+      <image class='left_line' mode='scaleFix' src='../../../img/line.png'></image>
+      <image class='right_line' mode='scaleFix' src='../../../img/line.png'></image>
+    </view>
+    <view class='in_content'>{{info.shop_describe}}</view>
+    <view class='contact'>
+      <view bindtap='call' data-phone='{{info.admin_phone}}'>
+        <image mode='scaleToFill' width='20' height='20' src='../../../img/phone.png'></image>
+        {{info.admin_phone}}
+      </view> 
+      <view>
+        <image mode='scaleToFill' width='20' height='20' src='../../../img/company_address.png'></image>
+        {{info.address}}
+      </view> 
+    </view>
+  </view>
+</view>

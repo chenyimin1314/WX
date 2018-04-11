@@ -1,0 +1,66 @@
+@import '../../../purchase/confirm_purchase/confirm_purchase.wxss';
+.item .title{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  border-top: 1rpx solid #ddd;
+  padding:0 25rpx;
+}
+.scrollView{
+  bottom: 0;
+}
+.item{
+  padding: 0;
+}
+.item1{
+  padding: 25rpx;
+}
+.item1{
+  border-bottom: none;
+}
+.item .title image{
+  width: 14rpx;
+}
+.shop_list{
+  padding: 0;
+}
+.submitPrice{
+  height: 80rpx;
+}
+.submitPrice{
+  border-bottom: 1rpx solid #ddd;
+}
+.operate{
+  display: flex;
+  height: 80rpx;
+  padding: 10rpx 25rpx;
+  justify-content: flex-end;
+  align-items: center;
+  /* box-sizing: border-box; */
+}
+
+.operate button{
+  margin: 0;
+  height: 60rpx;
+  padding: 0 25rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+button[type="default"][plain].default{
+  border-color: #999;
+  color: #999;
+}
+button[type="default"][plain].warn{
+  border-color: #ff3b2f;
+  color: #ff3b2f;
+}
+/*  支付状态哦  */
+.orderStatus{
+  padding: 25rpx 32rpx;
+  line-height: 1.5;
+  color: #999;
+  background: #fff;
+  border-bottom: 1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
+  margin: 20rpx 0 50rpx;
+}
