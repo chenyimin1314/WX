@@ -1,0 +1,32 @@
+.swiper-container{
+	padding: .5rem 0;
+}
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 10.5rem;
+	height: 6.5rem;
+	background-color: #fff;
+	border-radius: .2rem;
+	box-shadow: .5rem .5rem  .5rem  rgba(0,0,0,.05);
+}
+
+.swiper-slide-next {
+	transform: translate3d(50px, 0px, -200px) rotateX(0deg) rotateY(0deg)!important;
+	z-index: 0;
+	transition-duration: 0ms!important;
+}
+.swiper-slide-prev{
+	transform: translate3d(-50px, 0px, -200px) rotateX(0deg) rotateY(0deg)!important;
+	z-index: 0;
+	transition-duration: 0ms!important;
+}
+.swiper-slide-shadow-left,.swiper-slide-shadow-right{
+	display: none;
+}
+.choose{
+	font-size: .65rem;
+	line-height: 1;
+	padding: 1.65rem 0.8rem 3rem;
+	color: #777;
+}

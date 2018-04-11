@@ -1,0 +1,84 @@
+.page{
+    padding-top: 2.2rem;
+}
+.renter-content{
+    padding: 0 .725rem;
+}
+.renter-info{
+    width: 100%;
+    height: 9rem;
+    background-color: #fafefd;
+    border: .025rem solid #d1d1d1;
+    border-radius: .35rem;
+    margin-top: .625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .625rem 1.175rem 0 1.125rem;
+    position: relative;
+}
+
+.renter-info::before,.renter-info::after{
+    content: "";
+    width: .45rem;
+    height: 2.75rem;
+    background-image: url('../../img/login/nail.png');
+    background-size: .45rem 2.75rem;
+    position: absolute;
+    bottom: -1.6rem;
+    z-index: 1;
+}
+.renter-info::before{
+    left: .55rem;
+}
+.renter-info::after{
+    right: .55rem;
+}
+
+.renter-content .input-outter{
+    display: flex;
+    margin-bottom: .925rem;
+}
+
+.renter-content label{
+    width: 3.55rem;
+    font-size: .6rem;
+    line-height: 1.6rem;
+    color: #bcbcbc;    
+}
+
+.renter-content input{
+    height: 1.6rem;
+    margin-bottom: 0;
+    border-radius: 6px;
+}
+
+.renter-verification{
+    width: 100%;
+    height: 11.25rem;
+    background-color: #fafefd;
+    border: .025rem solid #d1d1d1;
+    border-radius: .35rem;
+    margin-top: .625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.275rem;
+}
+.renter-verification input{
+    height: 1.6rem;
+    margin-bottom: 0;
+    border-radius: 6px;
+}
+
+.renter-verification .renter-password{
+    border: 1px solid #000;
+}
+
+.renter-content #register{
+
+    margin: 2rem auto;
+}
+.renter-content .buttons{
+    padding: 0 .6rem;
+}

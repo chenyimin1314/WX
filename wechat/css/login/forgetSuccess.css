@@ -1,0 +1,28 @@
+.success-img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    border: 0.025rem solid #0093d2;
+    margin: 2.875rem auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-img img {
+    display: block;
+    width: 2.4rem;
+    height: 1.625rem;
+}
+
+.success-info {
+    line-height: 0;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1.45rem;
+    color: #666666;
+}
+
+.buttons {
+    padding: 5.15rem 1.375rem;
+}

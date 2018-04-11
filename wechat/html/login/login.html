@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <link rel="stylesheet" href="../../css/common/light7.min.css">
+    <link rel="stylesheet" href="../../css/common/mui.min.css" />
+    <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/login/login.css">
+    <title>登录</title>
+</head>
+<body>
+    <div class="page" id="login_page">
+        <div class="content">
+            <div class="login-bg"></div>
+            <!--登陆-->
+            <div class="form-login"> 
+                <div class="user-name inputBox">
+                	<p class="tip" id="phone_tip">手机号已注册</p>
+                	<span class="login-icon"></span>
+                    <input placeholder="请输入手机号" id="phone" name="phone" maxlength="11"/>
+                </div>
+                <div class="password inputBox">
+                	<p class="tip" id="password_tip">密码格式错误</p>
+                	<span class="login-icon phone"></span>
+                    <!---->
+                     <div class="mui-input-row mui-password">
+                     	<input  placeholder="请输入密码" id="password" class="mui-input-password" name="password"  maxlength="20" type="password"/>
+					</div>
+                </div>
+                <div class="password inputBox">
+                	<p class="tip" id="code_tip">邀请码不能为空</p>
+                	<span class="login-icon invite"></span>
+                    <input placeholder="请输入邀请码" id="code" maxlength="20"  type="text"/> 
+                </div>
+                <div class="ProtocolBox">
+                    <span>登录即代表同意<a href="javascript:;">平台服务协议</a></span>
+                </div>
+                <div class="buttons">
+                    <a id="submit" class="button button-big button-fill button-login">登录</a>
+                </div>
+                <div class="forget_register">
+                    <a href="forget.html">忘记密码？</a>
+                    <a href="javascript:;" class="center_line"></a>
+                    <a href="register.html">立即注册》</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/common/mui.min.js"></script>
+<script src="../../js/common/zepto.min.js"></script>
+<script src="../../js/common/common.js"></script>
+<script src="../../js/login/login.js"></script>
+</html>

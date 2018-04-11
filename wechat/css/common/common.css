@@ -1,0 +1,41 @@
+header h1.title{
+    color: #fff;
+    font-size:.9rem;
+}
+.mui-popup-backdrop{
+	z-index: 9999;
+}
+.bar .button-link{
+    color: #fff;
+}
+.bar .button-link:active{
+    color: #fff;
+}
+.page{
+    display: block;
+    background-color: #e7f5f5;
+}
+.button.button-fill{
+    background-color: #50baf6;
+}
+.tip{
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #f00;
+	line-height: .85rem;
+	padding: 0 .5rem;
+	font-size: .6rem;
+}
+.tip:before{
+	display: inline-block;
+	content: "!";
+	width: .55rem;
+	height: .55rem;
+	color: #fff;
+	background: #f00;
+	line-height: .55rem;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: .2rem;
+}
