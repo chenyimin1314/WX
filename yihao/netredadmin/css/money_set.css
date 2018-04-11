@@ -1,0 +1,33 @@
+.money_manager_detail{
+    height:240px;
+}
+.setValue{
+    display: flex;
+    margin:20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 600px;
+}
+.flex{
+    display: flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border:1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.title{
+    font-size: 16px;
+}
+.form-control{
+    margin:20px 0 20px;
+}
+.btn-group {
+    width: 80%;
+}
+.btn-group .btn{
+    width: 100%;
+}

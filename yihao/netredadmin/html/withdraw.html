@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../common/common.css" />
+		<link rel="stylesheet" href="../css/audit.css" />
+		<link rel="stylesheet" href="../common/page.css" />
+		<link rel="stylesheet" href="../common/jcDate.css" />
+		<link rel="stylesheet" href="../common/xcConfirm.css" />
+		<script type="text/javascript" src="../js/lib/jquery-1.8.3.min.js" ></script>
+		<!--<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>-->
+
+		<script type="text/javascript" src="../js/lib/jquery.page.js" ></script>
+		<script type="text/javascript" src="../js/lib/xcConfirm.js" ></script>
+		<script type="text/javascript" src="../js/lib/jquery.cookie.js" ></script>
+		<title></title>
+	</head>
+	<body>
+	<div class="top_msg">
+		<div class="top_msg_left">
+			<img src="../img/logo.png" alt="">
+		</div>
+		<div class="top_msg_right_box">
+			<div class="top_msg_right">
+				<img class = "user_heard" src="">
+				<span class="user_name"></span>
+				<sapn class="cancel_btn">注销</sapn>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="main_content">
+		<div class="main_content_left">
+			<ul>
+				<!--平台概况-->
+				<li>
+					<img style="width:16px;height:12px;margin-top:-6px;" src="../img/img1_.png">
+					<span>数据总览</span>
+					<div class="blue_line_">
+
+					</div>
+				</li>
+				<!--商铺认证审核-->
+				<!--商铺财务管理-->
+				<li class="user_apply">
+					<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2_.png">
+					<span>用户审核</span>
+					<div class="arrow">
+						<img src="../img/arrow_right.png">
+					</div>
+					<div class="blue_line_"></div>
+				</li>
+				<ul class="user_apply_list my_account">
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>商家审核</span>
+						<div class="blue_line_2"></div>
+					</li>
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>网红审核</span>
+						<div class="blue_line_2"></div>
+					</li>
+				</ul>
+				<!--商铺财务管理-->
+				<li class="money_manager">
+					<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img5_.png">
+					<span>商铺财务管理</span>
+					<div class="arrow">
+						<img src="../img/arrow_right.png">
+					</div>
+
+					<div class="blue_line_">
+
+					</div>
+				</li>
+				<ul class="money_manager_detail my_account">
+					<li class="li_flag bg_color">
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+						<span class="whiteColor">提现审核</span>
+						<div class="blue_line_2_"></div>
+					</li>
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>提现记录</span>
+						<div class="blue_line_2"></div>
+					</li>
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>佣金设置</span>
+						<div class="blue_line_2"></div>
+					</li>
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>财务统计</span>
+						<div class="blue_line_2"></div>
+					</li>
+				</ul>
+				<!--基本设置-->
+				<li class="baseSet">
+					<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img6_.png">
+					<span>基本设置</span>
+					<div class="arrow">
+						<img src="../img/arrow_right.png">
+					</div>
+					<div class="blue_line_">
+
+					</div>
+				</li>
+				<ul class="my_account my_account_3">
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>账号设置</span>
+						<div class="blue_line_2"></div>
+					</li>
+					<li>
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+						<span>商品标签设置</span>
+						<div class="blue_line_2"></div>
+					</li>
+					<li class="li_flag bg_color">
+						<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+						<span class="whiteColor">首页轮播图设置</span>
+						<div class="blue_line_2_"></div>
+					</li>
+				</ul>
+			</ul>
+		</div>
+			<div class="main_content_right">
+				
+				<h1>提现列表</h1>
+				
+				<div class="audit_content">
+					<div class="audit_content_nav">
+						
+						<div class="audit_content_nav_right">
+							
+							
+							
+							<div class="select_condition">
+								<span>审核状态</span>
+								<select class="select_2">
+									<option>未审核</option>
+									<option>已审核</option>
+									<option>被驳回</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="audit_content_list">
+						<div class="audit_content_list_title">
+							<ul>
+								<li>用户ID</li>
+								<li>余额</li>
+								<li>申请提现金额/元</li>
+								<li>提现转账账号</li>
+								<li>提现转账类型</li>								
+								<li>审核时间</li>
+								<li>申请时间</li>
+								<li>审核状态</li>
+								
+							</ul>
+						</div>
+						<div class="audit_content_list_details">
+							
+							<!--<ul>
+								<li>baby</li>
+								<li>商户认证</li>
+								<li>2017-03-05 16:45:12</li>
+								<li>未审核</li>
+								<li class="operation">
+									<a>查看并审核</a>
+									<a class="operation_2">修改</a>
+									<a>删除</a>
+								</li>
+							</ul>
+							<ul>
+								<li>baby</li>
+								<li>商户认证</li>
+								<li>2017-03-05 16:45:12</li>
+								<li>未审核</li>
+								<li class="operation">
+									<a>查看并审核</a>
+									<a class="operation_2">修改</a>
+									<a>删除</a>
+								</li>
+							</ul>
+							<ul>
+								<li>baby</li>
+								<li>商户认证</li>
+								<li>2017-03-05 16:45:12</li>
+								<li>未审核</li>
+								<li class="operation">
+									<a>查看并审核</a>
+									<a class="operation_2">修改</a>
+									<a>删除</a>
+								</li>
+							</ul>-->
+						
+						</div>
+						<div class="page">
+							<div class="tcdPageCode"></div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		<!--<script type="text/javascript" src="../js/jQuery-jcDate.js" ></script>
+		<script type="text/javascript" src="../js/lib/jQuery-jcDate_2.js" ></script>-->
+		<script type="text/javascript" src="../js/lib/jQuery-jcDate.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../js/withdraw.js" ></script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

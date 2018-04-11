@@ -1,0 +1,71 @@
+input, textarea {
+    box-sizing: border-box;
+}
+
+.main_content_left > ul > ul.my_myStores {
+    height: 240px;
+}
+.color9{
+    color: #999;
+}
+#tempImg0{
+    width: 140px;
+    height:140px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.mtop{
+    margin-top:20px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+}
+.notice{
+    width: 560px;
+}
+.form-group > .form-control{
+    margin-right:20px;
+    flex:1;
+}
+.form-group > label{
+    white-space: nowrap;
+    font-weight: 400;
+    width: 100px;
+    text-align: left;
+    padding-right: 20px;
+}
+.main_content_right {
+    margin: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+.shopintro .form-control{
+    margin:0;
+}
+textarea{
+    resize: none;
+}
+.f20{
+    font-size:15px;
+    font-weight: 600;
+}
+.store_box{
+    padding: 20px;
+}
+#save_head{
+    margin-left:20px;
+}
+label{
+    display: block;
+    margin:0;
+}
+#uploadImg{
+    display: none;
+}
+.upload{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+}

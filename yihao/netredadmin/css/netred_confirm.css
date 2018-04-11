@@ -1,0 +1,427 @@
+button.btn:focus {
+	outline: none;
+}
+.user_apply_list{
+	height:120px;
+}
+.main_content_right{
+	overflow-x: auto!important;
+}
+.main_content_right h1 button {
+	float: right;
+	margin: 12px 40px 0 0;
+}
+
+.main_content_right h1 img {
+	padding: 20px 10px 20px 0;
+	margin-top: -3px;
+	cursor: pointer;
+}
+
+.form {
+	padding-top: 18px;
+}
+
+.input-group {
+	width: 233px;
+	margin-left: 40px;
+	vertical-align: middle;
+}
+
+.status {
+	padding-right: 20px;
+}
+
+.status .input-group-btn li a {
+	height: 34px;
+	line-height: 34px;
+}
+
+.status>.form-control {
+	float: right;
+}
+
+.status .dropdown-toggle {
+	width: 18px;
+	height: 34px;
+}
+
+.status .dropdown-toggle .caret {
+	margin-left: -5px;
+}
+
+.status .form-control {
+	width: 142px;
+}
+
+.form label {
+	font-weight: normal;
+}
+
+.form input[readonly=readonly] {
+	background-color: #fff;
+}
+
+.col-lg-3 {
+	margin: 0;
+	width: 290px;
+}
+
+.col-lg-4.right input[readonly=readonly] {
+	width: 75px;
+	padding: 0;
+	padding-left: 10px;
+}
+
+.col-lg-5 {
+	width: 450px;
+}
+
+.form .row .col-lg-4.right {
+	display: flex;
+	flex: 1;
+	height: 34px;
+	align-items: center;
+	flex-flow: row nowrap;
+	padding: 0;
+	justify-content: flex-end;
+}
+
+.col-lg-4.right>span {
+	font-size: 12px;
+	color: #333;
+	padding-right: 12px;
+}
+
+.col-lg-4.right .dropdown-menu {
+	overflow: hidden;
+	text-align: left;
+	min-width: 92px;
+}
+
+.col-lg-4.right .input-group {
+	width: 100px;
+	margin: 0;
+}
+
+.input-group.date {
+	width: 100%;
+	margin-left: 26px;
+}
+
+.input-group.date>* {
+	float: left;
+	line-height: 34px;
+}
+
+.input-group.date label {
+	background: url("../img/date.png") no-repeat #fff;
+	background-position: 90% 45%;
+}
+
+.input-group.date label input {
+	background: none;
+}
+
+.input-group .form-control[readonly=readonly]:focus {
+	outline: none;
+	border-color: #ccc;
+	box-shadow: none;
+}
+
+.input-group.date span:not(.input-group-btn) {
+	padding: 0 7px;
+}
+
+.input-group.date input[type=text] {
+	width: 123px;
+}
+
+.input-group span button {
+	height: 34px;
+	background-color: #f5f5f5;
+}
+
+.form .row {
+	flex-flow: row nowrap;
+	display: flex;
+	margin-right: 0;
+	justify-content: flex-start;
+	padding-right: 40px;
+}
+
+.table-responsive {
+	margin: 16px 32px;
+}
+
+.table-responsive .table {
+	border: 1px solid #ddd;
+}
+
+.table th {
+	height: 50px;
+}
+
+.table th,
+.table td {
+	vertical-align: middle;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+/*详情*/
+
+.table tbody tr td .check {
+	color: #006dff;
+	background: none;
+	border: none;
+}
+
+.table tbody tr td .add_blcak {
+	background: #006DFF;
+	border: none;
+}
+
+.table tbody tr td .btn:focus {
+	outline: none;
+}
+
+.table tbody tr td .btn.drop {
+	color: #f00;
+}
+
+.tcdPageCode {
+	padding: 0 32px;
+}
+
+#check_info {
+	display: block;
+}
+
+#check_info .form-group {
+	display: flex;
+	align-items: center;
+}
+
+#check_info .form-group>label {
+	width: 100px;
+	padding-left: 32px;
+	padding-right:10px;
+	text-align: right;
+	font-size: 14px;
+	box-sizing: content-box;
+}
+#check_info .form-group>input {
+	flex: 1;
+}
+
+#check_info .form-group:not(.title)>label {
+	font-weight: normal;
+}
+
+#check_info input[readonly=readonly] {
+	background: #fff;
+}
+
+#check_info input[readonly=readonly]:focus {
+	box-shadow: none;
+	border-color: #ccc
+}
+
+#check_info input {
+	font-size: 12px;
+}
+
+.check_content {
+	margin-top: 22px;
+	padding-bottom: 20px;
+}
+
+.check_content>div {
+	flex: 1;
+}
+
+.check_content>div .form-group {
+	width:600px;
+}
+
+#check_info div.shop_description {
+	align-items: flex-start;
+	flex-flow:column wrap;
+}
+#shop_description{
+}
+
+.editer {
+	width: 350px;
+	flex: 1;
+	padding: 10px;
+	resize: none;
+	border-color: #ccc;
+	margin-left:-10px;
+	margin-top:-10px;
+}
+
+.editer:focus {
+	outline: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+/*店铺资料*/
+.shop_message .imgbox {
+	padding-left: 54px;
+	margin-bottom:20px;
+}
+
+.shop_message .imgbox label {
+	font-weight: normal;
+}
+
+.imgbox>.img_type {
+	margin: 10px 30px 10px 0;
+	padding-top: 10px;
+	padding-left: 10px;
+	height: 145px;
+	border: 1px solid #ddd;
+	align-items: center;
+	flex-flow: row wrap;
+	overflow-y: auto;
+}
+.img_type label{
+	display: inline-block;
+	width: 120px;
+	height:120px;
+	overflow: hidden;
+	margin-right: 10px;
+}
+.img_type label img{
+	width: 100%;
+	height: 100%;
+}
+.shop_image>img,.id_image>img{
+	width: 120px;
+	height:120px;
+	margin-right:10px;
+	/*margin-top:10px;*/
+}
+.shop_image{
+	margin-right: 20px;
+}
+
+input[type=file] {
+	display: none;
+}
+
+#check_info .manager .form-group>label {
+	padding-left: 50px;
+	padding-right: 3px;
+	width: 162px;
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	/*ie6-8*/
+	text-align-last: justify;
+	/* ie9*/
+	-moz-text-align-last: justify;
+	/*ff*/
+	-webkit-text-align-last: justify;
+	/*chrome 20+*/
+}
+
+.manager .form-group>input {
+	min-width: 200px;
+}
+.id_card_image{
+	display: flex;
+	padding-left: 50px;
+	margin: 30px 0;
+}
+.id_card_image>div>label{
+	display: flex;
+	width: 186px;
+	height: 132px;
+	margin-bottom: 0;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ddd;
+	margin-right: 20px;
+}
+
+.buttons .myButton{
+	margin-right: 24px;
+}
+.buttonGroup{
+	padding:20px 46px;
+	border-top:1px solid #ddd;
+}
+.buttons .change{
+	display: none;
+}
+#shop_description{
+	flex:1;
+}
+.xcConfirm .popBox .ttBox {
+	box-sizing: content-box;
+}
+.shop_image{
+	margin-left:60px;
+}
+#shop_image img{
+	width: 105px;
+	height:150px;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+.imgPopver{
+	display: none;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.2);
+	z-index: 20000000000;
+}
+.form-group label{
+	margin:0;
+}
+.personal_image{
+	max-height: 800px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#id_image,#personal_image{
+	margin:20px 0;
+}
+#id_image img{
+	width: 320px;
+	height:180px;
+	margin-right:20px;
+}
+#personal_image img{
+	width: 180px;
+	height:320px;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+.myimgbox{
+	width: 600px;
+	height:600px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-top:-300px;
+	margin-left:-300px;
+	overflow: hidden;
+	background: #fff;
+}

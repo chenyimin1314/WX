@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<link rel="stylesheet" href="https://cache.amap.com/lbs/static/main.css"/>-->
+		<link rel="stylesheet" href="../common/common.css" />
+		<link rel="stylesheet" href="../common/page.css" />
+		<link rel="stylesheet" href="../common/xcConfirm.css" />
+		<link rel="stylesheet" href="../js/lib/jquery-calendar.css" />
+		<link rel="stylesheet" href="../css/shop_identification.css" />
+		<script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.page.js"></script>
+		<script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=92ddba744c243b98587eeba5f5cbbb20"></script>
+		<script src="../js/wangEditor.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/shop_identification.js"></script>
+		<title>商铺认证</title>
+	</head>
+
+	<body>
+		<div class="top_msg">
+			<div class="top_msg_left">
+				<span>
+					酣途
+				</span>
+				<span>
+					旅游直播
+				</span>
+			</div>
+			<div class="top_msg_right_box">
+				<div class="top_msg_right">
+					<div class="message_tishi">
+						<img src="../img/msg.png">
+						<span class="tishi_number"></span>
+					</div>
+					<img class="user_heard" src="">
+					<span class="user_name"></span>
+					<span class="cancel_btn">注销</span>
+				</div>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="main_content_left">
+				<ul>
+					<li>
+						<img style="width:18px;height:18px;margin-top:-9px;" src="../img/img1_.png">
+						<span>首页</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li>
+						<img style="width:18px;height:14px;margin-top:-7px;" src="../img/img2_.png">
+						<span>我的直播</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li class="myCount">
+						<img style="width:14px;height:16px;margin-top:-8px;" src="../img/img3_.png">
+						<span>我的账户</span>
+						<div class="arrow">
+							<img src="../img/arrow_right.png">
+						</div>
+						<div class="blue_line_"></div>
+					</li>
+					<ul class="my_account">
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>账户概况</span>
+
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>账户流量明细</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>账户存储空间明细</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>账户设置</span>
+							<div class="blue_line_2"></div>
+						</li>
+					</ul>
+					<li>
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+						<span>数据统计</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li>
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img5.png">
+						<span>用户管理</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li class="merchant">
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img6_.png">
+						<span>营销工具</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li class="ticketManage merchant">
+						<img style="width:20px;height:20px;margin-top:-10px;" src="../img/img7_.png">
+						<span>票券管理</span>
+						<div class="arrow">
+							<img src="../img/arrow_right.png">
+						</div>
+						<div class="blue_line_"></div>
+					</li>
+					<ul class="my_Ticket merchant">
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>发布票券</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>票券使用记录</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>兑换券使用审核</span>
+							<div class="blue_line_2"></div>
+						</li>
+					</ul>
+					<li class="merchant">
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img8_.png">
+						<span>旗下主播</span>
+						<div class="blue_line_"></div>
+					</li>
+					<li class="myPrevue">
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img9_.png">
+						<span>我的宣传</span>
+						<div class="arrow">
+							<img src="../img/arrow_right.png">
+						</div>
+						<div class="blue_line_"></div>
+					</li>
+					<ul class="my_myPrevue">
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>图文详情</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>预告视频</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>商家视频</span>
+							<div class="blue_line_2"></div>
+						</li>
+					</ul>
+					<!--我的商铺-->
+					<li class="myStores">
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img10_.png">
+						<span>我的商铺</span>
+						<div class="arrow">
+							<img src="../img/arrow_right.png">
+						</div>
+						<div class="blue_line_"></div>
+					</li>
+					<!--我的商铺详情-->
+					<ul class="my_myStores" style="display: none;">
+						<li class="li_flag bg_color">
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+							<span class="whiteColor">商铺认证</span>
+							<div class="blue_line_2_"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>商铺管理</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>添加商品</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>商品管理</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>销售统计</span>
+							<div class="blue_line_2"></div>
+						</li>
+					</ul>
+					<li style="display: none;">
+						<img style="width:18px;height:14px;margin-top:-7px;" src="../img/img11_.png">
+						<span>订单管理</span>
+						<div class="blue_line_"></div>
+					</li>
+					<!--商家财务管理-->
+					<li class="myMoney" style="display: none;">
+						<img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img12_.png">
+						<span>商铺财务管理</span>
+						<div class="arrow">
+							<img src="../img/arrow_right.png">
+						</div>
+						<div class="blue_line_"></div>
+					</li>
+					<!--商家财务详情-->
+					<ul class="my_myMoney" style="display: none;">
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>收支明细</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>提现申请</span>
+							<div class="blue_line_2"></div>
+						</li>
+						<li>
+							<img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+							<span>提现记录</span>
+							<div class="blue_line_2"></div>
+						</li>
+					</ul>
+				</ul>
+			</div>
+			<!--右边详情-->
+			<div class="main_content_right" id="noConfirm">
+				<div class="no_confirm">您还没有进行店铺认证</div>
+				<div>
+					<span class="start_confirm myButton">开始店铺认证</span>
+				</div>
+			</div>
+			<div class="main_content_right" id="main_content" style="display:none">
+				<h4>认证资料<span id="data_change">修改</span></h4>
+				<div class="form">
+					<!--基本信息-->
+					<div class="baseInfo">
+						<h5><span>*</span>基本信息</h5>
+						<div class="shop_name"><label for="shopname">商铺名称：</label><input type="text" id="shopname" /></div>
+						<div class="shop__address"><label for="shopaddress">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</label><input type="text" readonly="readonly" id="shopaddress" /></div>
+						<div class="shop_intro"><label for="shopintro">商铺介绍：</label>
+							<p class="tips">限制文字在3000字以内,15张图片</p>
+							<div id="shopintro"></div>
+						</div>
+					</div>
+					<!--商铺资料-->
+					<div class="shopdata">
+						<h5><span>*</span>商铺资料</h5>
+						<div class="shop_name"><label for="shop_data">管&nbsp;理&nbsp;员：</label><input type="text" id="shop_data" /></div>
+						<div class="shop__address"><label for="shop_data_phone">联系电话：</label><input type="text" maxlength="11" id="shop_data_phone" /></div>
+						<div id="shop_identify" class="shopImage">
+							<label class="identify_title">商铺认证图片：</label><br />
+							<p class="tips">*最少上传一张图片，最多上传五张图片，请认真上传，图片将显示在我的店铺，限制大小200k，尺寸为宽高相同</p>
+							<div class="flex_box" id="shop_img">
+								<div><label for="shop_identify_image1"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="shop_identify_image1" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_identify_image2"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="shop_identify_image2" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_identify_image3"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="shop_identify_image3" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_identify_image4"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="shop_identify_image4" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_identify_image5"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="shop_identify_image5" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+							</div>
+						</div>
+						<div id="shop_data_idendify" class="shopImage">
+							<label class="identify_title">商铺证件认证（营业执照）：</label><br />
+							<div class="flex_box" id="confirm_img">
+								<div><label for="shop_data1_image1"><img src="../img/add.png" alt="商铺认证图片" /></label><input id="shop_data1_image1" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_data1_image2"><img src="../img/add.png" alt="商铺认证图片" /></label><input id="shop_data1_image2" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="shop_data1_image3"><img src="../img/add.png" alt="商铺认证图片" /></label><input id="shop_data1_image3" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+							</div>
+						</div>
+					</div>
+					<!--商铺管理员-->
+					<div id="name_vertify" class="shop_manager">
+						<h5><span>*</span>商铺管理员</h5>
+						<div class="shop_name"><label for="shop_manager_name">实名认证姓名：</label><input type="text" id="shop_manager_name" /></div>
+						<div class="shop__address"><label for="shop_id_card">实名认证身份证：</label><input type="tel" maxlength="18" maxlength="18" id="shop_id_card" /></div>
+						<div class="shopImage">
+							<label class="identify_title">身份证认证图片：</label><br />
+							<div class="flex_box" id="manager_img">
+								<div><label for="name_vertify_image1"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="name_vertify_image1" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+								<div><label for="name_vertify_image2"><img src="../img/photo.png" alt="商铺认证图片" /></label><input id="name_vertify_image2" type="file" accept="image/jpeg,image/png,image/jpg" /></div>
+							</div>
+						</div>
+						<p class="tips" id="changeTips" style="display: none;">*修改的资料需要审核后才会展示</p>
+					</div>
+					<!--申请认证-->
+					<div class="apply_vertivfy">
+						<button id="submit" data-status="1" class="button">申请认证</button>
+					</div>
+				</div>
+			</div>
+			<div class="main_content_right" id="map" style="display: none">
+				<div id="mapContainer">
+					<div id="tip">
+						<input type="text" id="keyword" name="keyword" value="请输入关键字：(选定后搜索)" onfocus='this.value=""' />
+					</div>
+				</div>
+				<p class="tips" style="padding-left: 0;width: 80%;margin: 0 auto;">*请在地图上点击选择地址后再细微修改,以便于获取定位信息</p>
+				<div class="address">你选的地址是:<input type="text" id="address" /></div>
+				<div class="buttonBtn"><span id="cancel">取消</span><span id="confirm">确定</span></div>
+			</div>
+		</div>
+		<div class="my_popover" style="display: none;">
+			<div class="rotate">
+
+			</div>
+		</div>
+	</body>
+
+</html>

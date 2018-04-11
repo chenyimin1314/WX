@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/common.css"/>
+    <link rel="stylesheet" href="../common/page.css"/>
+    <link rel="stylesheet" href="../common/xcConfirm.css"/>
+    <link rel="stylesheet" href="../css/order.css">
+    <script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+    <title>订单管理</title>
+</head>
+<body>
+
+<div class="top_msg">
+    <div class="top_msg_left">
+        <img src="../img/logo.png" height="48px" alt="一号买手">
+    </div>
+    <div class="top_msg_right_box">
+        <!--我的位置-->
+        <div class="top_msg_right_left">
+            <div class="my_location_flag">
+                我的位置:
+            </div>
+            <ul class="my_location_msg">
+                <li>
+                    <a href="index.html">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    >
+                </li>
+                <li class="position_details">
+                    创建直播间
+                </li>
+            </ul>
+        </div>
+        <div class="top_msg_right">
+            <img class="user_heard" src="">
+            <span class="user_name"></span>
+            <span class="cancel_btn">注销</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="main_content">
+    <div class="main_content_left">
+        <ul>
+            <li class="represent">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img1_.png">
+                <span>代言管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <ul class="my_represent">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>代言商品管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>代言过程管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <!--我的店铺-->
+            <li class="myStores">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2_.png">
+                <span>我的商铺</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--我的店铺详情-->
+            <ul class="my_myStores">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>添加商品</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商品管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>销售统计</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>店铺设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <li  class="li_flag bg_color">
+                <img style="width:18px;height:14px;margin-top:-7px;" src="../img/img3.png">
+                <span class="white_color">订单管理</span>
+                <div class="blue_line"></div>
+            </li>
+            <!--商家财务管理-->
+            <li class="myMoney">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+                <span>商铺财务管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--商家财务详情-->
+            <ul class="my_myMoney">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>收支明细</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现申请</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现记录</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <!--右边详情-->
+    <div class="main_content_right">
+        <div id="content">
+            <!-- Nav tabs -->
+            <!--订单类型(默认待付款：1（待付款） 2（待收货） 3（待消费） 4（已完成） 5（关闭订单）-->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#obligation" data-type="1" role="tab" data-toggle="tab">待付款</a></li>
+                <li><a href="#wait-send" role="tab" data-type="2" data-toggle="tab">待发货</a></li>
+                <li><a href="#has-send" role="tab" data-type="3" data-toggle="tab">已发货</a></li>
+                <!--<li><a href="#refund " role="tab" data-type="4" data-toggle="tab">退款</a></li>-->
+                <li><a href="#success-order" data-type="4" role="tab" data-toggle="tab">成功的订单</a></li>
+                <!--<li><a href="#close" role="tab" data-type="6" data-toggle="tab">关闭的订单</a></li>-->
+                <!--<li><a href="#consumption" role="tab" data-type="7" data-toggle="tab">待消费</a></li>-->
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!--待付款-->
+                <div class="tab-pane active" id="obligation">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table0">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>总价（元）</th>
+                                    <th>数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>创建时间</th>
+                                    <th>说明</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody0">
+                                <tr>
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="create-time">2017-03-05 16:45:12</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager0" class="tcdPageCode"></div>
+                    </div>
+
+                </div>
+                <!--待发货-->
+                <div class="tab-pane" id="wait-send">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table1">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>单价（元）</th>
+                                    <th>总数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>说明</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody1">
+                                <tr>
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                    <!--<td class="operate"><span class="btn confirm">确认发货</span></td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager1" class="tcdPageCode"></div>
+                    </div>
+
+                </div>
+                <!--已发货-->
+                <div class="tab-pane" id="has-send">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table2">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>总价（元）</th>
+                                    <th>数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>说明</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody2">
+                                <tr>
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager2" class="tcdPageCode"></div>
+                    </div>
+                </div>
+                <!--退款中-->
+                <!--成功的订单-->
+                <div class="tab-pane" id="success-order">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table3">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>总价（元）</th>
+                                    <th>数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>说明</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody3">
+                                <!--<tr>-->
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                <!--</tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager4" class="tcdPageCode"></div>
+                    </div>
+                </div>
+                <!--关闭的订单-->
+                <div class="tab-pane" id="close">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table5">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>总价（元）</th>
+                                    <th>数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>说明</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody5">
+                                <tr>
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager5" class="tcdPageCode"></div>
+                    </div>
+                </div>
+                <!--待消费-->
+                <div class="tab-pane" id="consumption">
+                    <div class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control search_keyword" placeholder="搜索订单编号">
+                            <span class="input-group-btn search_button"><button class="btn btn-default"
+                                                                                type="button">查询</button></span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table6">
+                                <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>总价（元）</th>
+                                    <th>数量</th>
+                                    <th>买家</th>
+                                    <th>实付款</th>
+                                    <th>说明</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody6">
+                                <tr>
+                                    <!--<td class="id">20170001</td>-->
+                                    <!--<td class="price">180.00</td>-->
+                                    <!--<td class="count">780</td>-->
+                                    <!--<td class="customer">花在风雨中</td>-->
+                                    <!--<td class="pay-money">38.88</td>-->
+                                    <!--<td class="explain"><span class="btn detail">订单详情</span></td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager6" class="tcdPageCode"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--订单详情-->
+        <div id="detail" style="display:none;">
+            <h1><span id="back"><img src="../img/back.png" alt=""></span>订单详情</h1>
+            <div class="iconArr">
+                <div class="strat">
+                    <div class="title">拍下商品</div>
+                    <img src="../img/icon-active-start.png" width="233" height="40">
+                    <div class="time">2017-07-23 18:23:23</div>
+                </div>
+                <div class="center">
+                    <div class="title">款到账</div>
+                    <img src="../img/icon-active-center.png" width="233" height="40">
+                    <div class="time">2017-07-23 18:23:23</div>
+                </div>
+                <div class="center">
+                    <div class="title">已发货</div>
+                    <img src="../img/icon-active-center.png" width="233" height="40">
+                    <div class="time">2017-07-23 18:23:23</div>
+                </div>
+                <div class="last">
+                    <div class="title">确认收货</div>
+                    <img src="../img/icon-active-end.png">
+                    <div class="time">2017-07-23 18:23:23</div>
+                </div>
+            </div>
+            <div class="order_message">
+                <div><span><img src="../img/detail_order.png">订单编号：</span><span class="order_id"></span></div>
+                <div><span>物流公司：</span><span class="order_company"></span></div>
+                <div><span>物流编码：</span><span class="Logistics_number"></span></div>
+            </div>
+            <div class="order_message">
+                <div><span><img src="../img/detail_contact.png">联系人：</span><span class="order_contact"></span></div>
+                <div><span>联系电话：</span><span class="order_phone"></span></div>
+                <div><span>收货地址：</span><span class="order_address"></span></div>
+            </div>
+            <div class="order_message order_store">
+                <div><span><img src="../img/detail_store.png"><span class="store_name"></span></span></div>
+            </div>
+            <div class="order_detail">
+                <table class="table table-striped table-responsive" style="border:1px solid #ddd">
+                    <thead>
+                        <tr>
+                            <td>商品名称</td>
+                            <td>数量</td>
+                            <td>价格</td>
+                            <td>来源</td>
+                        </tr>
+                    </thead>
+                    <tbody id="detail_body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popver" style="display:none;">
+    <div class="send">
+        <div class="title">确认发货</div>
+        <form class="form-horizontal">
+            <!-- Split button -->
+            <div class="form-group">
+                <label class="control-label">物流公司:</label>
+                <div class="btn-group">
+                    <button type="button" id="companyButton" class="btn btn-default content"></button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" id="company">
+                        <li>顺丰快递</li>
+                        <li>圆通快递</li>
+                        <li>申通快递</li>
+                        <li>中通快递</li>
+                        <li>韵达快递</li>
+                        <li>EMS</li>
+                        <li>其他快递</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group" id="other-company" style="display: none">
+                <label for="inputEmail3" class="control-label">其他公司:</label>
+                <input type="text" class="form-control" id="inputEmail3">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="control-label">物流编号:</label>
+                <input type="text" class="form-control" id="inputPassword3">
+            </div>
+        </form>
+        <div class="sendMsg">
+            <span class="cancel">取消</span>
+            <span class="confirm">确定</span>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/order.js"></script>
+</html>

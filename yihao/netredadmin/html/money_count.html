@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../common/xcConfirm.css"/>
+    <link rel="stylesheet" href="../common/jcDate.css"/>
+    <link rel="stylesheet" href="../common/page.css"/>
+    <link rel="stylesheet" href="../common/common.css"/>
+    <link rel="stylesheet" href="../css/money_confirm.css"/>
+    <script src="../js/lib/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/lib/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/jQuery-jcDate.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+    <title>财务统计</title>
+</head>
+
+<body>
+<div class="top_msg">
+    <div class="top_msg_left">
+        <img src="../img/logo.png" alt="">
+    </div>
+    <div class="top_msg_right_box">
+        <div class="top_msg_right">
+            <img class = "user_heard" src="">
+            <span class="user_name"></span>
+            <sapn class="cancel_btn">注销</sapn>
+        </div>
+    </div>
+
+</div>
+
+<div class="main_content">
+    <div class="main_content_left">
+        <ul>
+            <!--平台概况-->
+            <li>
+                <img style="width:16px;height:12px;margin-top:-6px;" src="../img/img1_.png">
+                <span>数据总览</span>
+                <div class="blue_line_">
+
+                </div>
+            </li>
+            <!--商铺认证审核-->
+            <!--商铺财务管理-->
+            <li class="user_apply">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2_.png">
+                <span>用户审核</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <ul class="user_apply_list my_account">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商家审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>网红审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <!--商铺财务管理-->
+            <li class="money_manager">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img3_.png">
+                <span>商铺财务管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+
+                <div class="blue_line_">
+
+                </div>
+            </li>
+            <ul class="money_manager_detail my_account">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现记录</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>佣金设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li class="li_flag bg_color">
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+                    <span class="whiteColor">财务统计</span>
+                    <div class="blue_line_2_"></div>
+                </li>
+            </ul>
+            <!--基本设置-->
+            <li class="baseSet">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+                <span>基本设置</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_">
+
+                </div>
+            </li>
+            <ul class="my_account my_account_3">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>账号设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商品标签设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li class="li_flag bg_color">
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+                    <span class="whiteColor">首页轮播图设置</span>
+                    <div class="blue_line_2_"></div>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <div class="main_content_right">
+        <div id="content">
+            <h1>财务统计</h1>
+            <div class="form">
+                <div class="row">
+                    <!--商品名搜索-->
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="shop_keyword" placeholder="搜索商铺名称">
+                            <span class="input-group-btn" id="searchKeyword"><button class="btn btn-default"
+                                                                  type="button">查询</button></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table">
+                        <thead>
+                        <tr>
+                            <th>商铺名称</th>
+                            <th>联系人</th>
+                            <th>电话号码</th>
+                            <th>总收入/元</th>
+                            <th>总资产/元</th>
+                            <th>提现金额/元</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <!--<tr>-->
+                            <!--<td class="name">13888880505</td>-->
+                            <!--<td class="contact">韩梅梅</td>-->
+                            <!--<td class="phone">20170001</td>-->
+                            <!--<td class="all_get">2000</td>-->
+                            <!--<td class="all_money">3000</td>-->
+                            <!--<td class="really_money">1900</td>-->
+                            <!--<td><span class="detail btn explain">收入详情</span></td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页-->
+                <div id="pager" class="tcdPageCode"></div>
+            </div>
+        </div>
+        <div id="get-detail" style="display: none">
+            <h1><img id="close" src="../img/back.png" alt="">收入详情</h1>
+            <div class="form">
+                <div class="row">
+                    <!--商品名搜索-->
+                    <div class="col-lg-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="shop_keyword1" placeholder="搜索商品名称">
+                            <span class="input-group-btn" id="searchKeyword1"><button class="btn btn-default"
+                                                                  type="button">查询</button></span>
+                        </div>
+                    </div>
+                    <!--日期搜索-->
+                    <div class="col-lg-4">
+                        <div class="input-group date">
+                            <span>申请时间</span>
+                            <label><input type="text" class="form-control" id="dropdownMenu1"
+                                          readonly="readonly"></label><span>至</span>
+                            <label><input type="text" class="form-control" id="dropdownMenu2"
+                                          readonly="readonly"></label>
+                            <span id="search_date1" class="input-group-btn"><button class="btn btn-default"
+                                                                  type="button">查询</button></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 right">
+                        <div class="input-group status">
+                            <input type="text" readonly="readonly" value="全部" id="chooseListValue1" data-type="-1" placeholder="全部" class="form-control"
+                                   aria-label="Text input with dropdown button">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" id="chooseList1">
+                                    <li><a href="javascript:;" data-type="-1">全部</a></li>
+                                    <li><a href="javascript:;" data-type="1">待发货</a></li>
+                                    <li><a href="javascript:;" data-type="2">已发货</a></li>
+                                    <li><a href="javascript:;" data-type="3">已完成</a></li>
+                                    <li><a href="javascript:;" data-type="4">退款中</a></li>
+                                    <li><a href="javascript:;" data-type="5">已退款</a></li>
+                                    <li><a href="javascript:;" data-type="6">待消费</a></li>
+                                    <li><a href="javascript:;" data-type="7">退款驳回</a></li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                        </div><!-- /input-group -->
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>商品名称</th>
+                            <th>买家昵称</th>
+                            <th>数量</th>
+                            <th>金额（元）</th>
+							<th>邮费（元）</th>
+                            <th>购买时间</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody1">
+                        <tr>
+                            <!--<td class="order_id">20170001</td>
+                            <td class="commodity_name">韩梅梅甜心</td>
+                            <td class="name">韩梅梅</td>
+                            <td class="count">156</td>
+                            <td class="money">52200</td>
+                            <td class="purchase_time">2017-03-05 16:24:34</td>
+                            <td class="status">已成交</td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页-->
+                <div id="pager1" class="tcdPageCode"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/money_count.js"></script>
+</body>
+
+</html>

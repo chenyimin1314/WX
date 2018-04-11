@@ -1,0 +1,524 @@
+*{
+	margin:0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+/*input,textarea{*/
+	/*border:1px solid #ccc;*/
+	/*outline: none;*/
+/*}*/
+/*input:focus,textarea:focus{*/
+	/*border: 1px solid #66afe9!important;*/
+	/*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);*/
+	/*box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);*/
+/*}*/
+/* 滚动条自定义 */
+::-webkit-scrollbar{
+	width: 6px;
+}
+/* 滚动条两端的按钮 */
+::-webkit-scrollbar-button{
+	
+}
+/*  外层轨道 */
+::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,.3);
+    border-radius: 10px;
+}
+/*  内层轨道，滚动条中间部分（除去） */
+::-webkit-scrollbar-track-piece{
+
+}
+/* 滑块 */
+::-webkit-scrollbar-thumb{
+ 	border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,.5);
+}
+/* 边角 */
+::-webkit-scrollbar-corner{
+	
+}
+
+
+::-webkit-resizer{
+	
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+html,body{
+	font-family: "微软雅黑";
+	background: #ebf2f5;
+	width: 100%;
+	height: 100%;
+	min-width: 1200px;
+}
+
+.top_msg{
+	width:100%;
+	height:80px;
+	background: #fff;
+	display: flex;
+}
+.top_msg_left{
+	float: left;
+	height: 80px;
+	background: #FF3B2F;
+	width:240px;
+}
+.top_msg_left>img{
+	margin: 15px 0 0 40px;
+}
+.top_msg_right_box{
+	float: left;
+	flex: 1;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ddd;
+	display: none;
+}
+.top_msg_left>span{
+	height:80px;
+	line-height: 80px;
+	color:#fff;
+	float: left;
+}
+.top_msg_left>span:nth-child(1){
+	font-size: 36px;
+	margin-left: 32px;
+	margin-right: 5px;
+}
+.top_msg_left>span:nth-child(2){
+	font-size: 26px;
+}
+.top_msg_right{
+	float: right;
+}
+.message_tishi{
+	float: left;
+	position: relative;
+	left: 0;
+	top:0;
+	
+}
+.message_tishi>img{
+	width:35px;
+	height:35px;
+	margin-top:22.5px;
+	margin-right: 40px;
+	cursor: pointer;
+}
+.user_heard{
+	float: left;
+	width:50px;
+	height: 50px;
+	border-radius: 50px;
+	margin-top:15px;
+	margin-right: 16px;
+}
+.user_name{
+	font-size: 16px;
+	height: 80px;
+	line-height: 80px;
+	color:#666;
+}
+.cancel_btn{
+	height: 80px;
+	line-height: 80px;
+	color: #4192ff;
+	font-size: 16px;
+	margin-left: 40px;
+	margin-right: 40px;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+.tishi_number{
+	position: absolute;
+	top:26px;
+	left:28px;
+	background: #f26526;
+	display: block;
+	width:16px;
+	height: 16px;
+	border-radius: 16px;
+	font-size: 10px;
+	line-height: 16px;
+	text-align: center;
+	color:#fff;
+	cursor: pointer;
+}
+
+.main_content{
+	width:100%;
+	display: flex;
+	
+}
+.main_content_left{
+	float: left;
+	width:240px;
+	height: 100%;
+	background: #1d242a;
+	overflow: auto;
+}
+.main_content_left>ul>li{
+	height:70px;
+	position: relative;
+	clear: both;
+	cursor: pointer;
+	position: relative;
+}
+.blue_line,.blue_line_{
+	position: absolute;
+	width:4px;
+	height:70px;
+	background:#FF3B2F ;
+	left: 0;
+	top:0;
+}
+.blue_line_{
+	display: none;
+}
+.main_content_left>ul>li.bg_color{
+	background: #262935;
+}
+.arrow{
+	position: absolute;
+	right:22px;
+	top:50%;
+	margin-top:-10px;
+}
+.arrow>img{
+	width:20px;
+	height:20px;
+}
+.main_content_left>ul>li>img{
+	margin-left: 38px;
+	position: relative;
+	top:50%;
+	float: left;
+	
+}
+.main_content_left>ul>li>span{
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	color:#a9aab7;
+	margin-left: 15px;
+	font-size: 16px;
+}
+.main_content_left>ul>li>span.white_color{
+	color:#fff;
+}
+.main_content_left>ul>ul{
+	clear: both;
+	display: block;
+	height:0px;
+	overflow: hidden;
+	transition: height 1s;
+}
+.main_content_left>ul>ul>li{
+	height:60px;
+	width:100%;
+	line-height: 60px;
+	cursor: pointer;
+	position: relative;
+}
+
+.blue_line_2,.blue_line_2_{
+	position: absolute;
+	width:4px;
+	height:60px;
+	background: #FF3B2F;
+	left: 0;
+	top:0;
+}
+.blue_line_2{
+	display: none;
+}
+.my_Ticket>li.bg_color{
+	background: #262935;
+	
+}	
+.my_Ticket>li>img{
+	margin-left: 42px;
+	position: relative;
+	top:50%;
+	float: left;
+	
+}
+.my_represent>li>img,
+.my_myPrevue>li>img,
+.my_myStores>li>img,
+.my_myMoney>li>img{
+	margin-left: 42px;
+	position: relative;
+	top:50%;
+	float: left;
+}
+.my_represent>li>span,
+.my_myPrevue>li>span,
+.my_myStores>li>span,
+.my_myMoney>li>span{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	color:#a9aab7;
+	margin-left: 20px;
+	font-size: 14px;
+}
+.whiteColor{
+	color:#fff!important;
+}
+.my_Ticket>li>span{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	color:#a9aab7;
+	margin-left: 20px;
+	font-size: 14px;
+}
+
+span.whiteColor{
+	color:#fff;
+}
+
+.bg_color{
+	background: #262935;
+	
+}	
+.my_account>li>img{
+	margin-left: 42px;
+	position: relative;
+	top:50%;
+	float: left;
+	
+}
+.my_account>li>span{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	color:#a9aab7;
+	margin-left: 20px;
+	font-size: 14px;
+}
+.my_account>li>span.whiteColor{
+	color:#fff;
+}
+
+.main_content_right{
+	flex: 1;
+	overflow: auto;
+	background-color: #fff;
+	padding-bottom:32px;
+	overflow-x: hidden;
+}
+.top_msg_right_left{
+	float: left;
+	height: 80px;
+	display: block!important;
+	padding-left: 40px;
+}
+.top_msg_right_left>div{
+	display:inline-block;
+	line-height: 80px;
+	font-size: 16px;
+	font-weight: 600;
+}
+.top_msg_right_left>div:nth-child(2){
+	margin: 0 10px;
+	font-family: simsun;
+	font-weight: 600;
+}
+.my_location_flag{
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	font-size: 16px;
+	color: #333;
+	padding-left: 40px;
+	padding-right: 8px;
+}
+.my_location_msg{
+	float: left;
+	height: 80px;
+}
+.my_location_msg>li{
+	float: left;
+	line-height: 80px;
+	font-size: 16px;
+	color: #333;
+}
+.my_location_msg>li:nth-child(2){
+	padding:0 8px;
+}
+.my_location_msg>li:nth-child(3){
+	color: #4192ff;
+}
+.my_location_msg>li>a{
+	color: #333;
+}
+
+.top_msg_right_left{
+	display: none;
+}
+
+/*只有商家才显示*/
+.merchant{
+	display:none;
+}
+
+.my_myPrevue>li:nth-child(3){
+	display: none;
+}
+.main_content_right>h1{
+	height: 56px;
+	line-height: 56px;
+	color: #000;
+	font-size: 16px;
+	padding-left: 42px;
+	border-bottom: 1px solid #ddd;
+	margin:0;
+	font-weight: bold;
+}
+#jcDate{
+	width: 185px!important;
+}
+#jcDate #jcDateBtn{
+	padding-top: 0;
+}
+.main_content_right{
+	margin: 20px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+}
+.form th{
+	font-weight: normal;
+}
+.form td{
+	font-size: 12px;
+}
+.myButton{
+	display: inline-block;
+	width: 140px;
+	height: 50px;
+	line-height: 50px;
+	font-size:12px;
+	text-align: center;
+	color: #fff;
+	background-color: #FF3B2F;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+/*radio样式自定义*/
+.my-label{
+	height: 34px;
+	font-weight: 400;
+	vertical-align: middle;
+}
+.my-label>*{
+	vertical-align: middle;
+}
+.radio {
+	display: none
+}
+.radio_span {
+	height: 18px;
+	width: 18px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	margin-top:-4px;
+	display: inline-block;
+	margin-right: 10px;
+	line-height: 1;
+	position: relative;
+}
+
+.radio:checked + .radio_span:after {
+	height: 8px;
+	width: 8px;
+	background-color: #666;
+	border-radius: 100%;
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.my_popover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.2);
+	z-index: 20000000000000000000;
+}
+.my_popover .rotate{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin: -50px 0 0 -50px;
+	border-right-color: transparent;
+	animation: rotate 1s infinite linear;
+}
+@keyframes rotate{
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+.back{
+	padding: 20px 10px;
+	margin-top: -4px;
+	cursor: pointer;
+}
+.tcdPageCode{
+	padding:0 32px 32px;
+}
+.w-e-text-container img{
+	display: block;
+	width: 100%;
+	margin:.5rem auto;
+}
+.tips{
+	font-size: 12px;
+	color: #f00;
+	padding-top:15px;
+
+}
+.imgPopver{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height:100%;
+	background-color: rgba(0,0,0,.3);
+	display: none;
+}
+.imgPopver> div{
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+}

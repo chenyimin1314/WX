@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../common/common.css"/>
+    <link rel="stylesheet" href="../css/platform.css"/>
+    <link rel="stylesheet" href="../common/xcConfirm.css"/>
+    <script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="../js/lib/echarts.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="top_msg">
+    <div class="top_msg_left">
+        <img src="../img/logo.png" alt="">
+    </div>
+    <div class="top_msg_right_box">
+        <div class="top_msg_right">
+            <img class="user_heard" src="">
+            <span class="user_name"></span>
+            <sapn class="cancel_btn">注销</sapn>
+        </div>
+    </div>
+
+</div>
+
+<div class="main_content">
+    <div class="main_content_left">
+        <ul>
+            <!--平台概况-->
+            <li class="li_flag bg_color">
+                <img style="width:16px;height:12px;margin-top:-6px;" src="../img/img1.png">
+                <span class="white_color">数据总览</span>
+                <div class="blue_line">
+
+                </div>
+            </li>
+            <!--商铺认证审核-->
+            <!--商铺财务管理-->
+            <li class="user_apply">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2.png">
+                <span>用户审核</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <ul class="user_apply_list my_account">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商家审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>网红审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+
+
+            <!--商铺财务管理-->
+            <li class="money_manager">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img3_.png">
+                <span>商铺财务管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+
+                <div class="blue_line_">
+
+                </div>
+            </li>
+            <ul class="money_manager_detail my_account">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现审核</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现记录</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>佣金设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>财务统计</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <!--基本设置-->
+            <li class="baseSet">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+                <span>基本设置</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_">
+
+                </div>
+            </li>
+            <ul class="my_account my_account_3">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>账号设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商品标签设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li class="li_flag bg_color">
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+                    <span class="whiteColor">首页轮播图设置</span>
+                    <div class="blue_line_2_"></div>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <div class="main_content_right">
+        <h1>数据总览</h1>
+        <div class="row">
+            <div class="flex_row color0">
+                <img class="index_img" src="../img/index_01.png">
+                <div class="center">
+                    <div class="i_title">待认证网红</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color1">
+                <img class="index_img" src="../img/index_02.png">
+                <div class="center">
+                    <div class="i_title">待认证商家</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color2">
+                <img class="index_img" src="../img/index_03.png">
+                <div class="center">
+                    <div class="i_title">待提现条数</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color2">
+                <img class="index_img" src="../img/index_04.png">
+                <div class="center">
+                    <div class="i_title">佣金比例</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color0">
+                <img class="index_img" src="../img/index_05.png">
+                <div class="center">
+                    <div class="i_title">网红数量</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color3">
+                <img class="index_img" src="../img/index_06.png">
+                <div class="center">
+                    <div class="i_title">商家数量</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+            <div class="flex_row color4">
+                <img class="index_img" src="../img/index_07.png">
+                <div class="center">
+                    <div class="i_title">资金总额</div>
+                    <div class="num"></div>
+                </div>
+                <img src="../img/right_arrow.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/platform.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

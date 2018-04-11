@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../common/page.css"/>
+    <link rel="stylesheet" href="../common/xcConfirm.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/common.css"/>
+    <link rel="stylesheet" href="../css/add_commodity.css"/>
+    <link rel="stylesheet" href="../css/commodity_mananger.css"/>
+    <link rel="stylesheet" href="../js/lib/jcDate.min.css">
+    <script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script src="../js/lib/jQuery-jcDate.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+    <title>商品管理</title>
+</head>
+
+<body>
+<div class="top_msg">
+    <div class="top_msg_left">
+        <img src="../img/logo.png" height="48px" alt="一号买手">
+    </div>
+    <div class="top_msg_right_box">
+        <!--我的位置-->
+        <div class="top_msg_right_left">
+            <div class="my_location_flag">
+                我的位置:
+            </div>
+            <ul class="my_location_msg">
+                <li>
+                    <a href="index.html">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    >
+                </li>
+                <li class="position_details">
+                    创建直播间
+                </li>
+            </ul>
+        </div>
+        <div class="top_msg_right">
+            <img class="user_heard" src="">
+            <span class="user_name"></span>
+            <span class="cancel_btn">注销</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="main_content">
+    <div class="main_content_left">
+        <ul>
+            <li class="represent">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img1_.png">
+                <span>代言管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <ul class="my_represent">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>代言商品管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>代言过程管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <!--我的店铺-->
+            <li class="myStores">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2_.png">
+                <span>我的商铺</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--我的店铺详情-->
+            <ul class="my_myStores">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>添加商品</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li class="li_flag bg_color">
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+                    <span class="whiteColor">商品管理</span>
+                    <div class="blue_line_2_"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>销售统计</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>店铺设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+
+            </ul>
+            <li>
+                <img style="width:18px;height:14px;margin-top:-7px;" src="../img/img3_.png">
+                <span>订单管理</span>
+                <div class="blue_line_"></div>
+            </li>
+            <!--商家财务管理-->
+            <li class="myMoney">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+                <span>商铺财务管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--商家财务详情-->
+            <ul class="my_myMoney">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>收支明细</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现申请</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现记录</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <!--右边详情-->
+    <div class="main_content_right">
+        <div id="list">
+            <h1>商品管理</h1>
+            <!--表格-->
+            <div class="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="keyword" placeholder="搜索商品名称">
+                    <span class="input-group-btn" id="search"><button class="btn btn-default" type="button">查询</button></span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table">
+                        <thead>
+                        <tr>
+                            <th><span class="hot"></span>商品名称</th>
+                            <th>商品编码</th>
+                            <th>商品类别</th>
+                            <th>单价（元）</th>
+                            <th>库存</th>
+                            <th>总销量</th>
+                            <th>发布时间</th>
+                            <th>状态</th>
+                            <th>推荐</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <!--<tr>-->
+                            <!--<td class="name hot">翡翠</td>-->
+                            <!--<td class="id">20170001</td>-->
+                            <!--<td class="type">翡翠</td>-->
+                            <!--<td class="price">180.00</td>-->
+                            <!--<td class="inventory">780</td>-->
+                            <!--<td class="total">1900</td>-->
+                            <!--<td class="release-time">2017-03-05 16:45:12</td>-->
+                            <!--<td class="on-sale">销售中</td>-->
+                            <!--<td class="recommend">店长推荐</td>-->
+                            <!--<td class="operate">-->
+                                <!--<span class="btn detail">详情</span>-->
+                                <!--<span class="btn edit">编辑</span>-->
+                                <!--<span class="btn drop">下架</span>-->
+                                <!--&lt;!&ndash;<span class="btn putaway">上架</span>&ndash;&gt;-->
+                                <!--<span class="btn delete">删除</span>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页-->
+                <div id="pager" class="tcdPageCode"></div>
+            </div>
+        </div>
+        <div id="edit_detail" style="display: none;">
+            <h1><img src="../img/back.png" class="back"><span>商品详情</span></h1>
+            <div class="form-horizontal">
+                <div class="shop-type form-group">
+                    <label class="col-sm-3">商品分类：</label>
+                    <div class="col-sm-9" id="labels">
+                    </div>
+                </div>
+                <div class="shop-name form-group">
+                    <label for="shop-name" class="col-sm-3 control-label">商品名称：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="shop-name">
+                    </div>
+                </div>
+                <div class="shop-name form-group">
+                    <label for="shop-description" class="col-sm-3 control-label">商品描述：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="shop-description">
+                    </div>
+                </div>
+                <div class="shop-name postage form-group">
+                    <label for="postage" class="col-sm-3 control-label">邮费：</label>
+                    <div class="col-sm-9">
+                        <input type="text" maxlength="4" onkeyup="this.value = this.value.replace(/^[^\d]*$/,'')"
+                               class="form-control" id="postage">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">商品属性：</label>
+                    <div class="col-sm-9">
+                        <table class="table table-bordered" id="shop_table">
+                            <tbody>
+                            <tr>
+                                <td>价格（元）</td>
+                                <td><input id="price" type="text" maxlength="15"/></td>
+                                <td>总库存</td>
+                                <td><input id="count" type="text" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g, ''))"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--日期-->
+                <div class="form-group calendar" style="display: none;">
+                    <label class="col-sm-3 control-label">有效日期：</label>
+                    <div class="col-sm-9">
+                        <label><input class="jcDate date" readonly="readonly" id="dropdownMenu1" type="text"></label> 至
+                        <label><input class="jcDate1 date" readonly="readonly" id="dropdownMenu2" type="text"></label>
+                    </div>
+                </div>
+                <!--其他-->
+                <p class="tips">*点击图片修改商品图片</p>
+                <!--商品图片-->
+                <div class="form-group imgupload">
+                    <label>商品图片：</label>
+                    <div>
+                        <div class="imgBox">
+                            <div id="imgBox"></div>
+                            <br>
+                            <!--<label class="btn btn-default" style="display: none" type="button">上传图片 <input id="uploadDetail" type="file"></label>-->
+                        </div>
+                    </div>
+                </div>
+                <!--背景色#f8f8f8-->
+                <div class="bgf8">
+                    <!--商品分类-->
+                    <div class="form-group" id="commodity" style="display: none">
+                        <label class="col-sm-3 control-label">商品分类：</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="shoptypename" class="form-control">
+                            <div class="img-box"></div>
+                            <div class="upload-add">
+                                <label class="btn btn-default" type="button">上传图片 <input id="upload-shop-image"
+                                                                                         type="file"></label>
+                                <button class="btn btn-default add-commodity" id="add-commodity" type="button">添加
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--销售规格-->
+                    <div class="form-group" id="sale-size">
+                        <label class="col-sm-3 control-label">销售规格：</label>
+                        <div class="col-sm-9">
+                            <table class="table table-bordered shop_table_1" id="shop_table">
+                                <tbody>
+                                <tr class="first">
+                                    <td>分类名称</td>
+                                    <td>价格（元）</td>
+                                    <td>库存</td>
+                                    <td>分类图片</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--商品详情-->
+                <div class="form-group shop-detail">
+                    <label class="col-sm-3 control-label">商品详情：</label>
+                    <div class="col-sm-9">
+                        <p class="tips" style="padding: 0">*双击删除当前图片</p>
+                        <div id="editDetail"></div>
+                        <label class="btn btn-default uploadDetailImg">上传图文详情照片<input id="uploadDetailImg" type="file"
+                                                                                      class="file"/></label>
+                    </div>
+                </div>
+                <!--分割线-->
+                <hr style="border-color: #ddd">
+                <div class="send">
+                    <button id="send" class="btn btn-danger">修改</button>
+                </div>
+            </div>
+        </div>
+        <div id="netList" style="display: none">
+            <h1><img src="../img/back.png" class="back"><span>代言商品</span></h1>
+            <div class="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="netName" placeholder="搜索网红昵称">
+                    <span class="input-group-btn" id="netSearch"><button class="btn btn-default" type="button">查询</button></span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                        <tr>
+                            <th>头像</th>
+                            <th>昵称</th>
+                            <th>粉丝量</th>
+                            <th>直播平台</th>
+                            <th>销售额(元)</th>
+                            <th>创建时间</th>
+                            <th>代言产品数</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody1">
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页-->
+                <div id="pager1" class="tcdPageCode"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popover_net">
+    <div class="popover_box">
+        <div class="pre_date">代言周期设置</div>
+        <div class="start_date">
+            <span>开始日期：</span>
+            <label><input type="text" placeholder="选择开始日期" class="form-control" id="start_date" readonly="readonly"></label>
+        </div>
+        <div class="end_date">
+            <span>结束日期：</span>
+            <label><input type="text" placeholder="选择结束日期" class="form-control" id="end_date" readonly="readonly"></label>
+        </div>
+        <div style="text-align: center"><button class="btn btn-danger" id="present" style="width:200px;">确定</button></div>
+    </div>
+</div>
+<div class="my_popover" style="display: none;">
+    <div class="rotate">
+
+    </div>
+</div>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../js/commodity_mananger.js"></script>
+</body>
+
+</html>

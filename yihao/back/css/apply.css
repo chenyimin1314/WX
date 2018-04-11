@@ -1,0 +1,73 @@
+.main_content_left > ul > ul.my_myMoney {
+    height: 180px;
+}
+
+.stroe {
+    padding: 22px 40px 40px 47px;
+    overflow: hidden;
+}
+
+.stroe > div {
+    float: left;
+}
+
+.stroe .s-left {
+    border: 1px solid #ddd;
+    width: 424px;
+    height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.s-left .title {
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.s-left img {
+    margin-right: 10px;
+}
+
+.s-left .amount-money {
+    font-size: 23px;
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+.stroe .s-right {
+    padding-left: 25px;
+    padding-top: 100px;
+    font-size: 13px;
+    color: #999;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    font-weight: normal;
+    margin: 0;
+    margin-right: 5px;
+    padding-left: 50px;
+}
+
+.form-group input {
+    width: 346px;
+}
+.radio-group{
+    margin-top:30px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.radio-group label:first-child{
+    margin-right:114px;
+}
+.myButton{
+    margin:45px 0 0 45px;
+}

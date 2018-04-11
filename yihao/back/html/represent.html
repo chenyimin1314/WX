@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../common/page.css"/>
+    <link rel="stylesheet" href="../js/lib/honeySwitch.css"/>
+    <link rel="stylesheet" href="../common/xcConfirm.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/common.css"/>
+    <link rel="stylesheet" href="../css/represent.css"/>
+    <script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../js/lib/xcConfirm.js"></script>
+    <title>首页</title>
+</head>
+<body>
+<div class="top_msg">
+    <div class="top_msg_left">
+        <img src="../img/logo.png" height="48px" alt="一号买手">
+    </div>
+    <div class="top_msg_right_box">
+        <!--我的位置-->
+        <div class="top_msg_right_left">
+            <div class="my_location_flag">
+                我的位置:
+            </div>
+            <ul class="my_location_msg">
+                <li>
+                    <a href="index.html">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    >
+                </li>
+                <li class="position_details">
+                    创建直播间
+                </li>
+            </ul>
+        </div>
+        <div class="top_msg_right">
+            <img class="user_heard" src="">
+            <span class="user_name"></span>
+            <span class="cancel_btn">注销</span>
+        </div>
+    </div>
+</div>
+<div class="main_content">
+    <div class="main_content_left">
+        <ul>
+            <li class="represent">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img1_.png">
+                <span>代言管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <ul class="my_represent">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>代言商品管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li class="li_flag bg_color">
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot_.png">
+                    <span class="whiteColor">代言过程管理</span>
+                    <div class="blue_line_2_"></div>
+                </li>
+            </ul>
+
+            <!--我的店铺-->
+            <li class="myStores">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img2_.png">
+                <span>我的商铺</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--我的店铺详情-->
+            <ul class="my_myStores">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>添加商品</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>商品管理</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>销售统计</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>店铺设置</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+            <li>
+                <img style="width:18px;height:14px;margin-top:-7px;" src="../img/img3_.png">
+                <span>订单管理</span>
+                <div class="blue_line_"></div>
+            </li>
+            <!--商家财务管理-->
+            <li class="myMoney">
+                <img style="width:17px;height:17px;margin-top:-8.5px;" src="../img/img4_.png">
+                <span>商铺财务管理</span>
+                <div class="arrow">
+                    <img src="../img/arrow_right.png">
+                </div>
+                <div class="blue_line_"></div>
+            </li>
+            <!--商家财务详情-->
+            <ul class="my_myMoney">
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>收支明细</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现申请</span>
+                    <div class="blue_line_2"></div>
+                </li>
+                <li>
+                    <img style="width:6px;height:6px;margin-top:-3px;" src="../img/dot.png">
+                    <span>提现记录</span>
+                    <div class="blue_line_2"></div>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <!--右边网红列表-->
+    <div class="main_content_right">
+        <div class="content" id="content">
+            <!--点击按钮-->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#obligation" data-type="0" role="tab" data-toggle="tab">待签约</a></li>
+                <li><a href="#wait-send" role="tab" data-type="1" data-toggle="tab">签约中</a></li>
+                <li><a href="#has-send" role="tab" data-type="2" data-toggle="tab">已结束</a></li>
+                <li><a href="#cancel" role="tab" data-type="3" data-toggle="tab">已关闭</a></li>
+            </ul>
+            <!--锚点内容-->
+            <div class="tab-content">
+                <div class="tab-pane active" id="obligation">
+                    <div class="form">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table0">
+                                <thead>
+                                <tr>
+                                    <th>网红昵称</th>
+                                    <th>注册日期</th>
+                                    <th>合作期限</th>
+                                    <th>代言商品</th>
+                                    <th>代言商品编号</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody0">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager1" class="tcdPageCode"></div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="wait-send">
+                    <div class="form">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table1">
+                                <thead>
+                                <tr>
+                                    <th>网红昵称</th>
+                                    <th>注册日期</th>
+                                    <th>合作期限</th>
+                                    <th>代言商品</th>
+                                    <th>代言商品编号</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody1">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager0" class="tcdPageCode"></div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="has-send">
+                    <div class="form">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table2">
+                                <thead>
+                                <tr>
+                                    <th>网红昵称</th>
+                                    <th>注册日期</th>
+                                    <th>合作期限</th>
+                                    <th>签约商品</th>
+                                    <th>签约商品编号</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody2">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager2" class="tcdPageCode"></div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="cancel">
+                    <div class="form">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table3">
+                                <thead>
+                                <tr>
+                                    <th>网红昵称</th>
+                                    <th>注册日期</th>
+                                    <th>合作期限</th>
+                                    <th>签约商品</th>
+                                    <th>签约商品编号</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody3">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页-->
+                        <div id="pager3" class="tcdPageCode"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="content" id="detail" style="display: none">
+            <h1><span id="back"><img src="../img/back.png" alt=""></span>网红详情</h1>
+            <div class="check_content">
+                <div class="base_message">
+                    <div class="form-group title"><label style="margin-left: -5px;"><font
+                            color="#f00">*</font>网红个人信息</label></div>
+                    <div class="form-group">
+                        <label for="shop_name1">网红昵称:</label>
+                        <input type="text" id="shop_name1"  readonly="readonly" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile">个人简介:</label>
+                        <input type="text" class="form-control" id="profile" readonly="readonly"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="platform_info">直播平台资料:</label>
+                        <div>
+                            <span id="platform"></span>
+                            (粉丝：<span id="fans"></span>&nbsp;&nbsp;注册时间：<span id="register_time"></span>)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="platform_id">平台用户ID：</label>
+                        <input type="text" class="form-control" id="platform_id" readonly="readonly"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="live_type">擅长直播品类：</label>
+                        <input type="text" class="form-control" id="live_type" readonly="readonly"/>
+                    </div>
+                    <!--个人图片-->
+                    <div class="shop_image">
+                        <div class="confirm_image">网红个人照片</div>
+                        <div id="personal_image"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看图片的弹窗-->
+<div class="imgPopver">
+    <div class="myimgbox">
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/represent.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+.main_content_left>ul> .my_represent{
+    height:120px;
+}
+.nav li{
+    height: 56px;
+    /*margin-right: 30px;*/
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border: none;
+    background-color: #eee;
+    font-weight: bold;
+}
+.nav-tabs>li>a:hover{
+    /*font-weight: bold;*/
+}
+
+.nav-tabs>li{
+}
+.nav li a{
+    border:none;
+    margin:0;
+    padding:0 55px;
+    line-height: 56px;
+    color: #000;
+}
+.nav li.active a{
+    border: none;
+    margin:0;
+}
+
+button.btn:focus{
+    outline: none;
+}
+h1{
+    font-size: 16px;
+    line-height: 56px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    padding: 0;
+    padding-left: 40px;
+    margin:0;
+}
+.form{
+    padding-top: 18px;
+}
+.input-group{
+    width: 233px;
+    margin-left:40px;
+    vertical-align: middle;
+}
+.input-group span button{
+    height: 34px;
+    background-color: #f5f5f5;
+}
+.table-responsive{
+    margin:16px 32px;
+}
+.table-responsive .table{
+    border: 1px solid #ddd;
+}
+.table th{
+    height: 50px;
+}
+.table th,.table td{
+    vertical-align: middle;
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+    vertical-align: middle;
+    text-align: center;
+}
+/*详情*/
+.table tbody tr td .btn{
+    /*color: #006dff;*/
+}
+.refuse{
+    margin:0 10px;
+}
+
+.check_content {
+    margin-top: 22px;
+    padding-bottom: 20px;
+    margin-left:40px;
+}
+
+.check_content>div {
+    flex: 1;
+}
+#detail h1{
+    padding:0 20px;
+}
+#personal_image{
+    padding: 20px;
+}
+#personal_image img{
+    margin-right: 20px;
+    margin-bottom:20px;
+    width: 180px;
+    height:320px;
+}
+.form-control[readonly='readonly']{
+    background-color: #fff;
+}
+.check_content>div .form-group {
+    width:600px;
+}
+
+#check_info div.shop_description {
+    align-items: flex-start;
+    flex-flow:column wrap;
+}
+
+.table tbody tr td .btn.drop{
+    color: #f00;
+}
+.table .name.hot{
+    background: url("../img/hot.png") no-repeat left top;
+}
+.table tbody tr td .btn.confirm{
+    padding: 5px 10px;
+    background-color: #3396fd;
+    color: #fff;
+}
+.tcdPageCode{
+    padding:0 32px;
+}
+/*弹窗*/
+.popver{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.2);
+    z-index: 20;
+}
+.popver .send{
+    width: 540px;
+    height: 385px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    padding: 31px 122px 42px;
+    text-align: center;
+}
+.popver .send .title{
+    font: bold 16px/1 "微软雅黑";
+    margin-bottom: 44px;
+}
+.popver .send .form-group{
+    height: 34px;
+    display: flex;
+}
+.popver .send .form-group label{
+    width: 89px;
+    padding: 0;
+    line-height: 34px;
+    padding-right: 10px;
+}
+.popver .send .btn-group{
+    width: 100%;
+}
+.popver .send .btn-group .content{
+    width: 228px;
+    height: 33px;
+}
+.popver .send .btn-group ul{
+    width: 255px;
+}
+.popver .send .btn-group ul li{
+    padding: 0 10px;
+    line-height: 34px;
+}
+.sendMsg{
+    margin:53px -15px 0;
+}
+.sendMsg span{
+    display: inline-block;
+    width: 140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    color: #fff;
+}
+.sendMsg span:first-child{
+    background-color: #f75b5f;
+    float: left;
+}
+.sendMsg span:last-child{
+    background-color: #00c39c;
+    float: right;
+}
+#companyButton{
+    text-align: left;
+}
+.iconArr{
+    padding: 41px 0 70px 0;
+    overflow: hidden;
+    border-bottom:1px solid #ddd;
+}
+.iconArr>div{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    width: 233px;
+}
+.order_message:not(.order_store){
+    border-bottom:1px solid #ddd;
+}
+.order_message{
+    padding-top: 20px;
+}
+.order_detail{
+    margin-left: 70px;
+    width: 420px;
+}
+.order_detail td{
+    height: 50px;
+}
+.iconArr>div>img{
+    margin: 20px 0 26px;
+    margin-left: 100px;
+}
+.iconArr .last img{
+    margin-left:68px;
+}
+.iconArr>div .title{
+    font-size: 16px;
+    color: #269a36;
+}
+.iconArr>div .time{
+    font-size: 12px;
+    color: #a1a1a1;
+}
+.order_message>div{
+    padding-left: 68px;
+    padding-bottom: 24px;
+}
+.order_message>div>span{
+    display: inline-block;
+}
+.order_message>div>span:first-child{
+    width: 70px;
+    position: relative;
+}
+.order_store>div>span:first-child{
+    width:auto;
+}
+.order_message>div>span:first-child>img{
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translate(-140%,-50%);
+}
+
+/*返回按钮*/
+#back{
+    padding: 18px 10px 20px 20px;
+    cursor: pointer;
+}
+#back img{
+    transform: translateY(-1px);
+}
+.tab-pane td{
+    height:50px;
+}
+#table3 .btn.danger,#table6 .btn.danger{
+    background: #f00;
+    color: #fff;
+    height: 32px;
+    margin-right: 8px;
+}
+.droplist{
+    padding-right: 40px;
+}
+.droplist>select{
+    text-align: center;
+    margin-top: 20px;
+    width: 160px;
+    float: right;
+}
+.droplist>select>option{
+    height:50px;
+    line-height: 50px;
+}
+#card .form{
+    padding-top: 0;
+}
+#companyButton{
+    height:34px;
+}

@@ -1,0 +1,201 @@
+.login_page {
+    width: 100%
+}
+
+.login_heard {
+    height: 100px;
+    background: #fff
+}
+
+.login_heard > img {
+    float: left;
+    height: 48px;
+    margin-left: 20%;
+    position: relative;
+    top: 50%;
+    margin-top: -24px
+}
+
+.login_heard span {
+    float: left;
+    font-size: 18px;
+    height: 100px;
+    line-height: 100px;
+    font-weight: 700
+}
+
+.login_heard span:nth-of-type(1) {
+    margin-left: 10px;
+    margin-right: 60px;
+    color: #D7443C
+}
+
+.login_heard span:nth-of-type(2) {
+    color: #000
+}
+
+.login_content {
+    width: 100%;
+    height: 500px;
+    background: url(../login/img/bg.png) no-repeat center center/1600px 500px
+}
+
+.login_type {
+    float: right;
+    margin-top: 70px;
+    margin-right: 340px;
+    width: 345px;
+    height: 340px;
+    background: #fff
+}
+
+.login_type_title {
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #ddd
+}
+
+.login_type_title li {
+    float: left;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    height: 25px;
+    margin-top: 15px
+}
+
+.login_type_title li:nth-child(1) {
+    border-right: 1px solid #ddd
+}
+
+.login_type_title li a {
+    cursor: pointer;
+    color: #8493a1;
+    font-size: 18px
+}
+
+.details_login_type > li {
+    display: none
+}
+
+.e_w_m > img {
+    width: 165px;
+    height: 165px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 90px
+}
+
+.erWeiMa_introduce {
+    float: left;
+    width: 165px;
+    margin-left: 90px;
+    margin-top: 20px
+}
+
+.erWeiMa_introduce span {
+    float: left;
+    color: #8493a1;
+    font-size: 14px
+}
+
+.erWeiMa_introduce span:nth-child(2) {
+    color: #e34859;
+    margin-right: 6px
+}
+
+.e_w_m_bottom {
+    float: left;
+    margin-top: 28px;
+    width: 100%
+}
+
+.e_w_m_bottom ul {
+    width: 270px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.e_w_m_bottom ul li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    text-align: center
+}
+
+.e_w_m_bottom ul li > img {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-left: 16px;
+    margin-right: 5px
+}
+
+.e_w_m_bottom ul li > span {
+    float: left;
+    color: #999;
+    font-size: 14px
+}
+
+.user_phone {
+    width: 307px;
+    height: 40px;
+    border: 1px solid #bdbdbd;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.user_phone:nth-of-type(1) {
+    margin-top: 40px;
+    margin-bottom: 20px
+}
+
+.user_logo {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: #f3f3f3;
+    text-align: center;
+    border-right: 1px solid #bdbdbd
+}
+
+.input_box {
+    float: left;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 40px
+}
+
+.input_box input {
+    float: left;
+    width: 100%;
+    height: 38px;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    text-indent: 10px;
+    outline: medium
+}
+
+.login_btn {
+    width: 307px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 50px;
+    background: #D7443C;
+    margin: 0 auto;
+    cursor: pointer
+}

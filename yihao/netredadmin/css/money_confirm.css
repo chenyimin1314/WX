@@ -1,0 +1,186 @@
+.money_manager_detail.my_account {
+    display: block;
+    height: 240px
+}
+
+.main_content_right h1 img {
+    padding: 20px 10px 20px 0;
+    margin-top: -3px;
+    cursor: pointer
+}
+
+button.btn:focus {
+    outline: 0
+}
+
+.form {
+    padding-top: 18px
+}
+
+.input-group {
+    width: 233px;
+    margin-left: 40px;
+    vertical-align: middle
+}
+
+.status {
+    padding-right: 20px
+}
+
+.status .input-group-btn li a {
+    height: 34px;
+    line-height: 34px
+}
+
+.status > .form-control {
+    float: right
+}
+.status > .form-control[readonly]{
+    background-color: #fff;
+}
+
+.status .dropdown-toggle {
+    width: 18px;
+    height: 34px
+}
+
+.status .dropdown-toggle .caret {
+    margin-left: -5px
+}
+
+.status .form-control {
+    width: 142px
+}
+
+.form label {
+    font-weight: 400
+}
+
+.form input[readonly=readonly] {
+    background-color: #fff
+}
+
+.col-lg-3 {
+    margin: 0;
+    width: 290px
+}
+
+.col-lg-4 {
+    width: 400px
+}
+
+.input-group.date {
+    width: 100%;
+    margin-left: 26px
+}
+
+.input-group.date > * {
+    float: left;
+    line-height: 34px
+}
+
+.input-group.date label {
+    background: url(../img/date.png) no-repeat #fff;
+    background-position: 90% 45%
+}
+
+.input-group.date label input {
+    background: 0 0
+}
+
+.input-group .form-control[readonly=readonly]:focus {
+    outline: 0;
+    border-color: #ccc;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.input-group.date span:not(.input-group-btn) {
+    padding: 0 7px
+}
+
+.input-group.date input[type=text] {
+    width: 123px
+}
+
+.input-group span button {
+    height: 34px;
+    background-color: #f5f5f5
+}
+
+.form .row {
+    padding-right: 20px
+}
+
+.form .row .col-lg-4.right {
+    float: right;
+    width: 300px
+}
+
+.table-responsive {
+    margin: 16px 32px
+}
+
+.table-responsive .table {
+    border: 1px solid #ddd
+}
+
+.table th {
+    height: 50px
+}
+
+.table td, .table th {
+    vertical-align: middle
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center
+}
+
+.table .operate .btn-primary {
+    background-color: #006dff
+}
+
+.table tbody tr td .btn.drop {
+    color: red
+}
+
+.tcdPageCode {
+    padding: 0 32px
+}
+
+.explain {
+    color: #006dff
+}
+
+.explain:hover {
+    color: #006dff
+}
+
+.operate button:first-child {
+    margin-right: 10px
+}
+
+.imgPopver {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 20000000000
+}
+
+.myimgbox {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .1)
+}

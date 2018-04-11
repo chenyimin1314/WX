@@ -1,0 +1,252 @@
+.main_content {
+    background: #EBF2F5;
+}
+
+.my_account_3 {
+    height: 180px
+}
+.main_content_right h4 {
+    font-size: 16px;
+    line-height: 56px;
+    padding-left: 40px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.main_content_right h5 {
+    font-size: 14px;
+    padding: 24px 0 12px 40px;
+}
+
+.shop_name > label {
+    vertical-align: top;
+    display: inline-block;
+    width: 120px;
+    font-size: 14px;
+    padding-left: 50px;
+    height: 26px;
+    box-sizing: border-box;
+}
+
+input[type=file] {
+    width: 0;
+    overflow: hidden;
+    height: 0;
+}
+
+.form {
+    /*overflow: hidden;*/
+}
+
+.flex_box label {
+    display: block;
+    width: 100%;
+    height: 57px;
+    text-align: center;
+    vertical-align: middle;
+}
+.uploadImage{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.uploadImage>label{
+    border:1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.progress_user{
+    color: #999;
+}
+.uploadImage>label img{
+    vertical-align: middle;
+}
+.uploadImage>label img.active{
+    width: 100%;
+    height:57px;
+}
+.uploadImage>label video{
+    width: 100%;
+}
+.progress_user{
+    display: none;
+}
+label{
+    position: relative;
+}
+.full{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:30px;
+    top:0;
+}
+.uploadImage>label:nth-child(2){
+    width: 320px;
+    height:57px;
+}
+.uploadImage>label:nth-child(4){
+    width:320px;
+    height:180px;
+}
+
+.flex_box label .img {
+    vertical-align: middle;
+    max-width: 100%;
+    width:100%;
+    height: 57px;
+}
+
+.shop_image.flex_box {
+    margin-left: 40px;
+    position: relative;
+}
+.shop_image:after{
+    content: "";
+    clear: both;
+    visibility: hidden;
+    height:0;
+}
+.shop_image.flex_box:after{
+    content: "";
+    display: none;
+    clear: both;
+}
+.shop_image .close{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height:30px;
+    right: -20px;
+    top:-20px;
+    background: url("../images/close.png");
+    background-size: cover;
+    cursor: pointer;
+}
+.buttonGroup{
+    text-align: center;
+    padding:20px 0;
+    border-top: 1px solid #ddd;
+}
+.button .btn{
+    margin:0 auto;
+}
+/*.button button {*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    /*height: 50px;*/
+    /*width: 140px;*/
+    /*line-height: 50px;*/
+    /*margin-top: 68px;*/
+    /*background: #f69;*/
+    /*outline: none;*/
+    /*border: none;*/
+    /*color: #fff;*/
+/*}*/
+
+.buttons {
+    padding-left: 40px;
+}
+
+.uploadImage {
+    padding-left: 40px;
+}
+
+.uploadImage button {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.buttons span {
+    margin-top: 10px;
+    margin-right: 40px;
+}
+.uploadImage{
+    padding-top:20px;
+}
+.button .myButton{
+    background: #D7443C;
+}
+.flex_box > div {
+    float: left;
+    width: 320px;
+    margin-right: 20px;
+    margin-bottom:20px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    position: relative;
+}
+.model > div:nth-child(2) label{
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video{
+    width: 320px;
+    height:180px;
+}
+
+#shop_data_idendify {
+    padding: 20px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+.announce h5 {
+    padding-bottom: 24px;
+}
+
+.announce .textarea {
+    width: 380px;
+    margin-left: 40px;
+    word-wrap: break-word;
+    resize: none;
+    margin-left: 40px;
+    width: 380px;
+    height: 170px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: justify;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+.announce .textarea > * {
+    vertical-align: middle;
+    padding: 0 3px;
+}
+
+.textarea:focus {
+    border: 1px solid #3297fc;
+    outline: none;
+}
+
+/*预览图片*/
+.preview {
+    width: 700px;
+}
+
+.preview img {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+
+.tips {
+    color: #f00;
+    font-size: 12px;
+    padding-left: 40px;
+    margin-bottom:20px;
+}
